@@ -2,6 +2,9 @@
  * Главный файл стилей.
  * Все паршалы подключаются сюда.
  */
- @import './components/page-hero';
 
+@import './base';
+@import './container';
+@import './input';
+@import './components/page-hero';
 
