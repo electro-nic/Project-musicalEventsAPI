@@ -1,0 +1,23 @@
+{{#each this}}
+<li class="hero__item">
+    <div class="hero__general">
+        <div class="music__thumb">
+            <picture class="music__img">
+                <img 
+                class="music__img-poster img" 
+                src="{{}}" 
+                data-source="{{}}" 
+                alt="{{}}">
+            </picture>
+        </div>
+        <div class="music__info">
+            <h3 class="hero__title title">{{}}</h3>
+            <p class="hero__text text">{{}}</p>
+            <a href="#" class="music__link">
+                <span class="material-icons">room</span>
+                {{}}
+            </a>
+        </div>
+    </div>
+</li>
+{{/each}}
