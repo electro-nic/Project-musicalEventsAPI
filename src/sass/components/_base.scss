@@ -1,17 +1,26 @@
-html {
-  box-sizing: border-box;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
+
+.container {
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
+
 
 ul {
   list-style: none;
