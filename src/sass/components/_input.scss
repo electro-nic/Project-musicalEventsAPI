@@ -41,7 +41,7 @@
 }
 
 .form-wrapper {
-  position: relative;
+  // position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +52,16 @@
   @include for-size(tablet-up) {
     flex-direction: row;
   }
+}
+
+.search-btn {
+  position: absolute;
+  top: 20%;
+  left: 85%;
+  width: 15px;
+  height: 15px;
+  // border: none;
+  outline: none;
 }
 
 .form__input {
