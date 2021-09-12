@@ -10,15 +10,14 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-up) {
     max-width: 768px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @include for-size(desktop-up) {
     max-width: 1280px;
   }
 }
-
 
 ul {
   list-style: none;
