@@ -1,4 +1,3 @@
-
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -12,9 +11,9 @@
     overflow: hidden;
 }
 
-.hero__general {
-    max-width: 128px;
-}
+// .hero__general {
+//     max-width: 128px;
+// }
 
 .hero__list--cards {
     display: flex;
@@ -25,6 +24,7 @@
 }
 
 .hero__item {
+    text-align: center;
     margin-top: 30px;
     margin-left: 15px;
     flex-basis: calc((100% - 2 * 15px) / 2);
@@ -39,23 +39,30 @@
     border-bottom-right-radius: 50px;
 }
 
+
 .hero__title {
     font-weight: 700;
     line-height: 1.21;
     font-size: 14px;
-    text-align: center;
     margin-bottom: 5px;
+    color: var(--title-color);
+
 }
 
 .hero__text {
     line-height: 1.21;
     font-size: 14px;
-    text-align: center;
-}
-
-.music__info {
+    margin-bottom: 5px;
+    color: var(--main-text-color);
 }
 
 .music__link {
+    display: flex;
+    justify-content: center;
     font-size: 12px;
+}
+
+.material-icons {
+    font-size: 14px;
+    color: var(--main-text-color);
 }
