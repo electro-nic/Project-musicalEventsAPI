@@ -31,13 +31,20 @@
     };
 };
 
-.modal__close {
+.modal__close{
     position: absolute;
     top: 25px;
     left: 230px;
-    width: 17px;
-    height: 17px;
-    color: var(--modal-accent-color);
+    width: 33px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--modal-background-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+
 
     @include for-size(tablet-up){
         top: 25px;
@@ -45,12 +52,31 @@
     };
 
     @include for-size(desktop-up){
+        width: 42px;
+        height: 40px;
+        top: 30px;
+        left: 875px;
+    };
+};
+
+
+.modal__close-icon{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;        
+    fill: var(--modal-accent-color);
+
+    @include for-size(desktop-up){
         width: 25px;
         height: 25px;
         top: 30px;
         left: 875px;
     };
-};
+}
+
+
+
 
 .modal__circle {
     position: absolute;
@@ -126,9 +152,22 @@
     @include for-size(desktop-up){
         font-size: 24px;
         line-height: 1.21;
-    }
+    };
 
 };
+
+.modal__grid{
+    position: absolute;
+};
+
+.modal__item-title{
+    margin-bottom: 5px;
+};
+
+.modal__item{
+    margin-bottom: 10px;
+};
+
 
 .modal__more {
     position: absolute;
