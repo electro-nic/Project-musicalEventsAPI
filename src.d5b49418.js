@@ -7,4 +7,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/onClickScrollTo");
 },{"./sass/main.scss":"clu1","./js/onClickScrollTo":"qg96"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.c6a81c26.js.map
+//# sourceMappingURL=/Project-musicalEventsAPI/src.d5b49418.js.map
