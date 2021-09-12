@@ -3,15 +3,15 @@
     margin-bottom: 25px;
     text-align: center;
   
-    @media screen and (min-width: 768px) {
-        margin-top: 40px;
-        margin-bottom: 27px;
-      }
-      @media screen and (min-width: 1280px) {
-        margin-top: 40px;
-        margin-bottom: 52px;
-      }
 
+    @include for-size(tablet-up) {
+      margin-top: 40px;
+        margin-bottom: 27px;
+    }
+    @include for-size(desktop-up) {
+      margin-top: 40px;
+      margin-bottom: 52px;
+     }
   }
   .header__title--decor {
     color: var(--title-color);
@@ -20,17 +20,10 @@
     font-size: 18px;
     line-height: 1.22;
     
-    // @include for-size(tablet-up) {
-    //   font-size: 30px;
-    // }
-    // @include for-size(tablet-up) {
-    //     font-size: 0px;
-    //  }
-
-    @media screen and (min-width: 768px) {
-        font-size: 30px;
-       }
-      @media screen and (min-width: 1280px) {
+    @include for-size(tablet-up) {
+      font-size: 30px;
+    }
+    @include for-size(desktop-up) {
         font-size: 50px;
-      }
+     }
   }
