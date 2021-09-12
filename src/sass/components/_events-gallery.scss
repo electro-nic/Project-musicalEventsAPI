@@ -62,8 +62,8 @@
 .music__img-poster {
     width: 128px;
 height: 161px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
     
     @include for-size(tablet-up) {
 width: 180px;
