@@ -10,10 +10,10 @@
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 767.98px) {
+  @include for-size(phone-only) {
     flex-direction: column;
   }
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-up) {
     flex-direction: row;
   }
 }
@@ -25,16 +25,17 @@
 
   font-size: 16px;
   line-height: 1.25;
-  color: #939393;
+  color: --second-text-color;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 20px;
+  outline: none;
 }
 .form__input:first-child {
-  @media screen and (max-width: 767.98px) {
+  @include for-size(phone-only) {
     margin-bottom: 25px;
   }
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-up) {
     margin-right: 30px;
   }
 }
@@ -47,7 +48,7 @@
   top: 21%;
   left: 85%;
   transform: matrix(-1, 0, 0, 1, 0, 0);
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-up) {
     top: 33%;
     left: 77%;
   }
