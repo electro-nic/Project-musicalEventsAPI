@@ -13,4 +13,24 @@
       }
 
   }
-  
+  .header__title--decor {
+    color: var(--title-color);
+    font-family: var(--font);
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.22;
+    
+    // @include for-size(tablet-up) {
+    //   font-size: 30px;
+    // }
+    // @include for-size(tablet-up) {
+    //     font-size: 0px;
+    //  }
+
+    @media screen and (min-width: 768px) {
+        font-size: 30px;
+       }
+      @media screen and (min-width: 1280px) {
+        font-size: 50px;
+      }
+  }
