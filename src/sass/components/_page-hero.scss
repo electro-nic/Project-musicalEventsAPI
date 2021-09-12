@@ -11,6 +11,9 @@
     overflow: hidden;
 }
 
+
+
+
 // .hero__general {
 //     max-width: 128px;
 // }
@@ -21,6 +24,16 @@
     margin-top: -30px;
     margin-left: -15px;
 
+    @include for-size(tablet-up) {
+        margin-top: -45px;
+        margin-left: -27px;
+      }
+    
+      @include for-size(desktop-up) {
+        margin-top: -50px;
+        margin-left: -70px;
+      }
+
 }
 
 .hero__item {
@@ -28,6 +41,18 @@
     margin-top: 30px;
     margin-left: 15px;
     flex-basis: calc((100% - 2 * 15px) / 2);
+
+    @include for-size(tablet-up) {
+        margin-top: 45px;
+        margin-left: 27px;
+        flex-basis: calc((100% - 3 * 45px) / 3);
+      }
+    
+      @include for-size(desktop-up) {
+        margin-top: 50px;
+        margin-left: 70px;
+        flex-basis: calc((100% - 4 * 70px) / 4);
+      }
 }
 
 .music__thumb {
@@ -35,8 +60,15 @@
 }
 
 .music__img-poster {
+    width: 128px;
+height: 161px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    
+    @include for-size(tablet-up) {
+width: 180px;
+height: 227px;
+      }
 }
 
 
@@ -47,6 +79,11 @@
     margin-bottom: 5px;
     color: var(--title-color);
 
+    @include for-size(tablet-up) {
+        font-size: 16px;
+        line-height: 1.25;
+      }
+    
 }
 
 .hero__text {
@@ -54,12 +91,25 @@
     font-size: 14px;
     margin-bottom: 5px;
     color: var(--main-text-color);
+
+    @include for-size(tablet-up) {
+        font-size: 16px;
+        line-height: 1.25;
+      }
+    
 }
 
 .music__link {
     display: flex;
     justify-content: center;
     font-size: 12px;
+    font-weight: 600;
+    line-height: 1.21;
+    
+    @include for-size(tablet-up) {
+        font-size: 14px;
+        line-height: 1.21;
+      }
 }
 
 .material-icons {
