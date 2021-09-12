@@ -1,0 +1,55 @@
+.form {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.form-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include for-size(phone-only) {
+    flex-direction: column;
+  }
+  @include for-size(tablet-up) {
+    flex-direction: row;
+  }
+}
+
+.form__input {
+  width: 270px;
+  height: 40px;
+  padding: 10px 30px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: --second-text-color;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  outline: none;
+}
+.form__input:first-child {
+  @include for-size(phone-only) {
+    margin-bottom: 25px;
+  }
+  @include for-size(tablet-up) {
+    margin-right: 30px;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+}
+.form__icon {
+  position: absolute;
+  top: 21%;
+  left: 85%;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  @include for-size(tablet-up) {
+    top: 33%;
+    left: 77%;
+  }
+}

@@ -2,5 +2,11 @@
  * Главный файл стилей.
  * Все паршалы подключаются сюда.
  */
+@import './utils/mixins';
+@import './utils/variables';
+@import './components/base';
+@import './components/page-header';
+@import './components/input';
+@import './components/page-hero';
 
 
