@@ -22,7 +22,9 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 "use strict";var e=require("./refs");function t(e){return fetch(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${e}&apikey=vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG`).then(e=>e.json())}function n(e){e.preventDefault(),t(e.target.value).then(e=>{console.log(e._embedded.events)}).catch(e=>console.log(e))}e.refs.inputCountry.addEventListener("input",n);
 },{"./refs":"VyiV"}],"fdXB":[function(require,module,exports) {
 (()=>{const o={closeModalBtn:document.querySelector(".modal__close"),modal:document.querySelector(".modal__backdrop")};o.closeModalBtn.addEventListener("click",function(){o.modal.classList.toggle("is-hidden")})})();
+},{}],"BeZ8":[function(require,module,exports) {
+let d=document.getElementById("preloader");function e(){setTimeout(()=>{document.body.classList.add("loaded_hiding"),setTimeout(()=>{document.body.classList.add("loaded"),document.body.classList.remove("loaded_hiding")},1e3)},1e3)}window.addEventListener("load",e);
 },{}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close");
-},{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.174fd3a5.js.map
+"use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/preloader");
+},{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/preloader":"BeZ8"}]},{},["Focm"], null)
+//# sourceMappingURL=/Project-musicalEventsAPI/src.13ced0f9.js.map
