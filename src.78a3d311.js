@@ -27,4 +27,4 @@ let d=document.getElementById("preloader");function e(){setTimeout(()=>{document
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/modal_img"),require("./js/preloader");
 },{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/modal_img":"clu1","./js/preloader":"BeZ8"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.7f90c866.js.map
+//# sourceMappingURL=/Project-musicalEventsAPI/src.78a3d311.js.map
