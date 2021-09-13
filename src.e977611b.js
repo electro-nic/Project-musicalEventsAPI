@@ -25,4 +25,4 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/api-connect"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close");
 },{"./sass/main.scss":"clu1","./js/api-connect":"TjPX","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.c3101bed.js.map
+//# sourceMappingURL=/Project-musicalEventsAPI/src.e977611b.js.map
