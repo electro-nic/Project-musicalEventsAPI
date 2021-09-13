@@ -12,22 +12,22 @@ const state = {
     value: '',
 }
 
-// refs.form.addEventListener('submit', onSearchEvents);
+refs.form.addEventListener('submit', onGreatGalleryEvents);
 
-async function onSearchEvents(e) {
+async function onGreatGalleryEvents(e) {
   e.preventDefault();
 
   try {
-    // state.value = e.currentTarget.elements[0].value;
+    state.value = e.currentTarget.elements.query.value;
 
     const eventPictures = await getEventsApi(state.value, state.page);
-    refs.eventList.innerHTML = cardTmp(eventPictures);
+    refs.eventList.insertAdjacentHTML('beforeend', cardTmp(eventPictures));
   } catch (error) {
     console.log(error.message);
   }
 }
 
-show(onSearchEvents())
+
 
 
 

@@ -43,5 +43,5 @@ export default async function connect(keyword = '', page = 0, size = 20) {
 
 
 // вызывать функциб можно так, тут log - это объект с результатами от бекенда
-const obj = connect('US');
-obj.then(log => console.log(log));
+// const obj = connect('US');
+// obj.then(log => console.log(log));
