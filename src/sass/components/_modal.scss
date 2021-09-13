@@ -244,9 +244,16 @@
 // кнопка "MORE FROM THIS AUTHOR"
 
 .modal__more {
+    width: 230px;
+    height: 40px;
     position: absolute;
     bottom: 104px;
-    right: 22px;
+    right: 23px;
+    background-color: var(--modal-background-color);
+    border-color: var(--modal-accent-color);
+    border-radius: 5px;
+    color: var(--modal-accent-color);
+
 
 }
 
