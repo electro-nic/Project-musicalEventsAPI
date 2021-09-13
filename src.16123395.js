@@ -4,7 +4,9 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.refs=void 0;const e={btnToTop:document.querySelector(".js-button")};exports.refs=e;
 },{}],"qg96":[function(require,module,exports) {
 "use strict";var e=require("./refs");function t(){const t=window.pageYOffset,o=document.documentElement.clientHeight;t>o&&e.refs.btnToTop.classList.remove("is-hidden"),t<o&&e.refs.btnToTop.classList.add("is-hidden")}function o(){window.scrollTo({top:0,left:0,behavior:"smooth"})}window.addEventListener("scroll",t),e.refs.btnToTop.addEventListener("click",o);
-},{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/onClickScrollTo");
-},{"./sass/main.scss":"clu1","./js/onClickScrollTo":"qg96"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.47953134.js.map
+},{"./refs":"VyiV"}],"fdXB":[function(require,module,exports) {
+(()=>{const o={closeModalBtn:document.querySelector(".modal__close"),modal:document.querySelector(".modal__backdrop")};o.closeModalBtn.addEventListener("click",function(){o.modal.classList.toggle("is-hidden")})})();
+},{}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/onClickScrollTo"),require("./js/modal-close");
+},{"./sass/main.scss":"clu1","./js/onClickScrollTo":"qg96","./js/modal-close":"fdXB"}]},{},["Focm"], null)
+//# sourceMappingURL=/Project-musicalEventsAPI/src.16123395.js.map
