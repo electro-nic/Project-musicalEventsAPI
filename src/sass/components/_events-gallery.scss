@@ -62,12 +62,19 @@
 .music__img-poster {
     width: 128px;
     height: 161px;
-    border-top-left-radius: 75px;
-    border-bottom-right-radius: 75px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     
     @include for-size(tablet-up) {
 width: 250px;
 height: 265px;
+border-top-left-radius: 75px;
+border-bottom-right-radius: 75px;
+      }
+
+      @include for-size(desktop-up) {
+        width: 180px;
+        height: 227px;
       }
 }
 
