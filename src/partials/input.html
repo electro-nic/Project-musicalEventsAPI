@@ -1,4 +1,7 @@
 <section class="searching-form">
+  <div class="header__title container">
+    <h1 class="header__title--decor">FIND BEST EVENTS AROUND THE WORLD</h1>
+  </div>
   <div class="container">
     <form class="form" autocomplete="off">
       <div class="form-wrapper">
@@ -10,9 +13,11 @@
             id=""
             placeholder="Start searching"
           />
-          <svg class="form__icon" width="12px" height="12px">
-            <use href=""></use>
-          </svg>
+          <button class="search-btn" type="submit" id="searchBtn">
+            <svg class="form__icon" width="12px" height="12px">
+              <use href="./images/icons/icons.svg#icon-search"></use>
+            </svg>
+          </button>
         </div>
 
 
@@ -24,9 +29,11 @@
             id="country"
             placeholder="Choose country"
           />
-          <svg class="form__icon" width="12px" height="12px">
-            <use href=""></use>
-          </svg>
+          <button class="search-btn" type="submit" id="countryBtn">
+            <svg class="form__icon" width="12px" height="12px">
+              <use href="./images/icons/icons.svg#icon-polygon"></use>
+            </svg>
+          </button>
         </div>
         <datalist id="country-code">
           <option value="US">United States Of America</option>
