@@ -26,7 +26,7 @@
   }
 
   @include for-size(desktop-up) {
-    width: 942px;
+    width: 930px;
     height: 1023px;
   }
 }
@@ -66,13 +66,18 @@
   text-align: center;
   cursor: pointer;
   fill: var(--modal-accent-color);
-
+  
   @include for-size(desktop-up) {
     width: 25px;
     height: 25px;
     top: 30px;
     left: 875px;
-  }
+  };
+};
+
+.modal__close:hover,
+.modal__close:focus {
+  transform: rotate(180deg);
 }
 
 // круглая иконка
@@ -240,11 +245,22 @@
   cursor: pointer;
 }
 
+.modal__buy:hover,
+.modal__buy:focus {
+  background-color: var(--modal-background-color);
+  border: 2px solid var(--modal-accent-color);
+}
+
 .modal__btn-title {
   font-style: 500;
   font-size: 16px;
   line-height: 1.25;
   color: var(--main-text-color);
+}
+
+.modal__btn-title:hover,
+.modal__btn-title:focus {
+  color: var(--modal-accent-color);
 }
 
 .modal__grid {
@@ -295,3 +311,17 @@
   line-height: 1.25;
   color: var(--modal-accent-color);
 }
+
+.modal__more:hover,
+.modal__more:focus {
+   background-color: var(--modal-accent-color);
+
+   @include for-size(tablet-up) {
+     background-color: var(--title-color);
+   }
+};
+
+.modal__more-title:hover,
+.modal__more-title:focus {
+  color: var(--modal-background-color);
+} 
