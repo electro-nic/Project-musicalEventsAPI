@@ -25,6 +25,6 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{}],"BeZ8":[function(require,module,exports) {
 let d=document.getElementById("preloader");function e(){setTimeout(()=>{document.body.classList.add("loaded_hiding"),setTimeout(()=>{document.body.classList.add("loaded"),document.body.classList.remove("loaded_hiding")},1e3)},1e3)}window.addEventListener("load",e);
 },{}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/preloader");
-},{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/preloader":"BeZ8"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.13ced0f9.js.map
+"use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/modal_img"),require("./js/preloader");
+},{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/modal_img":"clu1","./js/preloader":"BeZ8"}]},{},["Focm"], null)
+//# sourceMappingURL=/Project-musicalEventsAPI/src.4c169733.js.map
