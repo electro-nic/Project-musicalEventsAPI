@@ -12,13 +12,13 @@ const state = {
     value: '',
 }
 
-refs.form.addEventListener('submit', onSearchEvents);
+// refs.form.addEventListener('submit', onSearchEvents);
 
 async function onSearchEvents(e) {
   e.preventDefault();
 
   try {
-    state.value = e.currentTarget.elements.query.value;
+    // state.value = e.currentTarget.elements[0].value;
 
     const eventPictures = await getEventsApi(state.value, state.page);
     refs.eventList.innerHTML = cardTmp(eventPictures);
@@ -26,6 +26,8 @@ async function onSearchEvents(e) {
     console.log(error.message);
   }
 }
+
+show(onSearchEvents())
 
 
 
