@@ -237,6 +237,7 @@
   border-radius: 5px;
   border: none;
   background-color: var(--modal-accent-color);
+  cursor: pointer;
 }
 
 .modal__btn-title {
@@ -271,6 +272,7 @@
   background-color: var(--modal-background-color);
   border-color: var(--modal-accent-color);
   border-radius: 5px;
+  cursor: pointer;
 
   @include for-size(tablet-up) {
       width: 255px;
