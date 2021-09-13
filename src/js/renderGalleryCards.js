@@ -14,21 +14,20 @@ const state = {
 
 refs.form.addEventListener('submit', onGreatGalleryEvents);
 
+
 async function onGreatGalleryEvents(e) {
   e.preventDefault();
 
   try {
-    state.value = e.currentTarget.elements.query.value;
+    state.value = e.currentTarget.elements[0].value;
 
-    const eventPictures = await getEventsApi(state.value, state.page);
-    refs.eventList.insertAdjacentHTML('beforeend', cardTmp(eventPictures));
+    const eventPictures = await getEventsApi();
+    refs.eventList.innerHTML = cardTmp(eventPictures);
+    console.log(refs.eventList)
   } catch (error) {
     console.log(error.message);
   }
 }
-
-
-
 
 
 // async function onSearchEvents(e) {
