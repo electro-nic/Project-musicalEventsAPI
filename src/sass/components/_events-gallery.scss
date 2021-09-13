@@ -18,7 +18,7 @@
 }
 
 
-.hero__list--cards {
+.events__list--cards {
     display: flex;
     flex-wrap: wrap;
     margin-top: -30px;
@@ -36,7 +36,7 @@
 
 }
 
-.hero__item {
+.events__item {
     text-align: center;
     margin-top: 30px;
     margin-left: 15px;
@@ -61,18 +61,18 @@
 
 .music__img-poster {
     width: 128px;
-height: 161px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    height: 161px;
+    border-top-left-radius: 75px;
+    border-bottom-right-radius: 75px;
     
     @include for-size(tablet-up) {
-width: 180px;
-height: 227px;
+width: 250px;
+height: 265px;
       }
 }
 
 
-.hero__title {
+.events__title {
     font-weight: 700;
     line-height: 1.21;
     font-size: 14px;
@@ -86,7 +86,7 @@ height: 227px;
     
 }
 
-.hero__text {
+.events__text {
     line-height: 1.21;
     font-size: 14px;
     margin-bottom: 5px;
@@ -105,6 +105,7 @@ height: 227px;
     font-size: 12px;
     font-weight: 600;
     line-height: 1.21;
+    color: var(--main-text-color);
     
     @include for-size(tablet-up) {
         font-size: 14px;
@@ -114,5 +115,4 @@ height: 227px;
 
 .material-icons {
     font-size: 14px;
-    color: var(--main-text-color);
 }
