@@ -1,0 +1,148 @@
+.event-card {
+    opacity: 0;
+    width: 194px;
+    // height: 312px;
+    color: #fffffff3;
+    text-align: center;
+    position: relative;
+    // pos
+    // margin-bottom: 50px;
+    animation: zoom 1.5s 1;
+    animation-fill-mode: forwards;
+    height: 100%;
+  
+    @media screen and (max-width: 768px) {
+      width: 138px;
+    }
+  
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      border: 1px solid rgba(220, 86, 197, 0.3);
+      border-radius: 50px 0px;
+      width: 153px;
+      height: 143px;
+  
+      @media screen and (max-width: 768px) {
+        width: 109px;
+        height: 101px;
+      }
+    }
+    .event-image-wrapper {
+      top: 13px;
+      width: 180px;
+      height: 227px;
+      overflow: hidden;
+      position: relative;
+      border-top-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      margin-bottom: 18px;
+  
+      .event-image {
+        position: absolute;
+        // right: 14px;
+        // left: -60px;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+  
+      @media screen and (max-width: 768px) {
+        top: 9px;
+        width: 128px;
+        height: 161px;
+        margin-bottom: 14px;
+      }
+    }
+  
+    // pos
+    // .event-data {
+  
+    //   position: absolute;
+    //   // top: 88%;
+    //   bottom: 0;
+    // }
+    // .event-data-wrapper {
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   justify-content: center;
+    // }
+  
+    .event-title {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #dc56c5;
+      margin-bottom: 5px;
+  
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  
+    .event-date {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 5px;
+  
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  
+    .event-place {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+  
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 15px;
+      }
+  
+      .fa-map-marker-alt {
+        font-size: 12px;
+        padding-bottom: 1px;
+        margin-right: 3px;
+      }
+    }
+  }
+  //
+  @for $i from 1 through 24 {
+    .event-card {
+      // :nth-child(1-24)
+  
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (0.12s);
+      }
+    }
+  }
+  @keyframes zoom {
+    0% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
