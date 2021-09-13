@@ -1,4 +1,81 @@
 .logo {
   position: absolute;
-  top: 0;
+  width: 106px;
+  height: 90px;
+  left: 3px;
+  top: 3px;
+
+@include for-size(tablet-up) {
+  width: 179px;
+  height: 151px;
 }
+
+@include for-size(desktop-up){
+  width: 239px;
+  height: 201px;
+}
+
+  // @media screen and (min-width: 768px) {
+  //   width: 179px;
+  //   height: 151px;
+  // }
+
+  // @media screen and (min-width: 1280px) {
+  //   width: 239px;
+  //   height: 201px;
+  // }
+}
+.logo__background {
+  position: absolute;
+  width: 213.97px;
+  height: 180px;
+  left: -107.49px;
+  top: -90px;
+  background-image: linear-gradient(
+    136.07deg,
+    rgba(196, 196, 196, 0.03) 10.75%,
+    rgba(196, 196, 196, 0) 92.33%
+  );
+  backdrop-filter: blur(30px);
+  border-radius: 90%;
+
+
+  @include for-size(tablet-up) {
+    width: 359px;
+    height: 302px;
+    left: -180px;
+    top: -151px;
+  }
+  @include for-size(desktop-up) {
+    width: 477px;
+      height: 402px;
+      left: -238px;
+      top: -201px;
+  }
+  // @media screen and (min-width: 768px) {
+  //   width: 359px;
+  //   height: 302px;
+  //   left: -180px;
+  //   top: -151px;
+  // }
+
+  // @media screen and (min-width: 1280px) {
+  //   width: 477px;
+  //   height: 402px;
+  //   left: -238px;
+  //   top: -201px;
+  // }
+}
+
+// .bg-image {
+//   width: 1280px;
+//   height: 446px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   background-image: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%),
+//     linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
+//     url('../images/desktop/bg-desktop.png');
+//   background-size: 100% 102px, cover, cover;
+//   background-position: 50% 100%, center, center;
+//   background-repeat: no-repeat;
+// }
