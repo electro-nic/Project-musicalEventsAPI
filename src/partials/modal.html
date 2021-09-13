@@ -29,7 +29,7 @@
                     <h3 class="modal__item-title">
                         WHEN
                     </h3>
-                    <ul class="modal__when">
+                    <ul class="modal__when modal-text" >
                      <li class="modal__date">2021-06-09</li>
                      <li class="modal__time">20:00 (Kyiv/Ukraine)</li>
                      </ul>
@@ -38,8 +38,8 @@
                     <h3 class="modal__item-title">
                         WHERE
                     </h3>
-                    <ul class="modal__where">
-                        <li class="modal__ctity">Kyiv, Ukraine </li>
+                    <ul class="modal__where modal-text">
+                        <li class="modal__city">Kyiv, Ukraine </li>
                         <li class="modal__palace">VDNH</li>
                         </ul>
                 </li>
@@ -47,27 +47,38 @@
                     <h3 class="modal__item-title">
                         WHO
                     </h3>
-                    <p class="modal__autor">The Black Eyed Peas</p>
+                    <p class="modal__autor modal-text">
+                        The Black Eyed Peas
+                    </p>
                 </li>
-                <li class="modal__item">
+                <li class="modal__item modal-text">
                     <h3 class="modal__item-title">
                         PRICES
                     </h3>
                     <ul class="modal__tickets">
                         <li class="modal__tickets-item standart">
-                            <!-- <svg class="modal__tickets-icon"><use href="/"></use></svg> -->
+                            <div class="modal__icon">
+                            <svg class="modal__tickets-icon" width="24" height="16">
+                                <use href="./images/icons/icons.svg#icon-barcode"></use></svg>
                            <p class="modal__price">Standart 300-500 UAH</p>
-                            <button class="modal_buy">
-                                BUY TICKETS
+                           </div> 
+                           <div class="modal__btn">
+                           <button class="modal__buy">
+                                <span class="modal__btn-title">BUY TICKETS</span> 
                             </button>
+                            </div>
                         </li>
                         <li class="modal__tickets-item vip">
-                            <!-- <svg class="modal__tickets-icon">
-                                <use src="./images/icons/close.svg"></use></svg> -->
+                           <div class="modal__icon">
+                            <svg class="modal__tickets-icon" width="24" height="16">
+                                <use href="./images/icons/icons.svg#icon-barcode"></use></svg>
                             <p class="modal__price">VIP 1000-1500 UAH</p>
-                            <button class="modal_buy">
-                                BUY TICKETS
+                          </div> 
+                          <div class="modal__btn item-vip">
+                            <button class="modal__buy">
+                                <span class="modal__btn-title">BUY TICKETS</span> 
                             </button>
+                            </div>
                         </li>
                     </ul>
                 </li>

@@ -31,6 +31,8 @@
     };
 };
 
+// кнопка закрытия
+
 .modal__close{
     position: absolute;
     top: 25px;
@@ -75,8 +77,7 @@
     };
 }
 
-
-
+// круглая иконка
 
 .modal__circle {
     position: absolute;
@@ -105,12 +106,15 @@
     };
 };
 
+// грид модалки
+
 .modal__grid{
     margin: 0;
     padding: 0;
     position: absolute;
     top: 195px;
-    left: 100px;
+    left: 12px;
+    right: 17px;
 
     @include for-size(tablet-up) {
         top: 141px;
@@ -123,6 +127,18 @@
     };
 
 };
+
+// описание
+
+.modal__info{
+    margin: 0;
+    padding: 0;
+    
+    @include for-size(desktop-up) {
+        padding-left: 50px;
+    };
+
+}
 
 .modal__poster{
     display: none;
@@ -144,6 +160,7 @@
 };
 
 .modal__item-title {
+    text-align: center;
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
@@ -156,8 +173,64 @@
 
 };
 
+.modal-text{
+    font-style: 400;
+    font-size: 16px;
+    line-height: 1.22;
+    text-align: center;
+};
+
+.modal__date,
+.modal__city{
+    margin-bottom: 3px;
+};
+
+// раздел покупки билетов
+
+.modal__price{
+    margin-bottom: 10px;    
+};
+
+.modal__tickets{
+    padding-left: 13px;
+};
+
+.vip{
+    padding-left: 15px;
+};
+
+.item-vip{
+    padding-right: 15px;
+}
+
+.modal__tickets-icon{
+  margin-right: 13px;
+};
+
+.modal__tickets-item{
+    margin-bottom: 20px;
+};
+
+.modal__icon{
+    display: flex;
+};
+
+.modal__buy{
+    width: 145px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--modal-accent-color);
+    color: var(--main-text-color);
+};
+
+// .modal__btn-title{
+//     padding: 9px 0px 11px 0px;
+// };
+
 .modal__grid{
     position: absolute;
+    display: flex;
 };
 
 .modal__item-title{
@@ -168,13 +241,13 @@
     margin-bottom: 10px;
 };
 
+// кнопка "MORE FROM THIS AUTHOR"
 
 .modal__more {
     position: absolute;
     bottom: 104px;
     right: 22px;
 
-   
 }
 
 
