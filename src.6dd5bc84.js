@@ -29,4 +29,4 @@ let d=document.getElementById("preloader");function e(){setTimeout(()=>{document
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/modal_img"),require("./js/preloader");
 },{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/modal_img":"xSVp","./js/preloader":"BeZ8"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.8d7af553.js.map
+//# sourceMappingURL=/Project-musicalEventsAPI/src.6dd5bc84.js.map
