@@ -5,17 +5,16 @@
   max-width: 100%;
 } */
 
-.background__image--header {
-  @media screen and (max-width: 767.98px) {
-    max-height: 461px;
-  }
-
-  @media screen and (min-width: 768px) {
-    max-height: 622px;
+.background__image--header,
+.background__header {
+  @media screen and (max-width: 1279.98px) {
+    max-height: 364px;
+    background-image: url(../images/tablet/overlay-tablet.png);
   }
 
   @media screen and (min-width: 1280px) {
-    max-height: 1035.52px;
+    max-height: 446px;
+    background-image: url(../images/desktop/overlay-desktop.png);
   }
 }
 
@@ -25,9 +24,6 @@
   left: 0;
   top: 0;
   width: 100%;
-  max-width: 100%;
-  /*  min-width: 100%;
-  max-width: 1280px; */
 }
 
 .background__body {
@@ -35,7 +31,6 @@
   z-index: -20;
   left: 0;
   top: 300px;
-  width: 100%;
+  max-width: 100%;
   background-repeat: repeat;
 }
-
