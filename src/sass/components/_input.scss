@@ -45,8 +45,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 130px;
 
   @include for-size(phone-only) {
+    flex-direction: column;
+  }
+  @include for-size(phone-plus-up) {
     flex-direction: column;
   }
   @include for-size(tablet-up) {
@@ -62,7 +66,7 @@
   left: 80%;
   width: 34px;
   height: 34px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: transparent;
   border: none;
   outline: none;
   @include for-size(tablet-up) {
@@ -75,17 +79,20 @@
   width: 270px;
   height: 40px;
   padding: 10px 30px;
-
   font-size: 16px;
   line-height: 1.25;
-  color: --second-text-color;
-  background: rgba(255, 255, 255, 0.2);
+  color: var(--second-text-color);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   outline: none;
+  border: none;
 }
 .form__input:first-child {
   @include for-size(phone-only) {
+    margin-bottom: 25px;
+  }
+  @include for-size(phone-plus-up) {
     margin-bottom: 25px;
   }
   @include for-size(tablet-up) {
@@ -108,6 +115,6 @@
     left: 30%;
   }
 }
-.all-countries{
+.all-countries {
   background-color: aquamarine;
 }

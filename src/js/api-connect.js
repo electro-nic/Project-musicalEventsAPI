@@ -20,4 +20,6 @@ export default async function connect(keyword = '', page = 0, size = 20, country
 
 //вызывать функцию так
 // const obj = connect('', 0, 20, '');
+
 // obj.then(log => console.log(log));
+
