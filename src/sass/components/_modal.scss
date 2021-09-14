@@ -26,8 +26,8 @@
   }
 
   @include for-size(desktop-up) {
-    width: 900px;
-    height: 1000px;
+    max-width: 930px;
+    max-height: 1023px;
   }
 }
 
@@ -36,7 +36,7 @@
 .modal__close {
   position: absolute;
   top: 25px;
-  left: 230px;
+  right: 25px;
   width: 33px;
   height: 30px;
   display: inline-flex;
@@ -47,16 +47,12 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
 
-  @include for-size(tablet-up) {
-    top: 25px;
-    left: 553px;
-  }
-
+  
   @include for-size(desktop-up) {
     width: 42px;
     height: 40px;
     top: 30px;
-    left: 875px;
+    right: 30px;
   }
 }
 
@@ -71,7 +67,7 @@
     width: 25px;
     height: 25px;
     top: 30px;
-    left: 875px;
+    left: 30px;
   };
 };
 
@@ -85,7 +81,8 @@
 .modal__circle {
   position: absolute;
   top: 75px;
-  left: 86px;
+  right: 84px;
+  justify-content: center;
   width: 102px;
   height: 102px;
   margin-bottom: 18px;
@@ -101,8 +98,9 @@
   }
 
   @include for-size(desktop-up) {
+    
     top: 62px;
-    left: 399px;
+    // left: 399px;
     width: 132px;
     height: 132px;
     margin-bottom: 41px;
@@ -144,7 +142,7 @@
   @include for-size(desktop-up) {
     display: flex;
     width: 360px;
-    height: 641px;
+    // height: 641px;
     outline: 2px solid black;
   }
 }
@@ -300,7 +298,7 @@
 
   @include for-size(desktop-up) {
     bottom: 62px;
-    right: 338px;
+    // right: 338px;
     border-color: var(--modal-accent-color);
   }
 };
