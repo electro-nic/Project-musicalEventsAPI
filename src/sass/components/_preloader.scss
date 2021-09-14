@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
   
-    background: #0c0b0c67;
+    background: #1a0216a6;
     background-image: linear-gradient(
       136.07deg,
       rgba(196, 196, 196, 0.03) 10.75%,
@@ -24,14 +24,14 @@
     margin-top: -35px;
     margin-left: -35px;
     text-align: center;
-    animation: preloader-rotate 2s infinite linear;
+    animation: preloader-rotate 1s infinite linear;
   }
   
   .preloader__item {
     position: absolute;
     display: inline-block;
     top: 0;
-    background-color: #dc56c5;
+    background-color: #f407fc;
     border-radius: 100%;
     width: 35px;
     height: 35px;
@@ -62,7 +62,7 @@
   }
   
   .loaded_hiding .preloader {
-    transition: 0.3s opacity;
+    transition: 0.2s opacity;
     opacity: 0;
   }
   
