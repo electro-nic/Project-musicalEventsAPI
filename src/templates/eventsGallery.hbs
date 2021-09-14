@@ -4,7 +4,7 @@
         <picture class="music__img">
             <source srcset="" />
             <source srcset="" />
-            <img class="music__img-poster img" src="{{images.6.url}}" data-source="" alt="">
+            <img class="music__img-poster img" src="{{images.6.url}}" data-source="{{images.6.url}}" alt="">
         </picture>
     </div>
     <div class="music__info">
@@ -12,7 +12,7 @@
         <p class="events__text text">{{dates.start.localDate}}</p>
         <a href="#" class="music__link">
             <span class="material-icons">room</span>
-            {{_embedded.venues.0.address.line1}}
+            {{_embedded.venues.0.name}}
         </a>
     </div>
 </li>

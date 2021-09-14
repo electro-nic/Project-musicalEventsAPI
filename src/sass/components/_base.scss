@@ -6,10 +6,14 @@ body {
 
 .container {
   width: 100%;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+
+  @include for-size(phone-only ) {
+    max-width: 480px;
+  }
 
   @include for-size(tablet-up) {
     max-width: 768px;
