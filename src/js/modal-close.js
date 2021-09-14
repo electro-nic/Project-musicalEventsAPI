@@ -26,7 +26,7 @@ closeModalWindow.addEventListener('click', closeModal);
 function openModal(e) {
   if(e.target.nodeName === "LI") {
     e.preventDefault();
-    closeModalWindow.classList.remove('is-hidden');
+    closeModalWindow.classList.remove('class', 'is-hidden');
   }
   else {
     return;
@@ -36,21 +36,22 @@ function openModal(e) {
   console.log(e.target.nodeName);
 };
 
-// function closeModal(e){
-//   if(e.target.nodeName == "BUTTON") {
-//     e.preventDefault()
-//     closeModalWindow.classList.add('is-hidden');
-//     // console.log(e.target.nodeName);
-//   } else {
-//     return;
-//   }
+function closeModal(e){
+  if(e.target.nodeName !== "BUTTON") {
+    return;
+  }else{ 
+    e.preventDefault()
+    closeModalWindow.classList.add('class', 'is-hidden');
+  };
+  console.log(e.target.nodeName); 
+  }
   
+
+
+
+// function closeModal(){
+//   closeModalWindow.classList.add('is-hidden');
 // };
-
-
-function closeModal(){
-  closeModalWindow.classList.add('is-hidden');
-};
 
 function keyEscape(e) {
   if(e.code === "Escape") {

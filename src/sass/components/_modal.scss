@@ -8,8 +8,8 @@
 }
 
 .modal {
-  width: 272px;
-  height: 915px;
+  min-width: 272px;
+  min-height: 915px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -26,8 +26,8 @@
   }
 
   @include for-size(desktop-up) {
-    width: 930px;
-    height: 1023px;
+    width: 900px;
+    height: 1000px;
   }
 }
 
@@ -315,17 +315,12 @@
 
 .modal__more:focus,
 .modal__more:hover {
-   background-color: var(--modal-accent-color);
-   
-   @include for-size(tablet-up-only) {
-     background-color: var(--title-color);
-   }
-
+   background-color: var(--title-color);
+  border: none;
 };
 
 .modal__more:hover .modal__more-title,
 .modal__more:focus .modal__more-title {
   color: var(--modal-background-color);
-  border-color: var(--modal-accent-color);
-
+  border: none;
 } 
