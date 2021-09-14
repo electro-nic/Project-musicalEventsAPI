@@ -50,6 +50,9 @@
   @include for-size(phone-only) {
     flex-direction: column;
   }
+  @include for-size(phone-plus-up) {
+    flex-direction: column;
+  }
   @include for-size(tablet-up) {
     flex-direction: row;
   }
@@ -63,7 +66,7 @@
   left: 80%;
   width: 34px;
   height: 34px;
-  background-color:transparent;
+  background-color: transparent;
   border: none;
   outline: none;
   @include for-size(tablet-up) {
@@ -87,6 +90,9 @@
 }
 .form__input:first-child {
   @include for-size(phone-only) {
+    margin-bottom: 25px;
+  }
+  @include for-size(phone-plus-up) {
     margin-bottom: 25px;
   }
   @include for-size(tablet-up) {

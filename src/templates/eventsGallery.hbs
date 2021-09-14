@@ -2,9 +2,10 @@
 <li class="events__item">
     <div class="music__thumb">
         <picture class="music__img">
-            <source srcset="" />
-            <source srcset="" />
-            <img class="music__img-poster img" src="{{images.6.url}}" data-source="{{images.6.url}}" alt="">
+            <source media='(min-width: 1280px)' srcset="{{images.6.url}}, {{images.1.url}}" />
+            <source media='(min-width: 768px)' srcset='{{images.5.url}}, {{images.3.url}}' />
+            <source media='(max-width: 767.9px)' srcset='{{images.8.url}}, {{images.7.url}}' />
+            <img class="music__img-poster img" src="{{images.1.url}}" data-source="{{images.6.url}}" alt="{{name}}">
         </picture>
     </div>
     <div class="music__info">
