@@ -1,14 +1,60 @@
-(() => {
-    const refs = {
-    //   openModalLink: document.querySelector('.'),
-      closeModalBtn: document.querySelector('.modal__close'),
-      modal: document.querySelector('.modal__backdrop'),
-    };
+// (() => {
+//     const refs = {
+//       openModalLink: document.querySelector('[data-modal-open]'),
+//       closeModalBtn: document.querySelector('[data-modal-close]'),
+//       modal: document.querySelector('[data-modal]'),
+//     };
   
-    // refs.openModalBtn.addEventListener('click', toggleModal);
-    refs.closeModalBtn.addEventListener('click', toggleModal);
+//     refs.openModalLink.addEventListener('click', toggleModal);
+//     refs.closeModalBtn.addEventListener('click', toggleModal);
   
-    function toggleModal() {
-      refs.modal.classList.toggle('is-hidden');
-    }
-  })();
+//     function toggleModal() {
+//       refs.modal.classList.toggle('is-hidden');
+//     }
+//   })();
+
+import { refs } from "./refs";
+
+const closeModalWindow = document.querySelector('.modal__backdrop');
+const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
+
+refs.eventList.addEventListener('click', openModal);
+closeModalBtn.addEventListener('click', closeModal);
+closeModalWindow.addEventListener('click', closeModal);
+
+
+function openModal(e) {
+  if(e.target.nodeName === "LI") {
+    e.preventDefault();
+    closeModalWindow.classList.remove('is-hidden');
+  }
+  else {
+    return;
+  }
+  window.addEventListener('keydown', keyEscape);
+
+  console.log(e.target.nodeName);
+};
+
+// function closeModal(e){
+//   if(e.target.nodeName == "BUTTON") {
+//     e.preventDefault()
+//     closeModalWindow.classList.add('is-hidden');
+//     // console.log(e.target.nodeName);
+//   } else {
+//     return;
+//   }
+  
+// };
+
+
+function closeModal(){
+  closeModalWindow.classList.add('is-hidden');
+};
+
+function keyEscape(e) {
+  if(e.code === "Escape") {
+    closeModal(e);
+  }
+}
+
