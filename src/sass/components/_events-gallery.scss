@@ -42,13 +42,6 @@
   margin-left: 15px;
   flex-basis: calc((50% - 15px));
 
-
-  // @include for-size(phone-plus-up ) {
-  //   margin-top: 30px;
-  //   margin-left: 15px;
-  //   flex-basis: calc((100% - 2 * 15px) / 2);
-  // }
-
   @include for-size(tablet-up) {
     margin-top: 45px;
     margin-left: 27px;
@@ -92,6 +85,18 @@
   width: 127px;
   height: 161px;
   border-radius: 50px 0px;
+  box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
+  -23px 0 20px -23px rgba(220, 86, 197, .8),
+  0px 0 20px -23px rgba(220, 86, 197, .8),
+  0 0 40px rgba(220, 86, 197, .1) inset;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
+  -23px 0 20px -23px rgba(220, 86, 197, .8),
+  34px 0 20px -10px rgba(220, 86, 197, .8),
+  0 0 40px rgba(220, 86, 197, .1) inset;
+  }
 
 
   @include for-size(tablet-up) {
