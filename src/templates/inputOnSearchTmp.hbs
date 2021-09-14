@@ -1,0 +1,35 @@
+{{#each this}}
+  <li class='events__item'>
+    <div class='music__thumb'>
+      <picture class='music__img'>
+        <source
+          media='(min-width: 1280px)'
+          srcset='{{images.6.url}}, {{images.1.url}}'
+        />
+        <source
+          media='(min-width: 768px)'
+          srcset='{{images.5.url}}, {{images.3.url}}'
+        />
+        <source
+          media='(max-width: 767.9px)'
+          srcset='{{images.8.url}}, {{images.7.url}}'
+        />
+        <img
+          class='music__img-poster img'
+          src='{{images.1.url}}'
+          data-source='{{images.6.url}}'
+          alt='{{name}}'
+        />
+      </picture>
+    </div>
+    <div class='music__info'>
+      <h3 class='events__title title'>{{name}}</h3>
+      <p class='events__text text'>{{dates.start.localDate}}</p>
+      <a href='#' class='music__link'>
+        <span class='material-icons'>room</span>
+        {{_embedded.venues.0.name}}
+      </a>
+      <p>{{priceRanges.0.min}}</p>
+    </div>
+  </li>
+{{/each}}

@@ -109,6 +109,16 @@
     left: 30%;
   }
 }
+
+.form__icon--toClose {
+  fill: #939393;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+.toClose-icon {
+  cursor: pointer;
+}
 .all-countries {
   background-color: aquamarine;
 }

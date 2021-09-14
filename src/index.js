@@ -5,4 +5,4 @@ import './js/input-country';
 import './js/modal-close';
 import './js/modal_img';
 import './js/preloader';
-
+import './js/input-search';

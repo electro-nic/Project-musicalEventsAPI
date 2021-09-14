@@ -3,7 +3,7 @@
     <h1 class="header__title--decor">FIND BEST EVENTS AROUND THE WORLD</h1>
   </div>
   <div class="container">
-    <form class="form" autocomplete="off">
+    <form class="form" autocomplete="off" id="search-form">
       <div class="form-wrapper">
         <div class="input-wrapper">
           <input
@@ -15,14 +15,24 @@
           />
           <button class="search-btn" type="submit" id="searchBtn">
             <svg class="form__icon" width="12px" height="12px">
-              <use href="./images/icons/icons.svg#icon-search"></use>
+              <use
+                href="./images/icons/icons.svg#icon-search"
+                opacity="1"
+              ></use>
+            </svg>
+            <svg class="form__icon--close" width="12px" height="12px">
+              <use
+                class="toClose-icon"
+                href="./images/icons/icons.svg#icon-close"
+                opacity="0"
+              ></use>
             </svg>
           </button>
         </div>
 
-
         <div class="input-wrapper">
-          <input list="country-code"
+          <input
+            list="country-code"
             class="form__input"
             type="text"
             name="country"
@@ -36,6 +46,15 @@
           </button>
         </div>
         <datalist id="country-code">
+<<<<<<< Updated upstream
+=======
+          <option class="optList" value=""></option>
+        </datalist>
+        <!-- <ul class="list-country">
+  <li class="item-country"></li>
+</ul> -->
+        <!-- <datalist id="country-code">
+>>>>>>> Stashed changes
           <option value="US">United States Of America</option>
           <option value="AD">Andorra</option>
           <option value="AI">Anguilla</option>
@@ -120,11 +139,18 @@
           <option value="UY">Uruguay</option>
           <option value="VE">Venezuela</option>
         </datalist>
+<<<<<<< Updated upstream
       </div>
     </form>
 
 
 
     
+=======
+ -->
+      </div>
+    </form>
+    <ul class="container event-list"></ul>
+>>>>>>> Stashed changes
   </div>
 </section>
