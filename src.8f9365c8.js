@@ -23,10 +23,10 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{"./refs":"VyiV"}],"YtkC":[function(require,module,exports) {
 "use strict";var e=require("./refs");function t(e){return fetch(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${e}&apikey=vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG`).then(e=>e.json())}function n(e){e.preventDefault(),t(e.target.value).then(e=>{console.log(e._embedded.events)}).catch(e=>console.log(e))}e.refs.inputCountry.addEventListener("input",n);
 },{"./refs":"VyiV"}],"fdXB":[function(require,module,exports) {
-(()=>{const o={closeModalBtn:document.querySelector(".modal__close"),modal:document.querySelector(".modal__backdrop")};o.closeModalBtn.addEventListener("click",function(){o.modal.classList.toggle("is-hidden")})})();
-},{}],"BeZ8":[function(require,module,exports) {
+"use strict";var e=require("./refs");const t=document.querySelector(".modal__backdrop"),n=document.querySelector('[data-action="close-modal__backdrop"]');function d(e){"LI"===e.target.nodeName&&(e.preventDefault(),t.classList.remove("is-hidden"),window.addEventListener("keydown",o),console.log(e.target.nodeName))}function c(){t.classList.add("is-hidden")}function o(e){"Escape"===e.code&&c(e)}e.refs.eventList.addEventListener("click",d),n.addEventListener("click",c),t.addEventListener("click",c);
+},{"./refs":"VyiV"}],"BeZ8":[function(require,module,exports) {
 let d=document.getElementById("preloader");function e(){setTimeout(()=>{document.body.classList.add("loaded_hiding"),setTimeout(()=>{document.body.classList.add("loaded"),document.body.classList.remove("loaded_hiding")},1e3)},1e3)}window.addEventListener("load",e);
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/modal_img"),require("./js/preloader");
 },{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/modal_img":"xSVp","./js/preloader":"BeZ8"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.fe1f070e.js.map
+//# sourceMappingURL=/Project-musicalEventsAPI/src.8f9365c8.js.map
