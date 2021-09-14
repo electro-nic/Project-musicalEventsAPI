@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
   
-    background: #0c0b0c8e;
+    background: #0c0b0c67;
     background-image: linear-gradient(
       136.07deg,
       rgba(196, 196, 196, 0.03) 10.75%,
@@ -31,7 +31,7 @@
     position: absolute;
     display: inline-block;
     top: 0;
-    background-color: #f51fd8;
+    background-color: #dc56c5;
     border-radius: 100%;
     width: 35px;
     height: 35px;
@@ -46,7 +46,7 @@
   
   @keyframes preloader-rotate {
     100% {
-      transform: rotate(600deg);
+      transform: rotate(360deg);
     }
   }
   

@@ -39,10 +39,13 @@
     margin-top: -50px;
     margin-left: -70px;
   }
+
+  
 }
 
 .events__item {
   text-align: center;
+
  
 
   @include for-size(phone-only ) {
@@ -68,6 +71,27 @@
     margin-left: 70px;
     flex-basis: calc((100% - 4 * 70px) / 4);
   }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);}
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      border: 1px solid rgba(220, 86, 197, 0.3);
+      border-radius: 50px 0px;
+      width: 153px;
+      height: 143px;
+  
+      @media screen and (max-width: 768px) {
+        width: 109px;
+        height: 101px;
+      }}
+
+  cursor: pointer;
+    
 }
 
 .music__thumb {
