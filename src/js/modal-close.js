@@ -13,6 +13,8 @@
 //     }
 //   })();
 
+// открытие/закрытие модального окна
+
 import { refs } from "./refs";
 
 const closeModalWindow = document.querySelector('.modal__backdrop');
@@ -26,7 +28,7 @@ closeModalWindow.addEventListener('click', closeModal);
 function openModal(e) {
   if(e.target.nodeName === "LI") {
     e.preventDefault();
-    closeModalWindow.classList.remove('is-hidden');
+    closeModalWindow.classList.remove('class', 'is-hidden');
   }
   else {
     return;
@@ -37,15 +39,16 @@ function openModal(e) {
 };
 
 // function closeModal(e){
-//   if(e.target.nodeName == "BUTTON") {
-//     e.preventDefault()
-//     closeModalWindow.classList.add('is-hidden');
-//     // console.log(e.target.nodeName);
-//   } else {
+//   if(e.target.nodeName !== "BUTTON") {
 //     return;
+//   }else{ 
+//     e.preventDefault()
+//     closeModalWindow.classList.add('class', 'is-hidden');
+//   };
+//   console.log(e.target.nodeName); 
 //   }
   
-// };
+
 
 
 function closeModal(){
@@ -58,3 +61,23 @@ function keyEscape(e) {
   }
 }
 
+// логика подгрузки изображение
+
+// $.ajax({
+//     type:"GET",
+//     url:"https://app.ticketmaster.com/discovery/v2/events/k7vGFKzleBdwS/images.json?apikey=Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy",
+//     async:true,
+//     dataType: "json",
+//     success: function(json) {
+//                 console.log(json);
+//                 // Parse the response.
+//                 // Do other things.
+//              },
+//     error: function(xhr, status, err) {
+//                 // This time, we do not end up here!
+//              }
+//   });
+
+// const imgCircle = document.querySelector('.modal__circle');
+
+// imgCircle.insertAdjacentHTML
