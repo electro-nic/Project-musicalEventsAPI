@@ -8,11 +8,10 @@ const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
 
-nameInput.addEventListener('input', debounce(onInputSearch, 500));
+nameInput.addEventListener('input', debounce(onIconShow, 500));
 
-function onInputSearch(e) {
-  apiService.keyword = e.target.value;
-
+function onIconShow(e) {
+    
   if (!e.target.value.length) {
     searchIconRef.style.opacity = 1;
     clearSearchIconRef.style.opacity = 0;
