@@ -41,8 +41,8 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  width: 33px;
-  height: 30px;
+  width: 17px;
+  height: 17px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -50,28 +50,30 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+  opacity: 0;
+  cursor: pointer;
 
   
   @include for-size(desktop-up) {
-    width: 42px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     top: 30px;
     right: 30px;
   }
 }
 
 .modal__close-icon {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
   fill: var(--modal-accent-color);
   
   @include for-size(desktop-up) {
+    position: absolute;
     width: 25px;
     height: 25px;
     top: 30px;
-    left: 30px;
+    right: 30px;
   };
 };
 

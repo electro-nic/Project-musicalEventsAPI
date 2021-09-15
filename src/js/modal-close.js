@@ -19,47 +19,65 @@ import { refs } from "./refs";
 
 const closeModalWindow = document.querySelector('.modal__backdrop');
 const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
+// const modalContainer = document.querySelector('.event__general');
 
 refs.eventList.addEventListener('click', openModal);
+// modalContainer.addEventListener('click',openModal);
 closeModalBtn.addEventListener('click', closeModal);
 closeModalWindow.addEventListener('click', closeModal);
 
 
 function openModal(e) {
-  if(e.target.nodeName === "LI") {
+  if(e.target.nodeName !== "LI") {
     e.preventDefault();
-    closeModalWindow.classList.remove('class', 'is-hidden');
+    closeModalWindow.classList.remove('is-hidden');
+
+    
+  console.log(e.target.nodeName);
   }
   else {
     return;
   }
+
   window.addEventListener('keydown', keyEscape);
 
-  console.log(e.target.nodeName);
 };
 
-// function closeModal(e){
-//   if(e.target.nodeName !== "BUTTON") {
-//     return;
-//   }else{ 
-//     e.preventDefault()
-//     closeModalWindow.classList.add('class', 'is-hidden');
-//   };
-//   console.log(e.target.nodeName); 
-//   }
+function closeModal(e){
+  if(e.target.nodeName === "BUTTON") {
+    e.preventDefault()
+    closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+
+  } if(e.target.nodeName === "DIV"){
+    e.preventDefault()
+    closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+    
+  } if(e.target.nodeName === "SPAN") {
+     e.preventDefault()
+    closeModalWindow.classList.add('is-hidden');
+
+  }  
+  else { 
+       return;
+  };
   
 
-
-
-function closeModal(){
-  closeModalWindow.classList.add('is-hidden');
-};
-
-function keyEscape(e) {
-  if(e.code === "Escape") {
-    closeModal(e);
+  console.log(e.target.nodeName);
   }
-}
+  
+  
+  function keyEscape(e) {
+    if(e.code === "Escape") {
+      closeModal(e);
+    }
+  }
+
+
+
 
 // логика подгрузки изображение
 
