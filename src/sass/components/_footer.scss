@@ -1,21 +1,74 @@
-.footer {
-    padding-top: 27px;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .heart {
+    color: rgb(223, 4, 4);
   }
-  .footer__text {
-    display: flex;
-    flex-direction: column;
-    color: var(--second-text-color);
+  .footer {
+    width: 100%;
+
+  }
+  .footer-container {
+    margin: 0 auto;
+  
+    @include for-size(mobile) {
+      max-width: 320px;
+    }
+  
+    @include for-size(tablet) {
+      max-width: 768px;
+    }
+  
+    @include for-size(desktop) {
+      max-width: 1024px;
+    }
+  }
+  
+  .footer-content {
+    @include for-size(mobile) {
+      padding-top: 29px;
+      padding-bottom: 30px;
+    }
+  
+    @include for-size(tablet-up) {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      padding-top: 30px;
+      padding-bottom: 28px;
+    }
+  }
+  
+  .footer-text {
+    font-weight: 400;
+    font-style: normal;
     font-size: 16px;
-    margin-right: auto;
-    margin-left: auto;
-    align-items: center;
+    line-height: 1.18;
     text-align: center;
-    justify-content: center;
+    color: var(--second-text-color);
+    margin: 0;
+  
+    @include for-size(mobile) {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.14;
+    }
+  
+    @include for-size(tablet-up) {
+      margin-right: 5px;
+    }
   }
+  
+  .footer-text-second {
+    margin: 0;
+  
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.18;
+    text-align: center;
+    color: var(--second-text-color);
+  
+    @include for-size(mobile) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
+  }
+  
