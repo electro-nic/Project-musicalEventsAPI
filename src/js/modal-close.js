@@ -19,29 +19,31 @@ import { refs } from "./refs";
 
 const closeModalWindow = document.querySelector('.modal__backdrop');
 const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
-// const modalContainer = document.querySelector('.event__general');
 
 refs.eventList.addEventListener('click', openModal);
-// modalContainer.addEventListener('click',openModal);
 closeModalBtn.addEventListener('click', closeModal);
 closeModalWindow.addEventListener('click', closeModal);
 
 
 function openModal(e) {
-  if(e.target.nodeName !== "LI") {
+  if(e.target.nodeName === "DIV"){
     e.preventDefault();
     closeModalWindow.classList.remove('is-hidden');
-
-    
+   
   console.log(e.target.nodeName);
-  }
+  } 
   else {
     return;
   }
-
   window.addEventListener('keydown', keyEscape);
-
 };
+
+// function keyEnterClick(e) {
+//   if (e.code === "Enter" && e.target.nodeName === "A") {
+//     closeModalWindow.classList.remove('is-hidden');
+// } 
+// window.addEventListener('keydown', keyEnterClick)
+// }
 
 function closeModal(e){
   if(e.target.nodeName === "BUTTON") {
@@ -50,7 +52,7 @@ function closeModal(e){
 
     console.log(e.target.nodeName);
 
-  } if(e.target.nodeName === "DIV"){
+  } if(e.target.nodeName === "FORM"){
     e.preventDefault()
     closeModalWindow.classList.add('is-hidden');
 
@@ -60,21 +62,20 @@ function closeModal(e){
      e.preventDefault()
     closeModalWindow.classList.add('is-hidden');
 
-  }  
-  else { 
+  } else { 
        return;
   };
   
 
   console.log(e.target.nodeName);
   }
-  
-  
-  function keyEscape(e) {
-    if(e.code === "Escape") {
-      closeModal(e);
-    }
-  }
+    
+function keyEscape(e) {
+  if(e.code == "Escape") {
+    closeModal()
+  }   
+}
+
 
 
 
