@@ -17,18 +17,18 @@
 
 import { refs } from "./refs";
 
-const closeModalWindow = document.querySelector('.modal__backdrop');
-const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
+// const closeModalWindow = document.querySelector('.modal__backdrop');
+// const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
 
 refs.eventList.addEventListener('click', openModal);
-closeModalBtn.addEventListener('click', closeModal);
-closeModalWindow.addEventListener('click', closeModal);
+refs.closeModalBtn.addEventListener('click', closeModal);
+refs.closeModalWindow.addEventListener('click', closeModal);
 
 
 function openModal(e) {
   if(e.target.nodeName === "DIV"){
     e.preventDefault();
-    closeModalWindow.classList.remove('is-hidden');
+    refs.closeModalWindow.classList.remove('is-hidden');
    
   console.log(e.target.nodeName);
   } 
@@ -48,19 +48,19 @@ function openModal(e) {
 function closeModal(e){
   if(e.target.nodeName === "BUTTON") {
     e.preventDefault()
-    closeModalWindow.classList.add('is-hidden');
+    refs.closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
 
   } if(e.target.nodeName === "FORM"){
     e.preventDefault()
-    closeModalWindow.classList.add('is-hidden');
+    refs.closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
     
   } if(e.target.nodeName === "SPAN") {
      e.preventDefault()
-    closeModalWindow.classList.add('is-hidden');
+    refscloseModalWindow.classList.add('is-hidden');
 
   } else { 
        return;
