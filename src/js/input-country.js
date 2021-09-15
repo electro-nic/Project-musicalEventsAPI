@@ -12,26 +12,6 @@
 
 // //https://app.ticketmaster.com/discovery/v2/venues.json?keyword=UCV&apikey=vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG
 
-// export default async function fetchLocale(locale = '') {
-//     // заготовки в ссылку 
-//     // сортировка - &sort=${sort}, добавить параметр в функцию sort = 'name,asc'
-
-//     try {
-//         const promiseLocale = await fetch(`${BASE_URL}countryCode=U${locale}&apikey=${API_KEY }`);
-//         const data = await promiseLocale.json();
-//         return data;
-//         console.log(data)
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }   
-// }
-// // fetchLocale('UK')
-// console.log(fetchLocale('UK'))
-
-
-
-
 import {refs} from './refs';
 
 const API_KEY = 'vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG';
@@ -43,6 +23,7 @@ async function fetchCountries(name) {
   return countryData;
   
 }
+
 refs.inputCountry.addEventListener('click',onCountryBtnClick)
 
 async function onCountryBtnClick(e){
@@ -50,16 +31,22 @@ async function onCountryBtnClick(e){
   try{
     const countryFetch = await fetchCountries(country)
     .then(elems=>
+ feature/input-country
       // console.log(elems.countries))
        forObject(elems.countries))
+      console.log(elems.countries),
+       onCountryCreate(elems))
+
   }
   catch(err){
   console.log(err);
 }
 }
-function forObject(obj){
+
+function onCountryCreate(obj){
   const optionEl= Object.keys(obj)
   console.log(optionEl)
+ feature/input-country
     const listCountry = optionEl.map((el)=>{
     console.log(el);
     const itemCountries = document.createElement('option');
@@ -71,8 +58,25 @@ function forObject(obj){
   })
   console.log(listCountry)
   refs.menu.insertAdjacentHTML('beforeend',listCountry) 
+
+   
+  // const listCountry = optionEl.map((el)=>{
+  //   const itemCountries = document.createElement('option');
+  //   itemCountries.setAttribute('value',`${el}`)
+  //   // itemCountries.append(el)//поставити назву країн
+  // console.log(itemCountries)
+  //  return itemCountries;
+ 
+  // })
+
+  
+  //  return listCountry
+
 }
-  // )
+
+  return refs.menu.insertAdjacentHTML('beforeend',listCountry) 
+
+
   // const listCountry=option.map((el)=>{
   //   return `<option  value="${el}">${el}</option>`})
       // console.log(listCountry.join(''))
