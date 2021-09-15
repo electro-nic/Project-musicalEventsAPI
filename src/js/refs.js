@@ -6,5 +6,6 @@ export const refs = {
     countryBtn: document.querySelector('#countryBtn'),
     list:document.querySelector('.list-country'),
     listItem:document.querySelector('.item-country'),
-    optList:document.querySelector('.optList')
+    optList:document.querySelector('.optList'),
+    inputCountry:document.querySelector('#country')
 }
