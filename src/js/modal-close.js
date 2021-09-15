@@ -26,40 +26,59 @@ closeModalWindow.addEventListener('click', closeModal);
 
 
 function openModal(e) {
-  if(e.target.nodeName === "LI") {
+  if(e.target.nodeName === "DIV"){
     e.preventDefault();
-    closeModalWindow.classList.remove('class', 'is-hidden');
-  }
+    closeModalWindow.classList.remove('is-hidden');
+   
+  console.log(e.target.nodeName);
+  } 
   else {
     return;
   }
   window.addEventListener('keydown', keyEscape);
-
-  console.log(e.target.nodeName);
 };
 
-// function closeModal(e){
-//   if(e.target.nodeName !== "BUTTON") {
-//     return;
-//   }else{ 
-//     e.preventDefault()
-//     closeModalWindow.classList.add('class', 'is-hidden');
-//   };
-//   console.log(e.target.nodeName); 
-//   }
+// function keyEnterClick(e) {
+//   if (e.code === "Enter" && e.target.nodeName === "A") {
+//     closeModalWindow.classList.remove('is-hidden');
+// } 
+// window.addEventListener('keydown', keyEnterClick)
+// }
+
+function closeModal(e){
+  if(e.target.nodeName === "BUTTON") {
+    e.preventDefault()
+    closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+
+  } if(e.target.nodeName === "FORM"){
+    e.preventDefault()
+    closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+    
+  } if(e.target.nodeName === "SPAN") {
+     e.preventDefault()
+    closeModalWindow.classList.add('is-hidden');
+
+  } else { 
+       return;
+  };
   
 
-
-
-function closeModal(){
-  closeModalWindow.classList.add('is-hidden');
-};
-
-function keyEscape(e) {
-  if(e.code === "Escape") {
-    closeModal(e);
+  console.log(e.target.nodeName);
   }
+    
+function keyEscape(e) {
+  if(e.code == "Escape") {
+    closeModal()
+  }   
 }
+
+
+
+
 
 // логика подгрузки изображение
 

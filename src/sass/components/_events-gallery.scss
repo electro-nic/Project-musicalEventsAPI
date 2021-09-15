@@ -11,19 +11,11 @@
   overflow: hidden;
 }
 
-.music__thumb {
-  display: flex;
-  justify-content: center;
-}
-
 .events__list--cards {
   display: flex;
   flex-wrap: wrap;
   margin-top: -30px;
   margin-left: -15px;
-
-
-
 
   @include for-size(tablet-up) {
     margin-top: -45px;
@@ -37,15 +29,16 @@
 }
 
 .events__item {
+  position: relative;
   text-align: center;
   margin-top: 30px;
   margin-left: 15px;
   flex-basis: calc((50% - 15px));
+  cursor: pointer;
 
-   animation: zoom 1.5s 1;
-   animation-fill-mode: forwards;
-   height: 100%;
-    
+  animation: zoom 1.5s 1;
+  animation-fill-mode: forwards;
+  height: 100%;
 
   @include for-size(tablet-up) {
     margin-top: 45px;
@@ -56,32 +49,43 @@
   @include for-size(desktop-up) {
     margin-top: 50px;
     margin-left: 70px;
-    flex-basis: calc((100% - 4 * 70px) / 4);
+    flex-basis: calc((25% - 70px));
+  }
+}
+
+.event__general:hover,
+.event__general:focus {
+  transform: scale(1.05);
+  box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
+    -23px 0 20px -23px rgba(220, 86, 197, 0.8),
+    10px 0 20px -10px rgba(220, 86, 197, 0.8),
+    0 0 40px rgba(220, 86, 197, 0.1) inset;
+}
+
+.event__general::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(220, 86, 197, 0.3);
+  border-radius: 50px 0;
+  width: 109px;
+  height: 101px;
+  right: -10px;
+  top: -20px;
+
+  @include for-size(tablet-up) {
+    width: 153px;
+    height: 143px;
+    right: -5px;
   }
 
-  &:hover,
-  &:focus {
-    transform: scale(1.05);}
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      border: 1px solid rgba(220, 86, 197, 0.3);
-      border-radius: 50px 0px;
-      width: 153px;
-      height: 143px;
-  
-      @media screen and (max-width: 768px) {
-        width: 109px;
-        height: 101px;
-      }}
-
-  cursor: pointer;
-    
+  @include for-size(desktop-up) {
+    right: 20px;
+  }
 }
 
 .music__thumb {
+  display: flex;
+  justify-content: center;
   margin-bottom: 5px;
 }
 
@@ -91,27 +95,22 @@
   height: 161px;
   border-radius: 50px 0px;
   box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
-  -23px 0 20px -23px rgba(220, 86, 197, .8),
-  0px 0 20px -23px rgba(220, 86, 197, .8),
-  0 0 40px rgba(220, 86, 197, .1) inset;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
-  -23px 0 20px -23px rgba(220, 86, 197, .8),
-  34px 0 20px -10px rgba(220, 86, 197, .8),
-  0 0 40px rgba(220, 86, 197, .1) inset;
-  }
-
+    0px 0 20px -35px rgba(220, 86, 197, 0.8),
+    0px 0 20px -23px rgba(220, 86, 197, 0.8),
+    0 0 40px rgba(220, 86, 197, 0.1) inset;
 
   @include for-size(tablet-up) {
     width: 180px;
     height: 227px;
   }
 
-  // @include for-size(desktop-up) {
-  //   height: 265px;
-  //   border-radius: 75px 0px;
+  // &:hover,
+  // &:focus {
+  //   transform: scale(1.05);
+  //   box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
+  //     -23px 0 20px -23px rgba(220, 86, 197, 0.8),
+  //     25px 0 20px -10px rgba(220, 86, 197, 0.8),
+  //     0 0 40px rgba(220, 86, 197, 0.1) inset;
   // }
 }
 
