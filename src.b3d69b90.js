@@ -17,7 +17,7 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{}],"xSVp":[function(require,module,exports) {
 
 },{}],"cntR":[function(require,module,exports) {
-"use strict";var e=require("./refs"),t=s(require("./api-connect")),r=s(require("../templates/eventsGallery")),n=require("@pnotify/core");function s(e){return e&&e.__esModule?e:{default:e}}async function i(){try{(0,t.default)().then(t=>{console.log(t._embedded.events),e.refs.eventList.insertAdjacentHTML("afterbegin",(0,r.default)(t._embedded.events))})}catch(n){console.log(n.message)}}require("@pnotify/core/dist/BrightTheme.css"),i();
+"use strict";var e=require("./refs"),t=s(require("./api-connect")),r=s(require("../templates/eventsGallery")),n=require("@pnotify/core");function s(e){return e&&e.__esModule?e:{default:e}}function i(){try{(0,t.default)().then(t=>{console.log(t._embedded.events),e.refs.eventList.insertAdjacentHTML("afterbegin",(0,r.default)(t._embedded.events))})}catch(n){console.log(n.message)}}require("@pnotify/core/dist/BrightTheme.css"),window.addEventListener("load",i());
 },{"./refs":"VyiV","./api-connect":"TjPX","../templates/eventsGallery":"tFwy","@pnotify/core":"txz9","@pnotify/core/dist/BrightTheme.css":"xSVp"}],"qg96":[function(require,module,exports) {
 "use strict";var e=require("./refs");function t(){const t=window.pageYOffset,o=document.documentElement.clientHeight;t>o&&e.refs.btnToTop.classList.remove("is-hidden"),t<o&&e.refs.btnToTop.classList.add("is-hidden")}function o(){window.scrollTo({top:0,left:0,behavior:"smooth"})}window.addEventListener("scroll",t),e.refs.btnToTop.addEventListener("click",o);
 },{"./refs":"VyiV"}],"YtkC":[function(require,module,exports) {
@@ -29,4 +29,4 @@ let d=document.getElementById("preloader");function e(){setTimeout(()=>{document
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderGalleryCards"),require("./js/onClickScrollTo"),require("./js/input-country"),require("./js/modal-close"),require("./js/preloader");
 },{"./sass/main.scss":"clu1","./js/renderGalleryCards":"cntR","./js/onClickScrollTo":"qg96","./js/input-country":"YtkC","./js/modal-close":"fdXB","./js/preloader":"BeZ8"}]},{},["Focm"], null)
-//# sourceMappingURL=/Project-musicalEventsAPI/src.5de71e70.js.map
+//# sourceMappingURL=/Project-musicalEventsAPI/src.b3d69b90.js.map
