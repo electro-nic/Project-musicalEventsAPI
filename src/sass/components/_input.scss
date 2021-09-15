@@ -41,7 +41,6 @@
 }
 
 .form-wrapper {
-  // position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +86,11 @@
   border-radius: 20px;
   outline: none;
   border: none;
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+  }
 }
 .form__input:first-child {
   @include for-size(phone-only) {
@@ -115,6 +119,7 @@
     left: 30%;
   }
 }
+
 .all-countries {
   background-color: aquamarine;
 }

@@ -10,19 +10,30 @@
             class="form__input"
             type="text"
             name=""
-            id=""
+            id="name-input"
             placeholder="Start searching"
           />
           <button class="search-btn" type="submit" id="searchBtn">
             <svg class="form__icon" width="12px" height="12px">
-              <use href="./images/icons/icons.svg#icon-search"></use>
+              <use
+                class="search__icon"
+                href="./images/icons/icons.svg#icon-search"
+                opacity="1"
+              ></use>
+            </svg>
+            <svg class="form__icon icon-close" width="12px" height="12px">
+              <use
+                class="clear-search__icon"
+                href="./images/icons/icons.svg#icon-close"
+                opacity="0"
+              ></use>
             </svg>
           </button>
         </div>
 
-
         <div class="input-wrapper">
-          <input list="country-code"
+          <input
+            list="country-code"
             class="form__input"
             type="text"
             name="country"
@@ -34,13 +45,11 @@
               <use href="./images/icons/icons.svg#icon-polygon"></use>
             </svg>
           </button>
-
-          
         </div>
-          <datalist id="country-code">
-            <option  class="optList"value=""></option>
-            </datalist>
-<!-- <ul class="list-country">
+        <datalist id="country-code">
+          <option class="optList" value=""></option>
+        </datalist>
+        <!-- <ul class="list-country">
   <li class="item-country"></li>
 </ul> -->
         <!-- <datalist id="country-code">
@@ -129,10 +138,8 @@
           <option value="VE">Venezuela</option>
         </datalist>
  -->
-
       </div>
     </form>
-    
+    <ul class="events__list"></ul>
   </div>
-
 </section>
