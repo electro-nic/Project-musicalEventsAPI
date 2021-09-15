@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import getEventsApi from './api-connect';
+import connectApi from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 
 
@@ -8,17 +8,18 @@ import '@pnotify/core/dist/BrightTheme.css';
 
 
 
-// refs.form.addEventListener('submit', onGreatGalleryEvents);
+window.addEventListener('load', onGreatGalleryEvents())
 
 
-onGreatGalleryEvents()
-async function onGreatGalleryEvents() {
 
-  // e.preventDefault();
 
+function onGreatGalleryEvents() {
+ 
   try {
-    // state.value = e.currentTarget.elements[0].value;
-    getEventsApi().then(data => {
+    connectApi().then(data => {
+      // const events = data._embedded.events;
+      // const nameList = new Set(events.map(item => item.name));
+      // const newList = [...nameList].map(name => events.find(item => item.name === name))
       console.log(data._embedded.events);
       refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data._embedded.events));
     })
