@@ -43,9 +43,7 @@ async function fetchCountries(name) {
   return countryData;
   
 }
-// const obj = fetchCountries();
-// obj.then(elems=>console.log(elems))
-refs.countryBtn.addEventListener('click',onCountryBtnClick)
+refs.inputCountry.addEventListener('click',onCountryBtnClick)
 
 async function onCountryBtnClick(e){
   e.preventDefault();
@@ -53,7 +51,6 @@ async function onCountryBtnClick(e){
     const countryFetch = await fetchCountries(country)
     .then(elems=>
       // console.log(elems.countries))
-      // createCountry(elems.countries))
        forObject(elems.countries))
   }
   catch(err){
@@ -64,13 +61,15 @@ function forObject(obj){
   const optionEl= Object.keys(obj)
   console.log(optionEl)
     const listCountry = optionEl.map((el)=>{
-    console.log(el)
+    console.log(el);
     const itemCountries = document.createElement('option');
-    itemCountries.append(el)
-   console.log(itemCountries)
+    itemCountries.setAttribute('value', `${el}`);
+    // itemCountries.append(el)
+   console.log(itemCountries);
    return itemCountries;
    
   })
+  console.log(listCountry)
   refs.menu.insertAdjacentHTML('beforeend',listCountry) 
 }
   // )
