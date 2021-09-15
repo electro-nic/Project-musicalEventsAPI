@@ -17,11 +17,13 @@
   max-width: 215px;
   margin-right: auto;
   margin-left: auto;
-  color: var(--title-color);
+  color: #fee;
   font-family: var(--font);
   font-weight: 900;
   font-size: 18px;
   line-height: 1.22;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em rgb(255, 13, 191), 0 0 0.5em rgb(255, 13, 191),
+    0 0 0.1em rgb(255, 13, 191), 0 10px 3px #000;
 
   @include for-size(tablet-up) {
     max-width: 355px;
@@ -123,3 +125,10 @@
 .all-countries {
   background-color: aquamarine;
 }
+
+// Анимация для Заголовка
+
+.animate__animated.animate__backInDown {
+  --animate-duration: 2s;
+}
+
