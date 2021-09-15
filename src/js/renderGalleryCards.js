@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import getEventsApi from './api-connect';
+import connectApi from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 
 
@@ -14,9 +14,9 @@ window.addEventListener('load', onGreatGalleryEvents())
 
 
 function onGreatGalleryEvents() {
-
+ 
   try {
-    getEventsApi().then(data => {
+    connectApi().then(data => {
       // const events = data._embedded.events;
       // const nameList = new Set(events.map(item => item.name));
       // const newList = [...nameList].map(name => events.find(item => item.name === name))
