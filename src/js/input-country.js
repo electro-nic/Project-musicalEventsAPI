@@ -39,7 +39,7 @@ async function onCountryBtnClick(e){
 }
 }
 
-function onCountryCreate(obj){
+function onCountryCreate (obj){
     const optionEl= Object.keys(obj)
     console.log(optionEl)
 
