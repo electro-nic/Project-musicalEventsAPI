@@ -4,6 +4,7 @@
  */
 @import './utils/mixins';
 @import './utils/variables';
+@import './utils/visually-hidden';
 @import './components/base';
 @import './components/background';
 @import './components/page-header';
@@ -14,3 +15,4 @@
 @import './components/footer';
 @import "./components/body-background";
 @import "./components/preloader";
+@import "./components/pagination";
