@@ -31,22 +31,18 @@ async function onCountryBtnClick(e){
   try{
     const countryFetch = await fetchCountries(country)
     .then(elems=>
- feature/input-country
-      // console.log(elems.countries))
-       forObject(elems.countries))
-      console.log(elems.countries),
-       onCountryCreate(elems))
-
+       onCountryCreate(elems.countries))
+    
   }
   catch(err){
   console.log(err);
 }
 }
 
-function onCountryCreate(obj){
-  const optionEl= Object.keys(obj)
-  console.log(optionEl)
- feature/input-country
+function onCountryCreate (obj){
+    const optionEl= Object.keys(obj)
+    console.log(optionEl)
+
     const listCountry = optionEl.map((el)=>{
     console.log(el);
     const itemCountries = document.createElement('option');
@@ -74,7 +70,7 @@ function onCountryCreate(obj){
 
 }
 
-  return refs.menu.insertAdjacentHTML('beforeend',listCountry) 
+  // return refs.menu.insertAdjacentHTML('beforeend',listCountry) 
 
 
   // const listCountry=option.map((el)=>{
