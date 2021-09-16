@@ -15,7 +15,7 @@ export function openModal(e) {
   console.log('e.target', e.target);
 
   const index = e.currentTarget.dataset.index;
-  window.addEventListener('keydown', keyEscape);
+  window.addEventListener('keydown', onCloseModalESC);
 
   renderModalInfo(index);
 }
@@ -43,8 +43,10 @@ function closeModal(e) {
   console.log(e.target.nodeName);
 }
 
-function keyEscape(e) {
-  if (e.code == 'Escape') {
-    closeModal();
+function onCloseModalESC(e) {
+  if (e.key !== 'Escape') {
+    return;
   }
+  console.log('закрываю модалку по', e.key);
+  closeModalWindow.classList.add('is-hidden');
 }
