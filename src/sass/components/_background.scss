@@ -1,9 +1,11 @@
-/* .background__container {
+.background__container {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%;
-} */
+  max-width: 1600px;
+  /* margin-top: -40px; */
+  padding-top: 0px;
+}
 
 .background__image--header,
 .background__header {
@@ -15,7 +17,7 @@
   @media screen and (min-width: 1280px) {
     max-height: 446px;
     background-image: url(../images/desktop/overlay-desktop.png);
-}
+  }
 }
 
 .background__header {

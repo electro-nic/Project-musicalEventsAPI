@@ -69,12 +69,19 @@ function closeModal(e){
 
   console.log(e.target.nodeName);
   }
+
+  function keyEscape(e) {
+  if(e.key == "Escape") {
+    refs.closeModalWindow.classList.add('is-hidden');
+  }   
+}
+window.addEventListener('keydown', keyEscape);
     
-function keyEscape(e) {
+/* function keyEscape(e) {
   if(e.code == "Escape") {
     closeModal()
   }   
-}
+} */
 
 
 
