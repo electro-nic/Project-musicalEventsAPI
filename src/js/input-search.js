@@ -24,6 +24,7 @@ function onIconShow(e) {
 
 
 
+
 nameInput.addEventListener('input', debounce(handlerInput, 1000));
 
 async function handlerInput(e){
@@ -35,9 +36,6 @@ async function handlerInput(e){
    obj.then(data => console.log(data))
    obj.then(data => onGreatGalleryEvents(data._embedded.events))
    .catch(err => console.log(err))};
-
-
-  //  nameInput.addEventListener('input', onGreatGalleryEvents())
 
 
 
@@ -111,9 +109,3 @@ async function handlerInput(e){
   //refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data._embedded.events));
         
       
-    
-  
-
-
-
-
