@@ -21,4 +21,14 @@ export function renderModalInfo(index) {
   modalRefs.palaceEl.innerHTML = currentEvent._embedded.venues[0].name;
   modalRefs.authorEl.innerHTML = currentEvent.name;
   modalRefs.standartPriceEl.innerHTML = standartPrice;
+
+  console.log('modalRefs.buyTicketsBtnVipEl', modalRefs.buyTicketsBtnVipEl);
+  console.log('modalRefs.buyTicketsBtnStEl', modalRefs.buyTicketsBtnStEl);
+
+  modalRefs.buyTicketsBtnStEl.addEventListener('click', onButTicketsBtn);
+}
+
+function onButTicketsBtn(e) {
+  e.preventDefault();
+  console.log('onButTicketsBtn');
 }

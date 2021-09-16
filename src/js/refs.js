@@ -19,4 +19,6 @@ export const modalRefs = {
   palaceEl: document.querySelector('#modal-palace'),
   authorEl: document.querySelector('#modal-author'),
   standartPriceEl: document.querySelector('#modal-prices'),
+  buyTicketsBtnStEl: document.querySelector('#buy-tickets-btn-standart'),
+  buyTicketsBtnVipEl: document.querySelector('#buy-tickets-btn-vip'),
 };

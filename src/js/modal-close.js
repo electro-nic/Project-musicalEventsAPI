@@ -15,7 +15,7 @@
 
 // открытие/закрытие модального окна
 
-import { refs } from './refs';
+import { modalRefs, refs } from './refs';
 import { renderModalInfo } from './renderModalInfo';
 
 const closeModalWindow = document.querySelector('.modal__backdrop');
