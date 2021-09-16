@@ -49,6 +49,7 @@ async function handlerInput(e){
 
 
 
+
 // nameInput.addEventListener('input', debounce(handlerInput, 1000));
 
 // async function handlerInput(e){
@@ -64,7 +65,7 @@ async function handlerInput(e){
 
 
 
-  //  function onGreatGalleryEvents(data) {
+   function onGreatGalleryEvents(data) {
     //e.preventDefault();
     //const keyword = nameInput.value;
      //try {
@@ -73,12 +74,12 @@ async function handlerInput(e){
          // const nameList = new Set(events.map(item => item.name));
          // const newList = [...nameList].map(name => events.find(item => item.name === name))
          //console.log(data._embedded.events);
-        //  refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
+         refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
       // })
      //} catch (error) {
        //console.log(error.message);
      //}
-  //  }
+   }
 
 //    function createEl({name, localDate}) {
 //      const article = `
