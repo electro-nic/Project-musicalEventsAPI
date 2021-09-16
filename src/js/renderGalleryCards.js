@@ -1,7 +1,9 @@
 import { refs } from './refs';
 import connectApi from './api-connect';
 import cardTmp from '../templates/eventsGallery';
-import { openModal } from '../js/modal-close';
+// import { openModal } from '../js/modal-close';
+import { openModal } from '../js/modal-open-close';
+
 import { eventsArr } from '../js/variables';
 
 import { error, alert } from '@pnotify/core';

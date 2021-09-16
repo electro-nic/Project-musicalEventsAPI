@@ -18,13 +18,12 @@
 import { modalRefs, refs } from './refs';
 import { renderModalInfo } from './renderModalInfo';
 
-
 const closeModalWindow = document.querySelector('.modal__backdrop');
 const closeModalBtn = document.querySelector(
   '[data-action="close-modal__backdrop"]'
 );
 
-// refs.eventListItem.addEventListener('click', openModal);
+refs.eventListItem.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 closeModalWindow.addEventListener('click', closeModal);
 
@@ -35,38 +34,34 @@ refs.eventList.addEventListener('click', openModal);
 refs.closeModalBtn.addEventListener('click', closeModal);
 refs.closeModalWindow.addEventListener('click', closeModal);
 
-
 export function openModal(e) {
   closeModalWindow.classList.remove('is-hidden');
   console.log('e.currentTarget', e.currentTarget);
   console.log('e.target', e.target);
 
-
   const index = e.currentTarget.dataset.index;
 
-function openModal(e) {
-  if(e.target.nodeName === "DIV"){
-    e.preventDefault();
-    refs.closeModalWindow.classList.remove('is-hidden');
-   
-  console.log(e.target.nodeName);
-  } 
-  else {
-    return;
+  function openModal(e) {
+    if (e.target.nodeName === 'DIV') {
+      e.preventDefault();
+      refs.closeModalWindow.classList.remove('is-hidden');
+
+      console.log(e.target.nodeName);
+    } else {
+      return;
+    }
+
+    window.addEventListener('keydown', keyEscape);
+
+    renderModalInfo(index);
   }
-
-  window.addEventListener('keydown', keyEscape);
-
-  renderModalInfo(index);
 }
-
 // function keyEnterClick(e) {
 //   if (e.code === "Enter" && e.target.nodeName === "A") {
 //     closeModalWindow.classList.remove('is-hidden');
 // }
 // window.addEventListener('keydown', keyEnterClick)
 // }
-
 
 function closeModal(e) {
   if (e.target.nodeName === 'BUTTON') {
@@ -91,44 +86,41 @@ function closeModal(e) {
   console.log(e.target.nodeName);
 }
 
-function closeModal(e){
-  if(e.target.nodeName === "BUTTON") {
-    e.preventDefault()
+function closeModal(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    e.preventDefault();
     refs.closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
-
-  } if(e.target.nodeName === "FORM"){
-    e.preventDefault()
+  }
+  if (e.target.nodeName === 'FORM') {
+    e.preventDefault();
     refs.closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
-    
-  } if(e.target.nodeName === "SPAN") {
-     e.preventDefault()
+  }
+  if (e.target.nodeName === 'SPAN') {
+    e.preventDefault();
     refscloseModalWindow.classList.add('is-hidden');
-
-  } else { 
-       return;
-  };
-  
-
-  console.log(e.target.nodeName);
+  } else {
+    return;
   }
 
-  function keyEscape(e) {
-  if(e.key == "Escape") {
+  console.log(e.target.nodeName);
+}
+
+function keyEscape(e) {
+  if (e.key == 'Escape') {
     refs.closeModalWindow.classList.add('is-hidden');
-  }   
+  }
 }
 window.addEventListener('keydown', keyEscape);
-    
-/* function keyEscape(e) {
-  if(e.code == "Escape") {
-    closeModal()
-  }   
-} */
 
+/* function keyEscape(e) {
+    if(e.code == "Escape") {
+      closeModal()
+    }   
+  } */
 
 function keyEscape(e) {
   if (e.code == 'Escape') {
