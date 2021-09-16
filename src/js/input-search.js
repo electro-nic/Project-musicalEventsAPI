@@ -3,6 +3,9 @@ import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
 import debounce from 'lodash.debounce';
 
+import { error, alert } from '@pnotify/core';
+import '@pnotify/core/dist/BrightTheme.css';
+
 const nameInput = document.querySelector('#name-input');
 const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
@@ -23,8 +26,6 @@ function onIconShow(e) {
 }
 
 
-
-
 nameInput.addEventListener('input', debounce(handlerInput, 1000));
 
 async function handlerInput(e){
@@ -34,13 +35,36 @@ async function handlerInput(e){
    refs.eventList.innerHTML = '';
    const obj = apiService(keyword, 0, 20, '');
    obj.then(data => console.log(data))
-   obj.then(data => onGreatGalleryEvents(data._embedded.events))
+  obj.then(data => {
+    if (data.page.totalElements === 0 || keyword.length === 0) {
+      return  error({
+                text: 'Incorrect data. Please enter your request again',
+                delay: 2000,
+              });
+    } else {
+      onGreatGalleryEvents(data._embedded.events)
+    }
+  })
    .catch(err => console.log(err))};
 
 
 
+// nameInput.addEventListener('input', debounce(handlerInput, 1000));
 
-   function onGreatGalleryEvents(data) {
+// async function handlerInput(e){
+//   e.preventDefault();
+//   const keyword = nameInput.value;
+//    console.log(keyword)
+//    refs.eventList.innerHTML = '';
+//    const obj = apiService(keyword, 0, 20, '');
+//    obj.then(data => console.log(data))
+//    obj.then(data => onGreatGalleryEvents(data._embedded.events))
+//    .catch(err => console.log(err))};
+
+
+
+
+  //  function onGreatGalleryEvents(data) {
     //e.preventDefault();
     //const keyword = nameInput.value;
      //try {
@@ -49,12 +73,12 @@ async function handlerInput(e){
          // const nameList = new Set(events.map(item => item.name));
          // const newList = [...nameList].map(name => events.find(item => item.name === name))
          //console.log(data._embedded.events);
-         refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
+        //  refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
       // })
      //} catch (error) {
        //console.log(error.message);
      //}
-   }
+  //  }
 
 //    function createEl({name, localDate}) {
 //      const article = `
