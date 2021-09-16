@@ -23,16 +23,16 @@ const closeModalBtn = document.querySelector(
   '[data-action="close-modal__backdrop"]'
 );
 
-refs.eventListItem.addEventListener('click', openModal);
+// refs.eventListItem.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 closeModalWindow.addEventListener('click', closeModal);
 
 // const closeModalWindow = document.querySelector('.modal__backdrop');
 // const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
 
-refs.eventList.addEventListener('click', openModal);
-refs.closeModalBtn.addEventListener('click', closeModal);
-refs.closeModalWindow.addEventListener('click', closeModal);
+// refs.eventList.addEventListener('click', openModal);
+// refs.closeModalBtn.addEventListener('click', closeModal);
+// refs.closeModalWindow.addEventListener('click', closeModal);
 
 export function openModal(e) {
   closeModalWindow.classList.remove('is-hidden');
