@@ -5,14 +5,17 @@
   text-align: center;
 
   @include for-size(tablet-up) {
-    margin-top: 40px;
+    padding-top: 40px;
     margin-bottom: 27px;
   }
+
   @include for-size(desktop-up) {
-    margin-top: 40px;
+    padding-top: 40px;
+    margin-top: 0px;
     margin-bottom: 52px;
   }
 }
+
 .header__title--decor {
   max-width: 215px;
   margin-right: auto;
@@ -27,9 +30,10 @@
 
   @include for-size(tablet-up) {
     max-width: 355px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     font-size: 30px;
   }
+
   @include for-size(desktop-up) {
     max-width: 590px;
     font-size: 50px;
@@ -51,9 +55,11 @@
   @include for-size(phone-only) {
     flex-direction: column;
   }
+
   @include for-size(phone-plus-up) {
     flex-direction: column;
   }
+
   @include for-size(tablet-up) {
     flex-direction: row;
   }
@@ -70,6 +76,7 @@
   background-color: transparent;
   border: none;
   outline: none;
+
   @include for-size(tablet-up) {
     top: 5%;
     left: 73%;
@@ -88,19 +95,23 @@
   border-radius: 20px;
   outline: none;
   border: none;
+
   &:hover,
   &:focus {
     background-color: rgba(255, 255, 255, 0.05);
     color: white;
   }
 }
+
 .form__input:first-child {
   @include for-size(phone-only) {
     margin-bottom: 25px;
   }
+
   @include for-size(phone-plus-up) {
     margin-bottom: 25px;
   }
+
   @include for-size(tablet-up) {
     margin-right: 30px;
   }
@@ -109,6 +120,7 @@
 .input-wrapper {
   position: relative;
 }
+
 .form__icon {
   position: absolute;
 
@@ -116,6 +128,7 @@
   left: 30%;
   fill: #939393;
   transform: matrix(-1, 0, 0, 1, 0, 0);
+
   @include for-size(tablet-up) {
     top: 35%;
     left: 30%;
@@ -133,7 +146,7 @@
 }
 
 //стилі для селекту
-.input-country{
- background-color: #d0cccc;
- color: #dc56c5;
+.input-country {
+  background-color: #d0cccc;
+  color: #dc56c5;
 }
