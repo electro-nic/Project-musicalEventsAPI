@@ -140,9 +140,9 @@
   }
 }
 
-.all-countries {
-  background-color: aquamarine;
-}
+// .all-countries {
+//   background-color: aquamarine;
+// }
 
 // Анимация для Заголовка
 
@@ -152,6 +152,16 @@
 
 //стилі для селекту
 .input-country {
-  background-color: #d0cccc;
+  background: rgba(175, 175, 175, 0.986);
   color: #dc56c5;
+
+  font-size: 18px;
+    line-height: 1.21;
+    font-family: "Montserrat", sans-serif;
+}
+
+.select select {
+  appearance: none;/* забираю дефолтну стрілку */
+
+
 }
