@@ -35,7 +35,7 @@ function renderGallery(data) {
     imgUrl: evt.images.find(img => img.width === 1024 && img.height === 683),
     locationRef: evt._embedded.venues[0].name,
   }));
-  refs.eventCardsRef.innerHTML = eventsListTpl(events);
+  //refs.eventCardsRef.innerHTML = eventsListTpl(events);
 }
 export default setPagination;
 //проверка пагинации
