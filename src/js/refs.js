@@ -1,4 +1,5 @@
 export const refs = {
+
   form: document.querySelector('.form'),
   eventList: document.querySelector('#js-events__list'),
   btnToTop: document.querySelector('.js-button'),
@@ -22,3 +23,4 @@ export const modalRefs = {
   buyTicketsBtnStEl: document.querySelector('#buy-tickets-btn-standart'),
   buyTicketsBtnVipEl: document.querySelector('#buy-tickets-btn-vip'),
 };
+

@@ -18,6 +18,7 @@
 import { modalRefs, refs } from './refs';
 import { renderModalInfo } from './renderModalInfo';
 
+
 const closeModalWindow = document.querySelector('.modal__backdrop');
 const closeModalBtn = document.querySelector(
   '[data-action="close-modal__backdrop"]'
@@ -27,12 +28,33 @@ const closeModalBtn = document.querySelector(
 closeModalBtn.addEventListener('click', closeModal);
 closeModalWindow.addEventListener('click', closeModal);
 
+// const closeModalWindow = document.querySelector('.modal__backdrop');
+// const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
+
+refs.eventList.addEventListener('click', openModal);
+refs.closeModalBtn.addEventListener('click', closeModal);
+refs.closeModalWindow.addEventListener('click', closeModal);
+
+
 export function openModal(e) {
   closeModalWindow.classList.remove('is-hidden');
   console.log('e.currentTarget', e.currentTarget);
   console.log('e.target', e.target);
 
+
   const index = e.currentTarget.dataset.index;
+
+function openModal(e) {
+  if(e.target.nodeName === "DIV"){
+    e.preventDefault();
+    refs.closeModalWindow.classList.remove('is-hidden');
+   
+  console.log(e.target.nodeName);
+  } 
+  else {
+    return;
+  }
+
   window.addEventListener('keydown', keyEscape);
 
   renderModalInfo(index);
@@ -44,6 +66,7 @@ export function openModal(e) {
 // }
 // window.addEventListener('keydown', keyEnterClick)
 // }
+
 
 function closeModal(e) {
   if (e.target.nodeName === 'BUTTON') {
@@ -67,6 +90,45 @@ function closeModal(e) {
 
   console.log(e.target.nodeName);
 }
+
+function closeModal(e){
+  if(e.target.nodeName === "BUTTON") {
+    e.preventDefault()
+    refs.closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+
+  } if(e.target.nodeName === "FORM"){
+    e.preventDefault()
+    refs.closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+    
+  } if(e.target.nodeName === "SPAN") {
+     e.preventDefault()
+    refscloseModalWindow.classList.add('is-hidden');
+
+  } else { 
+       return;
+  };
+  
+
+  console.log(e.target.nodeName);
+  }
+
+  function keyEscape(e) {
+  if(e.key == "Escape") {
+    refs.closeModalWindow.classList.add('is-hidden');
+  }   
+}
+window.addEventListener('keydown', keyEscape);
+    
+/* function keyEscape(e) {
+  if(e.code == "Escape") {
+    closeModal()
+  }   
+} */
+
 
 function keyEscape(e) {
   if (e.code == 'Escape') {
