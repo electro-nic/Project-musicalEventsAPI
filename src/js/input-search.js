@@ -38,7 +38,7 @@ async function handlerInput(e){
   obj.then(data => {
     if (data.page.totalElements === 0 || keyword.length === 0) {
       return  error({
-                text: 'Incorrect data. Please enter your request again',
+                text: 'Please. Enter the correct data to search for music events.',
                 delay: 2000,
               });
     } else {
