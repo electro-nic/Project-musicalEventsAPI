@@ -10,6 +10,11 @@ export function renderModalInfo(index) {
   const country = currentEvent._embedded.venues[0].country.name;
   const standartPrice = `Standart: from ${currentEvent.priceRanges[0].min} ${currentEvent.priceRanges[0].currency} `;
 
+  modalRefs.imgCircleEl[0].srcset = currentEvent.images[0].url;
+  modalRefs.imgPosterEl[0].srcset = currentEvent.images[1].url;
+
+  console.log(currentEvent.images);
+
   modalRefs.infoEl.innerHTML =
     currentEvent.info ||
     currentEvent.pleaseNote ||
