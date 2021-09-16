@@ -1,5 +1,4 @@
 export const refs = {
-
   form: document.querySelector('.form'),
   eventList: document.querySelector('#js-events__list'),
   btnToTop: document.querySelector('.js-button'),
@@ -12,6 +11,8 @@ export const refs = {
 };
 
 export const modalRefs = {
+  imgPosterEl: document.querySelectorAll('.modal__poster'),
+  imgCircleEl: document.querySelectorAll('.modal__circle'),
   infoEl: document.querySelector('#modal-info'),
   dateEl: document.querySelector('#modal-date'),
   timeEl: document.querySelector('#modal-time'),
@@ -25,4 +26,3 @@ export const modalRefs = {
   closeModalWindow: document.querySelector('.modal__backdrop'),
   closeModalBtn: document.querySelector('[data-action="close-modal__backdrop"]')
 };
-
