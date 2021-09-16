@@ -4,10 +4,10 @@
 //       closeModalBtn: document.querySelector('[data-modal-close]'),
 //       modal: document.querySelector('[data-modal]'),
 //     };
-  
+
 //     refs.openModalLink.addEventListener('click', toggleModal);
 //     refs.closeModalBtn.addEventListener('click', toggleModal);
-  
+
 //     function toggleModal() {
 //       refs.modal.classList.toggle('is-hidden');
 //     }
@@ -15,70 +15,118 @@
 
 // открытие/закрытие модального окна
 
-import { refs } from "./refs";
+import { modalRefs, refs } from './refs';
+import { renderModalInfo } from './renderModalInfo';
 
 const closeModalWindow = document.querySelector('.modal__backdrop');
-const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
+const closeModalBtn = document.querySelector(
+  '[data-action="close-modal__backdrop"]'
+);
 
-refs.eventList.addEventListener('click', openModal);
+// refs.eventListItem.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 closeModalWindow.addEventListener('click', closeModal);
 
+// const closeModalWindow = document.querySelector('.modal__backdrop');
+// const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
 
-function openModal(e) {
-  if(e.target.nodeName === "DIV"){
-    e.preventDefault();
-    closeModalWindow.classList.remove('is-hidden');
-   
-  console.log(e.target.nodeName);
-  } 
-  else {
-    return;
+// refs.eventList.addEventListener('click', openModal);
+// refs.closeModalBtn.addEventListener('click', closeModal);
+// refs.closeModalWindow.addEventListener('click', closeModal);
+
+export function openModal(e) {
+  closeModalWindow.classList.remove('is-hidden');
+  console.log('e.currentTarget', e.currentTarget);
+  console.log('e.target', e.target);
+
+  const index = e.currentTarget.dataset.index;
+
+  function openModal(e) {
+    if (e.target.nodeName === 'DIV') {
+      e.preventDefault();
+      refs.closeModalWindow.classList.remove('is-hidden');
+
+      console.log(e.target.nodeName);
+    } else {
+      return;
+    }
+
+    window.addEventListener('keydown', keyEscape);
+
+    renderModalInfo(index);
   }
-  window.addEventListener('keydown', keyEscape);
-};
-
+}
 // function keyEnterClick(e) {
 //   if (e.code === "Enter" && e.target.nodeName === "A") {
 //     closeModalWindow.classList.remove('is-hidden');
-// } 
+// }
 // window.addEventListener('keydown', keyEnterClick)
 // }
 
-function closeModal(e){
-  if(e.target.nodeName === "BUTTON") {
-    e.preventDefault()
+function closeModal(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    e.preventDefault();
     closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
-
-  } if(e.target.nodeName === "FORM"){
-    e.preventDefault()
+  }
+  if (e.target.nodeName === 'FORM') {
+    e.preventDefault();
     closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
-    
-  } if(e.target.nodeName === "SPAN") {
-     e.preventDefault()
+  }
+  if (e.target.nodeName === 'SPAN') {
+    e.preventDefault();
     closeModalWindow.classList.add('is-hidden');
-
-  } else { 
-       return;
-  };
-  
+  } else {
+    return;
+  }
 
   console.log(e.target.nodeName);
-  }
-    
-function keyEscape(e) {
-  if(e.code == "Escape") {
-    closeModal()
-  }   
 }
 
+function closeModal(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    e.preventDefault();
+    refs.closeModalWindow.classList.add('is-hidden');
 
+    console.log(e.target.nodeName);
+  }
+  if (e.target.nodeName === 'FORM') {
+    e.preventDefault();
+    refs.closeModalWindow.classList.add('is-hidden');
 
+    console.log(e.target.nodeName);
+  }
+  if (e.target.nodeName === 'SPAN') {
+    e.preventDefault();
+    refscloseModalWindow.classList.add('is-hidden');
+  } else {
+    return;
+  }
 
+  console.log(e.target.nodeName);
+}
+
+function keyEscape(e) {
+  if (e.key == 'Escape') {
+    refs.closeModalWindow.classList.add('is-hidden');
+  }
+}
+window.addEventListener('keydown', keyEscape);
+
+/* function keyEscape(e) {
+    if(e.code == "Escape") {
+      closeModal()
+    }   
+  } */
+
+function keyEscape(e) {
+  if (e.code == 'Escape') {
+    closeModal();
+  }
+}
 
 // логика подгрузки изображение
 
