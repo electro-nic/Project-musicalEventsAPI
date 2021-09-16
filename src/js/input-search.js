@@ -1,14 +1,14 @@
 import apiService from './api-connect';
 import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
-var debounce = require('lodash.debounce');
+import debounce from 'lodash.debounce';
 
 const nameInput = document.querySelector('#name-input');
 const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
 
-nameInput.addEventListener('input', debounce(onIconShow, 500));
+nameInput.addEventListener('change', debounce(onIconShow, 500));
 
 function onIconShow(e) {
     

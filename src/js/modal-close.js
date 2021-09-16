@@ -1,109 +1,52 @@
-// (() => {
-//     const refs = {
-//       openModalLink: document.querySelector('[data-modal-open]'),
-//       closeModalBtn: document.querySelector('[data-modal-close]'),
-//       modal: document.querySelector('[data-modal]'),
-//     };
+import { modalRefs } from './refs';
+import { renderModalInfo } from './renderModalInfo';
+
+modalRefs.closeModalBtn.addEventListener('click', closeModal);
+modalRefs.closeModalWindow.addEventListener('click', closeModal);
+
+// открытие модалки
+
+export function openModal(e) {
+  modalRefs.closeModalWindow.classList.remove('is-hidden');
+  console.log('e.currentTarget', e.currentTarget);
+  console.log('e.target', e.target);
+
+  const index = e.currentTarget.dataset.index;
   
-//     refs.openModalLink.addEventListener('click', toggleModal);
-//     refs.closeModalBtn.addEventListener('click', toggleModal);
-  
-//     function toggleModal() {
-//       refs.modal.classList.toggle('is-hidden');
-//     }
-//   })();
-
-// открытие/закрытие модального окна
-
-import { refs } from "./refs";
-
-// const closeModalWindow = document.querySelector('.modal__backdrop');
-// const closeModalBtn = document.querySelector('[data-action="close-modal__backdrop"]');
-
-refs.eventList.addEventListener('click', openModal);
-refs.closeModalBtn.addEventListener('click', closeModal);
-refs.closeModalWindow.addEventListener('click', closeModal);
-
-
-function openModal(e) {
-  if(e.target.nodeName === "DIV"){
-    e.preventDefault();
-    refs.closeModalWindow.classList.remove('is-hidden');
-   
-  console.log(e.target.nodeName);
-  } 
-  else {
-    return;
-  }
   window.addEventListener('keydown', keyEscape);
+
+  renderModalInfo(index);
+}
+
+// закрытие модалки по кнопке и по оверлнею
+
+function closeModal(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    e.preventDefault();
+    modalRefs.closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+  }
+  if (e.target.nodeName === 'FORM') {
+    e.preventDefault();
+    modalRefs.closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+  }
+  if (e.target.nodeName === 'SPAN') {
+    e.preventDefault();
+    modalRefs.closeModalWindow.classList.add('is-hidden');
+  } else {
+    return;
+  };
+
+  console.log(e.target.nodeName);
 };
 
-// function keyEnterClick(e) {
-//   if (e.code === "Enter" && e.target.nodeName === "A") {
-//     closeModalWindow.classList.remove('is-hidden');
-// } 
-// window.addEventListener('keydown', keyEnterClick)
-// }
+// закрытие модалки через ESC
 
-function closeModal(e){
-  if(e.target.nodeName === "BUTTON") {
-    e.preventDefault()
-    refs.closeModalWindow.classList.add('is-hidden');
-
-    console.log(e.target.nodeName);
-
-  } if(e.target.nodeName === "FORM"){
-    e.preventDefault()
-    refs.closeModalWindow.classList.add('is-hidden');
-
-    console.log(e.target.nodeName);
-    
-  } if(e.target.nodeName === "SPAN") {
-     e.preventDefault()
-    refscloseModalWindow.classList.add('is-hidden');
-
-  } else { 
-       return;
+function keyEscape(e) {
+  if (e.code == 'Escape') {
+    modalRefs.closeModalWindow.classList.add('is-hidden');
   };
-  
-
-  console.log(e.target.nodeName);
-  }
-
-  function keyEscape(e) {
-  if(e.key == "Escape") {
-    refs.closeModalWindow.classList.add('is-hidden');
-  }   
-}
-window.addEventListener('keydown', keyEscape);
-    
-/* function keyEscape(e) {
-  if(e.code == "Escape") {
-    closeModal()
-  }   
-} */
-
-
-
-
-
-// логика подгрузки изображение
-
-// $.ajax({
-//     type:"GET",
-//     url:"https://app.ticketmaster.com/discovery/v2/events/k7vGFKzleBdwS/images.json?apikey=Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy",
-//     async:true,
-//     dataType: "json",
-//     success: function(json) {
-//                 console.log(json);
-//                 // Parse the response.
-//                 // Do other things.
-//              },
-//     error: function(xhr, status, err) {
-//                 // This time, we do not end up here!
-//              }
-//   });
-
-// const imgCircle = document.querySelector('.modal__circle');
-
-// imgCircle.insertAdjacentHTML
+};
