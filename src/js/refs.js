@@ -23,4 +23,6 @@ export const modalRefs = {
   standartPriceEl: document.querySelector('#modal-prices'),
   buyTicketsBtnStEl: document.querySelector('#buy-tickets-btn-standart'),
   buyTicketsBtnVipEl: document.querySelector('#buy-tickets-btn-vip'),
+  closeModalWindow: document.querySelector('.modal__backdrop'),
+  closeModalBtn: document.querySelector('[data-action="close-modal__backdrop"]')
 };

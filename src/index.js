@@ -3,7 +3,7 @@ import './js/renderGalleryCards';
 import './js/onClickScrollTo';
 import './js/input-country';
 import './js/modal-close';
-import './js/modal-open-close';
+// import './js/modal-open-close';
 import './js/preloader';
 import './js/input-search';
 import './js/pagination';
