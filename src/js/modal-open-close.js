@@ -1,50 +1,50 @@
-import { refs } from './refs';
-import { renderModalInfo } from './renderModalInfo';
+// import { refs } from './refs';
+// import { renderModalInfo } from './renderModalInfo';
 
-const closeModalWindow = document.querySelector('.modal__backdrop');
-const closeModalBtn = document.querySelector(
-  '[data-action="close-modal__backdrop"]'
-);
+// const closeModalWindow = document.querySelector('.modal__backdrop');
+// const closeModalBtn = document.querySelector(
+//   '[data-action="close-modal__backdrop"]'
+// );
 
-closeModalBtn.addEventListener('click', closeModal);
-closeModalWindow.addEventListener('click', closeModal);
+// closeModalBtn.addEventListener('click', closeModal);
+// closeModalWindow.addEventListener('click', closeModal);
 
-export function openModal(e) {
-  closeModalWindow.classList.remove('is-hidden');
-  console.log('e.currentTarget', e.currentTarget);
-  console.log('e.target', e.target);
+// export function openModal(e) {
+//   closeModalWindow.classList.remove('is-hidden');
+//   console.log('e.currentTarget', e.currentTarget);
+//   console.log('e.target', e.target);
 
-  const index = e.currentTarget.dataset.index;
-  window.addEventListener('keydown', keyEscape);
+//   const index = e.currentTarget.dataset.index;
+//   window.addEventListener('keydown', keyEscape);
 
-  renderModalInfo(index);
-}
+//   renderModalInfo(index);
+// }
 
-function closeModal(e) {
-  if (e.target.nodeName === 'BUTTON') {
-    e.preventDefault();
-    closeModalWindow.classList.add('is-hidden');
+// function closeModal(e) {
+//   if (e.target.nodeName === 'BUTTON') {
+//     e.preventDefault();
+//     closeModalWindow.classList.add('is-hidden');
 
-    console.log(e.target.nodeName);
-  }
-  if (e.target.nodeName === 'FORM') {
-    e.preventDefault();
-    closeModalWindow.classList.add('is-hidden');
+//     console.log(e.target.nodeName);
+//   }
+//   if (e.target.nodeName === 'FORM') {
+//     e.preventDefault();
+//     closeModalWindow.classList.add('is-hidden');
 
-    console.log(e.target.nodeName);
-  }
-  if (e.target.nodeName === 'SPAN') {
-    e.preventDefault();
-    closeModalWindow.classList.add('is-hidden');
-  } else {
-    return;
-  }
+//     console.log(e.target.nodeName);
+//   }
+//   if (e.target.nodeName === 'SPAN') {
+//     e.preventDefault();
+//     closeModalWindow.classList.add('is-hidden');
+//   } else {
+//     return;
+//   }
 
-  console.log(e.target.nodeName);
-}
+//   console.log(e.target.nodeName);
+// }
 
-function keyEscape(e) {
-  if (e.code == 'Escape') {
-    closeModal();
-  }
-}
+// function keyEscape(e) {
+//   if (e.code == 'Escape') {
+//     closeModalWindow.classList.add('is-hidden');
+//   }
+// }
