@@ -2,8 +2,6 @@ import { modalRefs } from './refs';
 import { eventsArr } from './variables';
 
 export function renderModalInfo(index) {
-  console.log('data:', eventsArr[index]);
-
   const currentEvent = eventsArr[index];
   console.log('data:', currentEvent);
 
@@ -11,7 +9,6 @@ export function renderModalInfo(index) {
   const city = currentEvent._embedded.venues[0].city.name;
   const country = currentEvent._embedded.venues[0].country.name;
   const standartPrice = `Standart: from ${currentEvent.priceRanges[0].min} ${currentEvent.priceRanges[0].currency} `;
-  console.log('eventTime:', eventTime);
 
   modalRefs.infoEl.innerHTML =
     currentEvent.info ||
