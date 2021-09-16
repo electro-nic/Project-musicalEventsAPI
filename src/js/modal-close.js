@@ -34,6 +34,7 @@ function closeModal(e) {
     console.log(e.target.nodeName);
   }
   if (e.target.nodeName === 'SPAN') {
+    e.preventDefault();
     modalRefs.closeModalWindow.classList.add('is-hidden');
   } else {
     return;
