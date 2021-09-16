@@ -8,7 +8,7 @@ const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
 
-nameInput.addEventListener('input', debounce(onIconShow, 500));
+nameInput.addEventListener('change', debounce(onIconShow, 500));
 
 function onIconShow(e) {
     
