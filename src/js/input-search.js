@@ -22,15 +22,3 @@ function onIconShow(e) {
   }
 
 }
-
-// async function searchEvent(e) {
-//   e.preventDefault();
-
-// const value = e.currentTarget.elements.query.value
- 
-//   try {
-//     const fetchEvent = await apiService(country).then(data => console.log(data._embedded.events));
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// }
