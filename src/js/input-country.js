@@ -1,20 +1,9 @@
-// Consumer Key	vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG
-//https://app.ticketmaster.com/discovery/v2/events.json?apikey=vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG
 
-//Root URL
-//https://app.ticketmaster.com/discovery/v2/
-
-//Get a list of all events in the United States 
-//https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG
-
-// const API_KEY = 'vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG';
-// const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/venues.json?';
-
-// //https://app.ticketmaster.com/discovery/v2/venues.json?keyword=UCV&apikey=vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG
 
 import {refs} from './refs';
+import cardCountry from '../templates/country'; 
 
-const API_KEY = 'vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG';
+const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy'; //'vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG';
 const BASE_URL = 'https://app.ticketmaster.com/discovery-feed/v2/events?';
 
 async function fetchCountries(name) {
@@ -38,22 +27,39 @@ async function onCountryBtnClick(e){
   console.log(err);
 }
 }
-
 function onCountryCreate (obj){
     const optionEl= Object.keys(obj)
     console.log(optionEl)
-
-    const listCountry = optionEl.map((el)=>{
-    console.log(el);
-    const itemCountries = document.createElement('option');
-    itemCountries.setAttribute('value', `${el}`);
+  const listCountry=optionEl.map((el)=>{
+    const itemCountries = `<option class='input-country' value="${el}">${el}</option>`;
     // itemCountries.append(el)
-   console.log(itemCountries);
-   return itemCountries;
-   
+    console.log(itemCountries)
+    return itemCountries;
   })
-  console.log(listCountry)
-  refs.menu.insertAdjacentHTML('beforeend',listCountry) 
+  refs.inputCountry.insertAdjacentHTML('beforeend',listCountry)
+// }
+
+  //   const listMarkup = cardCountry(optionEl);
+
+  // refs.inputCountry.insertAdjacentHTML('beforeend', listMarkup);
+
+  //  const options= optionEl.map((el)=>{
+  //    return `<option  value="${el.country_code}">${el.country_code}</option>`})
+  //     refs.menu.insertAdjacentHTML('beforeend',options.join(''))
+
+   }
+  //   const listCountry = optionEl.map((el)=>{
+  //   console.log(el);
+  //   const itemCountries = document.createElement('option');
+  //   itemCountries.setAttribute('value', `${el}`);
+  //   // itemCountries.append(el)
+  //  console.log(itemCountries);
+  //  return itemCountries;
+   
+ 
+  // )
+  // console.log(listCountry)
+  // refs.inputCountry.insertAdjacentHTML('beforeend',listCountry) 
 
    
   // const listCountry = optionEl.map((el)=>{
@@ -68,7 +74,7 @@ function onCountryCreate (obj){
   
   //  return listCountry
 
-}
+// }
 
   // return refs.menu.insertAdjacentHTML('beforeend',listCountry) 
 
