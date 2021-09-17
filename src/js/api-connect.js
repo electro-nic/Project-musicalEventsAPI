@@ -1,10 +1,10 @@
 const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 
-export default async function connect(keyword = '', page = 0, size = 20, countryCode = '') {
+export default async function connect(keyword = '', page = 0, size = 20, countryCode = '', sort = 'date,asc') {
 
     try {
-        const promiseResponse = await fetch(`${BASE_URL}classificationName=music&dmaId=324&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}`);
+        const promiseResponse = await fetch(`${BASE_URL}classificationName=music&dmaId=324&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}&sort=${sort}`);
         const data = await promiseResponse.json();
 
         return data;
