@@ -10,8 +10,23 @@ const nameInput = document.querySelector('#name-input');
 const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
+const clearInput = document.querySelector('#search-link');
 
 nameInput.addEventListener('input', debounce(onIconShow, 500));
+nameInput.addEventListener('input', debounce(handlerInput, 1000));
+nameInput.addEventListener('keydown', handlerInput);
+clearInput.addEventListener('click', onInputClear);
+
+function onInputClear(e) {
+  e.preventDefault();
+  
+  if (e.currentTarget.nodeName === 'A') {
+    console.log(nameInput.value);
+    nameInput.value = '';
+  } else if (e.code === 'Enter'){
+     nameInput.value = keyword
+} else return
+}
 
 function onIconShow(e) {
   
@@ -24,9 +39,6 @@ function onIconShow(e) {
   }
 }
 
-
-nameInput.addEventListener('input', debounce(handlerInput, 1000));
-
 async function handlerInput(e){
   e.preventDefault();
   const keyword = nameInput.value;
@@ -38,10 +50,10 @@ async function handlerInput(e){
     if (data.page.totalElements === 0 || keyword.length === 0) {
       return  error({
                 text: 'Please. Enter the correct data to search for music events.',
-                delay: 2000,
+                delay: 1000,
               });
     } else {
-      onGreatGalleryEvents(data._embedded.events)
+      onGreatGalleryEvents(data._embedded.events);
     }
   })
    .catch(err => console.log(err))};

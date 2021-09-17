@@ -65,6 +65,13 @@
   }
 }
 
+.search-link {
+  position: absolute;
+  top: 2%;
+  left: 65%;
+  width: 36px;
+  height: 34px;
+}
 .search-btn {
   cursor: pointer;
   position: absolute;
@@ -157,12 +164,10 @@
 
   font-size: 18px;
   line-height: 1.21;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .select select {
   appearance: none;
   /* забираю дефолтну стрілку */
-
-
 }
