@@ -249,10 +249,16 @@
 
 .modal__icon {
   display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+
+  @include for-size(tablet-up){
+    justify-content: start;
+  }
 }
 
 .modal__buy {
-  display: inline-block;
+  display: flexbox;
   padding: 8px 16px 6px 16px;
   border-radius: 5px;
   // border: 1px solid transparent;
