@@ -1,7 +1,7 @@
 import { modalRefs, refs } from './refs';
 import { renderModalInfo } from './renderModalInfo';
 
-refs.eventList.addEventListener('click', openModal);
+
 modalRefs.closeModalBtn.addEventListener('click', closeModal);
 modalRefs.closeModalWindow.addEventListener('click', closeModal);
 
