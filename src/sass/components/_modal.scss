@@ -9,8 +9,8 @@
 }
 
 .modal {
-  min-width: 272px;
-  min-height: 915px;
+  width: 272px;
+  height: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -23,12 +23,12 @@
 
   @include for-size(tablet-up) {
     width: 595px;
-    height: 831px;
+    // height: 831px;
   }
 
   @include for-size(desktop-up) {
-    max-width: 930px;
-    max-height: 1023px;
+    width: 930px;
+    // height: 85%;
   }
 }
 
@@ -63,6 +63,7 @@
   top: 25px;
   right: 25px;
   fill: var(--modal-accent-color);
+  transform: rotate(180deg);
 
   @include for-size(desktop-up) {
     position: absolute;
@@ -73,10 +74,10 @@
   }
 }
 
-.modal__close:hover,
-.modal__close:focus {
-  transform: rotate(180deg);
-}
+// .modal__close-icon:hover,
+// .modal__close-icon:focus {
+//   transform: rotate(180deg);
+// }
 
 // круглая иконка
 
@@ -89,7 +90,8 @@
   height: 102px;
   margin-bottom: 18px;
   border-radius: 50%;
-  outline: 2px solid black;
+  object-fit: cover;
+    // outline: 2px solid black;
 
   @include for-size(tablet-up) {
     top: 28px;
@@ -101,7 +103,7 @@
 
   @include for-size(desktop-up) {
     top: 62px;
-    // left: 399px;
+    left: 399px;
     width: 132px;
     height: 132px;
     margin-bottom: 41px;
@@ -137,14 +139,16 @@
   @include for-size(tablet-up) {
     display: flex;
     width: 233px;
-    height: 416px;
-    outline: 2px solid black;
+    height: 360px;
+    object-fit: cover;
+    // outline: 2px solid black;
   }
   @include for-size(desktop-up) {
     display: flex;
     width: 360px;
-    // height: 641px;
-    outline: 2px solid black;
+     height: 431px;
+    object-fit: cover;
+    // outline: 2px solid black;
   }
 }
 
@@ -164,31 +168,37 @@
 .modal__item-title {
   text-align: center;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.2;
   color: var(--title-color);
 
   @include for-size(tablet-up) {
     text-align: start;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.21;
   }
 
-  @include for-size(desktop-up) {
-    font-size: 24px;
-    line-height: 1.21;
-  }
+  // @include for-size(desktop-up) {
+  //   font-size: 20px;
+  //   line-height: 1.21;
+  // }
 }
 
 .modal-text {
   font-style: 400;
-  font-size: 16px;
+  font-size: 10px;
   line-height: 1.22;
   text-align: center;
 
   @include for-size(tablet-up) {
+    font-size: 12px;
+  line-height: 1.22;
     text-align: start;
   }
+
+  // @include for-size(desktop-up) {
+  //   font-size: 16px;
+  // }
 }
 
 .modal__date,
@@ -210,23 +220,30 @@
   }
 }
 
-.vip {
-  padding-left: 15px;
+// .vip {
+//   padding-: 15px;
 
-  @include for-size(tablet-up) {
-    padding-left: 0;
-  }
-}
+//   @include for-size(tablet-up) {
+//     padding-left: 0;
+//   }
+// }
 
 .item-vip {
   padding-right: 15px;
 }
 
 .modal__tickets-icon {
+  width: 20px;
+  height: 12px;
   margin-right: 13px;
+
+  @include for-size(tablet-up){
+    width: 24px;
+    height: 17px;
+  }
 }
 
-.modal__tickets-item {
+.modal__tickets-item:not(:last-child) {
   margin-bottom: 20px;
 }
 
@@ -235,13 +252,16 @@
 }
 
 .modal__buy {
-  padding: 0;
-  width: 145px;
-  height: 40px;
+  display: inline-block;
+  padding: 8px 16px 6px 16px;
   border-radius: 5px;
-  border: none;
+  // border: 1px solid transparent;
   background-color: var(--modal-accent-color);
   cursor: pointer;
+
+  // @include for-size(desktop-up){
+  //   padding: 9px 19px 11px 19px;
+  // }
 }
 
 .modal__buy:hover,
@@ -253,9 +273,15 @@
 .modal__btn-title {
   display: inline;
   font-style: 500;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.25;
   color: var(--main-text-color);
+
+  // @include for-size(desktop-up){
+  //   font-style: 500;
+  //   font-size: 20px;
+  //   line-height: 1.25;
+  // }
 }
 
 .modal__buy:hover .modal__btn-title,
@@ -279,37 +305,42 @@
 // кнопка "MORE FROM THIS AUTHOR"
 
 .modal__more {
-  padding: 0;
-  width: 230px;
-  height: 40px;
+  display: inline-flex;
+  padding: 5px 3px;
   position: absolute;
-  bottom: 104px;
-  right: 23px;
+  bottom: 70px;
+  right: 50px;
   background-color: var(--modal-background-color);
-  border-color: var(--modal-accent-color);
+  border: 1px solid var(--modal-accent-color);
   border-radius: 5px;
   cursor: pointer;
 
   @include for-size(tablet-up) {
-    width: 255px;
-    height: 40px;
+    display: inline-flex;
+    padding: 10px 15px 10px 16px;
+    // width: 255px;
+    // height: 40px;
     bottom: 66px;
     right: 185px;
     border-color: var(--title-color);
   }
 
   @include for-size(desktop-up) {
-    bottom: 62px;
-    // right: 338px;
+    bottom: 42px;
+    right: 338px;
     border-color: var(--modal-accent-color);
   }
 }
 
 .modal__more-title {
   font-style: 500;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.25;
   color: var(--modal-accent-color);
+
+  @include for-size(tablet-up){
+  font-size: 16px;
+  }
 }
 
 .modal__more:focus,
