@@ -237,7 +237,7 @@
   height: 12px;
   margin-right: 13px;
 
-  @include for-size(tablet-up){
+  @include for-size(desctop-up){
     width: 24px;
     height: 17px;
   }
