@@ -11,10 +11,10 @@ const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
 
-nameInput.addEventListener('change', debounce(onIconShow, 500));
+nameInput.addEventListener('input', debounce(onIconShow, 500));
 
 function onIconShow(e) {
-    
+  
   if (!e.target.value.length) {
     searchIconRef.style.opacity = 1;
     clearSearchIconRef.style.opacity = 0;
@@ -22,7 +22,6 @@ function onIconShow(e) {
     clearSearchIconRef.style.opacity = 1;
     searchIconRef.style.opacity = 0;
   }
-
 }
 
 
