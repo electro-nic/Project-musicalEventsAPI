@@ -28,4 +28,5 @@ export function renderModalInfo(index) {
   modalRefs.standartPriceEl.innerHTML = standartPrice;
   modalRefs.buyTicketsBtnStEl.href = currentEvent.url;
   modalRefs.buyTicketsBtnVipEl.href = currentEvent.url;
+  modalRefs.modalMoreAuthor.href = currentEvent._embedded.attractions[0].url;
 }
