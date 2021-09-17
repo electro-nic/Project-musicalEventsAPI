@@ -1,4 +1,5 @@
 .header__title {
+  padding-top: 78px;
   margin-bottom: 25px;
   text-align: center;
 
@@ -154,12 +155,13 @@
   color: #dc56c5;
 
   font-size: 18px;
-    line-height: 1.21;
-    font-family: "Montserrat", sans-serif;
+  line-height: 1.21;
+  font-family: "Montserrat", sans-serif;
 }
 
 .select select {
-  appearance: none;/* забираю дефолтну стрілку */
+  appearance: none;
+  /* забираю дефолтну стрілку */
 
 
 }
