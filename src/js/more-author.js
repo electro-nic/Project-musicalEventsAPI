@@ -5,7 +5,7 @@
 
 // // const handlerSubmit = (data) => {
 // // console.log(data._embedded.attractions)
-// // //inpetSearch.query = e.target.dataset.name;
+// // //inputSearch.query = e.target.dataset.name;
 // // }
 
 

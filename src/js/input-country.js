@@ -40,7 +40,7 @@ async function onCountryCreate (obj){
 // function createCountriesSelect() {
 //   const options = countryCodes.map(({ alphaCode, name }) => {
 //     // деструктуризація елементів масиву обєктів країн
-//     return <option class='optin-coutries-list' value="${alphaCode}">${name}</option>; //
+//     return <option class='option-coutries-list' value="${alphaCode}">${name}</option>; //
 //   });
 //   selectRef.insertAdjacentHTML('beforeend', options.join('')); 
 // }
