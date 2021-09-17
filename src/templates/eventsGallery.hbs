@@ -1,34 +1,46 @@
 {{#each this}}
-  <li class='events__item' data-index='{{@index}}'>
-      <div class='music__thumb'>
-        <picture class='music__img'>
-          <source
-            media='(min-width: 1280px)'
-            srcset='{{images.6.url}}, {{images.1.url}}'
-          />
-          <source
-            media='(min-width: 768px)'
-            srcset='{{images.5.url}}, {{images.3.url}}'
-          />
-          <source
-            media='(max-width: 767.9px)'
-            srcset='{{images.8.url}}, {{images.7.url}}'
-          />
-          <img
-            class='music__img-poster img'
-            src='{{images.1.url}}'
-            data-source='{{images.6.url}}'
-            alt='{{name}}'
-          />
-        </picture>
-      </div>
-      <div class='music__info'>
-        <h3 class='events__title title'>{{name}}</h3>
-        <p class='events__text text'>{{dates.start.localDate}}</p>
-        <a href='#' class='music__link'>
-          <span class='material-icons'>room</span>
-          {{_embedded.venues.0.name}}
-        </a>
-      </div>
-  </li>
+<li class='events__item' data-index='{{@index}}'>
+  <div class='music__thumb'>
+    <div class="social__overlay">
+      <a class="social__link" href="{{_embedded.attractions.0.externalLinks.facebook.0.url}}" target="blank">
+         <svg class="social__icon" width="25px" height="25px">
+              <use
+                class="youtube__icon"
+                href="./images/icons/icons.svg#icon-youtube"
+              ></use>
+            </svg>
+      </a>
+      <a class="social__link" href="{{_embedded.attractions.0.externalLinks.twitter.0.url}}" target="blank">
+                 <svg class="social__icon" width="25px" height="25px">
+              <use
+                class="facebook__icon"
+                href="./images/icons/icons.svg#icon-facebook"
+              ></use>
+            </svg>
+      </a>
+      <a class="social__link" href="{{_embedded.attractions.0.externalLinks.wiki.0.url}}" target="blank">
+                       <svg class="social__icon" width="25px" height="25px">
+              <use
+                class="instagram-icon"
+                href="./images/icons/icons.svg#instagram-icon"
+              ></use>
+            </svg>
+      </a>
+    </div>
+    <picture class='music__img'>
+      <source media='(min-width: 1280px)' srcset='{{images.6.url}}, {{images.1.url}}' />
+      <source media='(min-width: 768px)' srcset='{{images.5.url}}, {{images.3.url}}' />
+      <source media='(max-width: 767.9px)' srcset='{{images.8.url}}, {{images.7.url}}' />
+      <img class='music__img-poster img' src='{{images.1.url}}' data-source='{{images.6.url}}' alt='{{name}}' />
+    </picture>
+  </div>
+  <div class='music__info'>
+    <h3 class='events__title title'>{{name}}</h3>
+    <p class='events__text text'>{{dates.start.localDate}}</p>
+    <a href='#' class='music__link'>
+      <span class='material-icons'>room</span>
+      {{_embedded.venues.0.name}}
+    </a>
+  </div>
+</li>
 {{/each}}
