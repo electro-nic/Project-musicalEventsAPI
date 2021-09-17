@@ -11,7 +11,7 @@ export function renderModalInfo(index) {
   const standartPrice = `Standart: from ${currentEvent.priceRanges[0].min} ${currentEvent.priceRanges[0].currency} `;
 
   modalRefs.imgCircleEl[0].srcset = currentEvent.images[0].url;
-  modalRefs.imgPosterEl[0].srcset = currentEvent.images[1].url;
+  modalRefs.imgPosterEl[0].srcset = currentEvent.images[3].url;
 
   console.log(currentEvent.images);
 
