@@ -78,6 +78,7 @@ justify-content: center;
 
     @include for-size(phone-plus-only) {
       max-width: 420px;
+      text-align: center;
     }
     
 }
