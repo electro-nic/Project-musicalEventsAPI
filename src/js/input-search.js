@@ -14,7 +14,7 @@ const clearInput = document.querySelector('#search-link');
 
 nameInput.addEventListener('input', debounce(onIconShow, 500));
 nameInput.addEventListener('input', debounce(handlerInput, 1000));
-nameInput.addEventListener('keydown', handlerInput);
+
 clearInput.addEventListener('click', onInputClear);
 
 function onInputClear(e) {
@@ -23,9 +23,7 @@ function onInputClear(e) {
   if (e.currentTarget.nodeName === 'A') {
     console.log(nameInput.value);
     nameInput.value = '';
-  } else if (e.code === 'Enter'){
-     nameInput.value = keyword
-} else return
+  } else return
 }
 
 function onIconShow(e) {
