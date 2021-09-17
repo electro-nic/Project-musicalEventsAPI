@@ -1,7 +1,7 @@
 {{#each this}}
 <li class='events__item' data-index='{{@index}}'>
   <div class='music__thumb'>
-    <div class="social__overlay">
+    <div class="social__overlay link-animation">
       <a class="social__link" href="{{_embedded.attractions.0.externalLinks.facebook.0.url}}" target="blank">
          <svg class="social__icon" width="25px" height="25px">
               <use
@@ -31,7 +31,7 @@
       <source media='(min-width: 1280px)' srcset='{{images.6.url}}, {{images.1.url}}' />
       <source media='(min-width: 768px)' srcset='{{images.5.url}}, {{images.3.url}}' />
       <source media='(max-width: 767.9px)' srcset='{{images.8.url}}, {{images.7.url}}' />
-      <img class='music__img-poster img' src='{{images.1.url}}' data-source='{{images.6.url}}' alt='{{name}}' />
+      <img class='music__img-poster img link-animation' src='{{images.1.url}}' data-source='{{images.6.url}}' alt='{{name}}' />
     </picture>
   </div>
   <div class='music__info'>
