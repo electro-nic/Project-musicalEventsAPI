@@ -9,3 +9,4 @@ import './js/pagination';
 //import './js/more-author';
 import './js/variables';
 import './js/renderModalInfo';
+import './js/markupCountryList';

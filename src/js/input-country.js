@@ -37,89 +37,14 @@ async function onCountryCreate (obj){
     })
   refs.inputCountry.insertAdjacentHTML('beforeend',listCountry)
 }
-// function createCountriesSelect() {
-//   const options = countryCodes.map(({ alphaCode, name }) => {
-//     // деструктуризація елементів масиву обєктів країн
-//     return <option class='optin-coutries-list' value="${alphaCode}">${name}</option>; //
-//   });
-//   selectRef.insertAdjacentHTML('beforeend', options.join('')); 
-// }
-// createCountriesSelect();
 
-
-
-  //   const listMarkup = cardCountry(optionEl);
-
-  // refs.inputCountry.insertAdjacentHTML('beforeend', listMarkup);
-
-  //  const options= optionEl.map((el)=>{
-  //    return `<option  value="${el.country_code}">${el.country_code}</option>`})
-  //     refs.menu.insertAdjacentHTML('beforeend',options.join(''))
-
-  //  }
-  //   const listCountry = optionEl.map((el)=>{
-  //   console.log(el);
-  //   const itemCountries = document.createElement('option');
-  //   itemCountries.setAttribute('value', `${el}`);
-  //   // itemCountries.append(el)
-  //  console.log(itemCountries);
-  //  return itemCountries;
-   
- 
-  // )
-  // console.log(listCountry)
-  // refs.inputCountry.insertAdjacentHTML('beforeend',listCountry) 
-
-   
-  // const listCountry = optionEl.map((el)=>{
-  //   const itemCountries = document.createElement('option');
-  //   itemCountries.setAttribute('value',`${el}`)
-  //   // itemCountries.append(el)//поставити назву країн
-  // console.log(itemCountries)
-  //  return itemCountries;
- 
-  // })
-
-  
-  //  return listCountry
-
-// }
-
-  // return refs.menu.insertAdjacentHTML('beforeend',listCountry) 
-
-
-  // const listCountry=option.map((el)=>{
-  //   return `<option  value="${el}">${el}</option>`})
-      // console.log(listCountry.join(''))
-  
-
-
-//   const listCountry=optionEl.map((el)=>{
-//     const itemCountries = document.createElement('li');
-//     itemCountries.append(el)
-//     return itemCountries;
-//   })
-//   refs.list.append(...listCountry)
-// }
-
-// function mapObject(elems){
-//   const options= elems.map((el)=>{
-//       return `<option class='optin-coutries-list' value="${el.country_code}">${el.country_code}</option>`})
-//       refs.menu.insertAdjacentHTML('beforeend',options.join(''))
-// }
-
-// function createCountries(e) {
-//         e.preventDefault();
-//         const options = countryFetch.map((alphaCode,name)=>{
-//         return <option class='optin-coutries-list' value="${alphaCode}">${name}</option>;
-//       })
-
-// }
-      //   const options = countryCodes.map(({ alphaCode, name}) => {
-      //       return <option class='optin-coutries-list' value="${alphaCode}">${name}</option>;
-      //   })
-      //   countryCode.insertAdjacentHTML('beforeend', options.join(''))
-// function renderCountries(country){
-//   const markup = CountryList(country);
-//   refs.menu.insertAdjacentHTML('beforeend',markup)
-// }
+//при кліку на селект іконта зникає
+refs.inputCountry.addEventListener('click',onIconHide)
+function onIconHide(e){
+  const valueSelect = e.currentTarget.value;
+  if(valueSelect === 'Choose country'){
+    console.log('нажали на інпут')
+  } else {
+    console.log('нічого не бачить')
+  }
+}
