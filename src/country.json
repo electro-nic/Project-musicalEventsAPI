@@ -1,0 +1,86 @@
+[
+    {
+    "countryCode": "AT",
+    "name": "Austria"
+    },
+    {
+    "countryCode": "AU",
+    "name": "Australia"
+    },
+    {
+    "countryCode": "BE",
+    "name": "Belgium"
+    },
+    {
+    "countryCode": "CA",
+    "name": "Canada"
+    },
+    {
+    "countryCode": "CH",
+    "name": "Switzerland"
+    },
+    {
+    "countryCode": "CZ",
+    "name": "Czech Republic"
+    },
+    {
+   "countryCode": "DE",
+    "name": "Germany"
+    },
+    {
+    "countryCode": "DK",
+    "name": "Denmark"
+    },
+    {
+    "countryCode": "ES",
+    "name": "Spain"
+    },          
+    {
+    "countryCode": "FI",
+    "name": "Finland"
+    },
+    {
+    "countryCode": "FR",
+    "name": "France"
+    },
+    {
+    "countryCode": "GB",
+    "name": "Ireland"
+    },
+    {
+    "countryCode": "IE",
+    "name": "France"
+    },
+    {
+    "countryCode": "IT",
+    "name": "Italy"
+    },
+    {
+    "countryCode": "MX",
+    "name": "Mexico"
+    },    
+    {
+    "countryCode": "NL",
+    "name": "Netherlands"
+    },
+    {
+    "countryCode": "NO",
+    "name": "Norway"
+    },
+    {
+    "countryCode": "NZ",
+    "name": "New Zealand"
+    },
+    {
+    "countryCode": "PL",
+    "name": "Poland"
+    },
+    {
+    "countryCode": "SE",
+    "name": "Sweden"
+    },
+    {
+    "countryCode": "US",
+    "name": "United States Of America"
+    }
+]

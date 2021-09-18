@@ -8,6 +8,7 @@ export const refs = {
   list: document.querySelector('.list-country'),
   listItem: document.querySelector('.item-country'),
   inputCountry: document.querySelector('#country'),
+  boxSelect:document.querySelector('.select')
 };
 
 export const modalRefs = {
