@@ -37,11 +37,13 @@ async function handlerInputPage(e){
   //  obj.then(data => console.log(data))
   obj.then(data => {
     if (data.page.totalElements === 0 || keyword.length === 0) {
+      refs.pagination.classList.add('visually-hidden');
       return  onError()
     } else {
       obj.then(data => {
         setPagination(data.page.totalElements);
         obj.then(data => console.log(data));
+        refs.pagination.classList.remove('visually-hidden');
       });
     }
   })
@@ -60,7 +62,8 @@ function setPagination(totalEvents) {
   pagination.on('beforeMove', function (eventData) {
     apiServices.page = eventData.page - 1;
     setEventsOnPage();
-    apiServices.fetchEvent().then(onGreatGalleryEvents).catch(console.log);
+    // apiService(data._embedded.events).then(onGreatGalleryEvents);
+
   });
 }
 
