@@ -1,4 +1,4 @@
-const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy';
+const API_KEY = 'AGcGkGLirWXVP1TBWnNfEanVNPgcYNS9';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 let arr = [];
 let currentPage = 0;
