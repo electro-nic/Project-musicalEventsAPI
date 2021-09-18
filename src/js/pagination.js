@@ -1,4 +1,7 @@
 import Pagination from 'tui-pagination';
+import apiService from '../services/api-services';
+import { refs } from './refs';
+import cardTmp from '../templates/eventsGallery';  
 import apiServices from '../services/api-services';
 import onGreatGalleryEvents from './renderGalleryCards';
 import debounce from 'lodash.debounce';
@@ -78,6 +81,15 @@ function setEventsOnPage() {
 }
 
 
+function renderGallery(data) {
+  const events = data._embedded.events.map(evt => ({
+    ...evt,
+    imgUrl: evt.images.find(img => img.width === 1024 && img.height === 683),
+    locationRef: evt._embedded.venues[0].name,
+  }));
+  refs.eventList.innerHTML = cardTmp(events);
+}
+
 // function renderGallery(data) {
 //   const events = data._embedded.events.map(evt => ({
 //     ...evt,
@@ -86,6 +98,7 @@ function setEventsOnPage() {
 //   }));
 //   //refs.eventCardsRef.innerHTML = eventsListTpl(events);
 // }
+
 export default setPagination;
 //проверка пагинации
 // const input = setPagination(70);

@@ -8,7 +8,11 @@ export const refs = {
   list: document.querySelector('.list-country'),
   listItem: document.querySelector('.item-country'),
   inputCountry: document.querySelector('#country'),
+
+  pagination: document.querySelector('#pagination')
+
   boxSelect:document.querySelector('.select')
+
 };
 
 export const modalRefs = {

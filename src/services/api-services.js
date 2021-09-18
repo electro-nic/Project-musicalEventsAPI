@@ -3,7 +3,7 @@ import refs from '../js/refs';
 class ApiService {
   constructor() {
     this.API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy';
-    this.BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
+    this.BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 
     this._keyword = '';
     this._countryCode = '';
@@ -31,7 +31,12 @@ class ApiService {
             width: '280px',
           });
         } else {
+
+          const pagination = document.querySelector('#pagination');
+          pagination.classList.remove('visually-hidden');
+
           // refs.pagination.classList.remove('visually-hidden');
+
           return data;
         }
       })
