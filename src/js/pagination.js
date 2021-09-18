@@ -1,5 +1,7 @@
 import Pagination from 'tui-pagination';
 import apiService from '../services/api-services';
+import { refs } from './refs';
+import cardTmp from '../templates/eventsGallery';  
 
 function setPagination(totalEvents) {
   const options = {
@@ -35,7 +37,7 @@ function renderGallery(data) {
     imgUrl: evt.images.find(img => img.width === 1024 && img.height === 683),
     locationRef: evt._embedded.venues[0].name,
   }));
-  refs.eventCardsRef.innerHTML = eventsListTpl(events);
+  refs.eventList.innerHTML = cardTmp(events);
 }
 export default setPagination;
 //проверка пагинации
