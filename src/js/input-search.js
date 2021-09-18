@@ -2,6 +2,8 @@ import apiService from './api-connect';
 import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
 import debounce from 'lodash.debounce';
+import { openModal } from '../js/modal-close';
+import { eventsArr } from '../js/variables';
 
 import { error, alert } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -86,6 +88,19 @@ function onError(){
          // const newList = [...nameList].map(name => events.find(item => item.name === name))
          //console.log(data._embedded.events);
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
+
+
+
+         //код Юли для открытия модалки
+        console.log('data', data);
+         eventsArr.splice(0, 20);
+         eventsArr.push(...data);
+      document
+        .querySelectorAll('.events__item')
+        .forEach(event => event.addEventListener('click', openModal));
+
+
+
       // })
      //} catch (error) {
        //console.log(error.message);

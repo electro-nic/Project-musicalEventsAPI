@@ -44,6 +44,8 @@ function renderGallery(data) {
     .querySelectorAll('.events__item')
     .forEach(event => event.addEventListener('click', openModal));
 
+
+             //код Юли для открытия модалки
   eventsArr.splice(0, 20);
 
   eventsArr.push(...events);
