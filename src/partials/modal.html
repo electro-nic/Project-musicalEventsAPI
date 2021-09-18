@@ -1,14 +1,17 @@
 <form class="modal__backdrop is-hidden">
   <div class="modal">
-    <svg class="modal__close-icon" width="17" height="17">
-      <use href="./images/icons/icons.svg#icon-close"></use>
-    </svg>
+    <div class="modal__rotate">
+    
     <button
       class="modal__close"
       type="button"
-      data-action="close-modal__backdrop"
-    ></button>
+      data-action="close-modal__backdrop">
+    <svg class="modal__close-icon" width="17" height="17">
+      <use href="./images/icons/icons.svg#icon-close"></use>
+    </svg>
+    </button>
 
+  </div>
     <img class="modal__circle" src="" alt="icon of artist" />
 
     <div class="modal__grid">
@@ -56,15 +59,17 @@
                     Standart 300-500 UAH
                   </p>
                 </div>
-
-                 <a class="modal__buy"
+                
+                <a
+                  class="modal__buy link-animation"
                   target="_blank"
                   rel="noreferrer noopener"
-                  id="buy-tickets-btn-standart">
-                    <span class="modal__btn-title">BUY TICKETS</span>
-                  </a>
-                  
-                 </li>
+                  id="buy-tickets-btn-standart"
+                  href="/"
+                >
+                  <p class="modal__btn-title">BUY TICKETS</p>
+                </a>
+              </li>
               <li class="modal__tickets-item vip">
                 <div class="modal__icon">
                   <svg class="modal__tickets-icon" width="24" height="16">
@@ -72,14 +77,15 @@
                   </svg>
                   <p class="modal__price">VIP: look on the website</p>
                 </div>
-                
-                  <a class="modal__buy"
+
+                <a
+                  class="modal__buy vip link-animation"
                   target="_blank"
                   rel="noreferrer noopener"
-                  id="buy-tickets-btn-vip">
-                    <span class="modal__btn-title">BUY TICKETS</span>
-                  </a>
-                
+                  id="buy-tickets-btn-vip"
+                >
+                  <p class="modal__btn-title">BUY TICKETS</p>
+                </a>
               </li>
             </ul>
           </li>
@@ -87,9 +93,13 @@
       </div>
     </div>
     <div class="modal__container animation-open">
-      <button class="modal__more" type="button">
-        <span class="modal__more-title"> MORE FROM THIS AUTHOR </span>
-      </button>
+      <a class="modal__more link-animation" 
+      target="_blank"
+      rel="noreferrer noopener"
+      id="modal__more"
+      href="/">
+        <p class="modal__more-title link-animation"> MORE FROM THIS AUTHOR </p>
+      </a>
     </div>
   </div>
 </form>

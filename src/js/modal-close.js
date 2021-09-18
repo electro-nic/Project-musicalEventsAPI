@@ -1,5 +1,6 @@
-import { modalRefs } from './refs';
+import { modalRefs, refs } from './refs';
 import { renderModalInfo } from './renderModalInfo';
+
 
 modalRefs.closeModalBtn.addEventListener('click', closeModal);
 modalRefs.closeModalWindow.addEventListener('click', closeModal);
@@ -12,7 +13,7 @@ export function openModal(e) {
   console.log('e.target', e.target);
 
   const index = e.currentTarget.dataset.index;
-  
+
   window.addEventListener('keydown', keyEscape);
 
   renderModalInfo(index);
@@ -21,7 +22,7 @@ export function openModal(e) {
 // закрытие модалки по кнопке и по оверлнею
 
 function closeModal(e) {
-  if (e.target.nodeName === 'BUTTON') {
+  if (e.currentTarget.nodeName === 'BUTTON') {
     e.preventDefault();
     modalRefs.closeModalWindow.classList.add('is-hidden');
 
@@ -32,21 +33,17 @@ function closeModal(e) {
     modalRefs.closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
-  }
-  if (e.target.nodeName === 'SPAN') {
-    e.preventDefault();
-    modalRefs.closeModalWindow.classList.add('is-hidden');
-  } else {
+  }  else {
     return;
-  };
+  }
 
   console.log(e.target.nodeName);
-};
+}
 
 // закрытие модалки через ESC
 
 function keyEscape(e) {
   if (e.code == 'Escape') {
     modalRefs.closeModalWindow.classList.add('is-hidden');
-  };
-};
+  }
+}

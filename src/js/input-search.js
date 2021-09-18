@@ -3,15 +3,31 @@ import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
 import debounce from 'lodash.debounce';
 
+import { error, alert } from '@pnotify/core';
+import '@pnotify/core/dist/BrightTheme.css';
+
 const nameInput = document.querySelector('#name-input');
 const searchIconRef = document.querySelector('.search__icon');
 const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
+const clearInput = document.querySelector('#search-link');
 
-nameInput.addEventListener('change', debounce(onIconShow, 500));
+nameInput.addEventListener('input', debounce(onIconShow, 500));
+nameInput.addEventListener('input', debounce(handlerInput, 1000));
+
+clearInput.addEventListener('click', onInputClear);
+
+function onInputClear(e) {
+  e.preventDefault();
+  
+  if (e.currentTarget.nodeName === 'A') {
+    console.log(nameInput.value);
+    nameInput.value = '';
+  } else return
+}
 
 function onIconShow(e) {
-    
+  
   if (!e.target.value.length) {
     searchIconRef.style.opacity = 1;
     clearSearchIconRef.style.opacity = 0;
@@ -19,13 +35,7 @@ function onIconShow(e) {
     clearSearchIconRef.style.opacity = 1;
     searchIconRef.style.opacity = 0;
   }
-
 }
-
-
-
-
-nameInput.addEventListener('input', debounce(handlerInput, 1000));
 
 async function handlerInput(e){
   e.preventDefault();
@@ -34,8 +44,34 @@ async function handlerInput(e){
    refs.eventList.innerHTML = '';
    const obj = apiService(keyword, 0, 20, '');
    obj.then(data => console.log(data))
-   obj.then(data => onGreatGalleryEvents(data._embedded.events))
+  obj.then(data => {
+    if (data.page.totalElements === 0 || keyword.length === 0) {
+      return  onError()
+    } else {
+      onGreatGalleryEvents(data._embedded.events);
+    }
+  })
    .catch(err => console.log(err))};
+
+function onError(){
+  error({
+    text: 'Please. Enter the correct data to search for music events.',
+    delay: 2000,
+  });
+}
+
+
+// nameInput.addEventListener('input', debounce(handlerInput, 1000));
+
+// async function handlerInput(e){
+//   e.preventDefault();
+//   const keyword = nameInput.value;
+//    console.log(keyword)
+//    refs.eventList.innerHTML = '';
+//    const obj = apiService(keyword, 0, 20, '');
+//    obj.then(data => console.log(data))
+//    obj.then(data => onGreatGalleryEvents(data._embedded.events))
+//    .catch(err => console.log(err))};
 
 
 

@@ -5,16 +5,17 @@
     </h1>
   </div>
   <div class="container">
-    <form class="form" autocomplete="off">
+    <form class="form">
       <div class="form-wrapper">
         <div class="input-wrapper">
           <input
-            class="form__input"
+            class="form__input link-animation"
             type="text"
             name=""
             id="name-input"
             placeholder="Start searching"
           />
+          <a href="" id="search-link" class="search-link">
           <button class="search-btn" type="submit" id="searchBtn">
             <svg class="form__icon" width="12px" height="12px">
               <use
@@ -31,6 +32,7 @@
               ></use>
             </svg>
           </button>
+          </a>
         </div>
 
 
@@ -45,7 +47,7 @@
             </button>
             
           </select> -->
-           <select class="form__input"  id="country" name="countries" > 
+           <select class="form__input link-animation"  id="country" name="countries" > 
               <option class='input-country' selected disabled hidden>Choose country</option>
               <option class='input-country' value="AT">Austria</option>
               <option class='input-country' value="AU">Australia</option>
@@ -78,7 +80,7 @@
 
 
         <div class="input-wrapper">
-          <select class="form__input" id="country" name="countries"></select>
+          <!-- <select class="form__input" id="country" name="countries"></select> -->
           <!-- <button class="search-btn" type="button" id="countryBtn">
             <svg class="form__icon" width="12px" height="12px">
               <use href="./images/icons/icons.svg#icon-polygon"></use>
@@ -87,7 +89,7 @@
           </div>
 
       
-         <!-- <ul class="list-country">
+         <ul class="list-country">
          <li class="item-country"></li>
           </ul> -->
         </div>

@@ -1,7 +1,6 @@
 .header__title {
-  margin-top: 78px;
+  padding-top: 78px;
   margin-bottom: 25px;
-
   text-align: center;
 
   @include for-size(tablet-up) {
@@ -11,7 +10,7 @@
 
   @include for-size(desktop-up) {
     padding-top: 40px;
-    margin-top: 0px;
+
     margin-bottom: 52px;
   }
 }
@@ -50,7 +49,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 130px;
+  margin-bottom: 56px;
 
   @include for-size(phone-only) {
     flex-direction: column;
@@ -58,6 +57,7 @@
 
   @include for-size(phone-plus-up) {
     flex-direction: column;
+    margin-bottom: 46px;
   }
 
   @include for-size(tablet-up) {
@@ -65,6 +65,13 @@
   }
 }
 
+.search-link {
+  position: absolute;
+  top: 2%;
+  left: 65%;
+  width: 36px;
+  height: 34px;
+}
 .search-btn {
   cursor: pointer;
   position: absolute;
@@ -140,10 +147,6 @@
   }
 }
 
-// .all-countries {
-//   background-color: aquamarine;
-// }
-
 // Анимация для Заголовка
 
 .animate__animated.animate__backInDown {
@@ -156,12 +159,11 @@
   color: #dc56c5;
 
   font-size: 18px;
-    line-height: 1.21;
-    font-family: "Montserrat", sans-serif;
+  line-height: 1.21;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .select select {
-  appearance: none;/* забираю дефолтну стрілку */
-
-
+  appearance: none;
+  /* забираю дефолтну стрілку */
 }
