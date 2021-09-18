@@ -13,7 +13,7 @@ class ApiService {
 
   
   fetchEvent() {
-    const url = `${this.BASE_URL}.json?keyword=${this._keyword}&countryCode=${this._countryCode}&size=${this._size}&page=${this._page}&apikey=${this.API_KEY}`;
+    const url = `${this.BASE_URL}.json?keyword=${this._keyword}&classificationName=music&countryCode=${this._countryCode}&size=${this._size}&page=${this._page}&apikey=${this.API_KEY}`;
  
 
     return fetch(url)
