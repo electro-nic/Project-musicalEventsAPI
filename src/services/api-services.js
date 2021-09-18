@@ -20,7 +20,7 @@ class ApiService {
       .then(response => response.json())
       .then(data => {
         if (data.page.totalElements === 0) {
-          refs.pagination.classList.add('visually-hidden');
+          // refs.pagination.classList.add('visually-hidden');
           throw error({
             title: 'No results found',
             delay: 2000,
@@ -31,8 +31,12 @@ class ApiService {
             width: '280px',
           });
         } else {
+
           const pagination = document.querySelector('#pagination');
           pagination.classList.remove('visually-hidden');
+
+          // refs.pagination.classList.remove('visually-hidden');
+
           return data;
         }
       })

@@ -6,9 +6,11 @@
   height: 100%;
   background-color: rgba(32, 13, 29, 0.6);
   transition: 0.5s all ease;
+  z-index: 99;
 }
 
 .modal {
+  
   width: 272px;
   height: 90%;
   top: 50%;
@@ -150,7 +152,7 @@
   @include for-size(desktop-up) {
     display: flex;
     width: 360px;
-     height: 431px;
+     height: 451px;
     object-fit: cover;
     // outline: 2px solid black;
   }
@@ -203,6 +205,27 @@
   // @include for-size(desktop-up) {
   //   font-size: 16px;
   // }
+}
+
+.modal__api-info {
+  width: 243px;
+  height: 60px;
+  overflow-y: scroll;
+
+  @include for-size(tablet-up){
+    width: 265px;
+    height: 80px;
+  }
+ 
+  @include for-size(desktop-up){
+    width: 450px;
+    height: 66px;
+  }
+}
+
+.modal__api-info::-webkit-scrollbar {
+  width: 2px;
+  background-color: var(--title-color);
 }
 
 .modal__date,
@@ -336,7 +359,7 @@
   }
 
   @include for-size(desktop-up) {
-    bottom: 42px;
+    bottom: 32px;
     right: 338px;
     border-color: var(--modal-accent-color);
   }
