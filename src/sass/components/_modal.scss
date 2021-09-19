@@ -9,7 +9,17 @@
     height: 100%;
     z-index: 99;
     background-color: rgba(32, 13, 29, 0.6);
+    transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
+    
+    animation: test 1s linear;
+
+    @keyframes test {
+    0% {
+        transform: translateX(50%) translateY(50%);
+    }
+    }
 }
+
 
 .modal {
   position: absolute;
