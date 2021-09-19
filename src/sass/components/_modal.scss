@@ -9,15 +9,10 @@
     height: 100%;
     z-index: 99;
     background-color: rgba(32, 13, 29, 0.6);
-    transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
+    backdrop-filter: blur(3px);
     
-    animation: test 1s linear;
-
-    @keyframes test {
-    0% {
-        transform: translateX(50%) translateY(50%);
-    }
-    }
+    
+   
 }
 
 
@@ -31,6 +26,14 @@
   border-radius: 150px 0;
   background-color: var(--modal-background-color);
   padding-bottom: 50px;
+  animation: open 0.8s linear;
+  transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
+
+  @keyframes open {
+  0% {
+      transform: translateX(50%) translateY(50%);
+  }
+  }
 
   @include for-size(tablet-up) {
     width: 595px;
