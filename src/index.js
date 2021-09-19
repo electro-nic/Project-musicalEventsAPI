@@ -5,7 +5,7 @@ import './js/onClickScrollTo';
 import './js/modal-close';
 import './js/preloader';
 import './js/input-search';
-// import './js/pagination';
+import './js/pagination';
 //import './js/more-author';
 import './js/variables';
 import './js/renderModalInfo';
