@@ -1,4 +1,4 @@
-const API_KEY = 'AGcGkGLirWXVP1TBWnNfEanVNPgcYNS9';
+const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 
 export default async function connect(keyword = '', page = 0, size = 20, countryCode = '') {
