@@ -230,6 +230,7 @@
   }
 }
 
+.modal__where,
 .modal__api-info {
   width: 243px;
   height: 35px;
@@ -246,6 +247,7 @@
   }
 }
 
+.modal__where::-webkit-scrollbar,
 .modal__api-info::-webkit-scrollbar {
   width: 2px;
   background-color: var(--title-color);
