@@ -1,8 +1,10 @@
 import Pagination from 'tui-pagination';
 import apiService from '../services/api-services';
 import { refs } from './refs';
-import cardTmp from '../templates/eventsGallery'; 
+import cardTmp from '../templates/eventsGallery';
 
+import { openModal } from '../js/modal-close';
+import { eventsArr } from '../js/variables';
 
 function setPagination(totalEvents) {
   const options = {
@@ -23,14 +25,13 @@ function setPagination(totalEvents) {
 
 function setEventsOnPage() {
   const windowOuterWidth = window.outerWidth;
- 
+
   if (windowOuterWidth > 768 && windowOuterWidth < 1280) {
     apiService.size = 21;
   } else {
     apiService.size = 20;
   }
 }
-
 
 function renderGallery(data) {
   const events = data._embedded.events.map(evt => ({
@@ -39,6 +40,20 @@ function renderGallery(data) {
     locationRef: evt._embedded.venues[0].name,
   }));
   refs.eventList.innerHTML = cardTmp(events);
+  document
+    .querySelectorAll('.events__item')
+    .forEach(event => event.addEventListener('click', openModal));
+
+
+             //код Юли для открытия модалки
+  eventsArr.splice(0, 20);
+
+  eventsArr.push(...events);
+  console.log('eventsArr after push', eventsArr);
+
+  document
+    .querySelectorAll('.events__item')
+    .forEach(event => event.addEventListener('click', openModal));
 }
 export default setPagination;
 //проверка пагинации
