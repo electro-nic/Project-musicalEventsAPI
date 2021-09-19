@@ -25,7 +25,7 @@ function closeModal(e) {
   if (e.currentTarget.nodeName === 'BUTTON') {
     e.preventDefault();
     modalRefs.closeModalWindow.classList.add('is-hidden');
-
+    
     console.log(e.target.nodeName);
   }
   if (e.target.nodeName === 'FORM') {
@@ -33,11 +33,17 @@ function closeModal(e) {
     modalRefs.closeModalWindow.classList.add('is-hidden');
 
     console.log(e.target.nodeName);
-  }  else {
+  } if (e.target.nodeName === 'SPAN') {
+    e.preventDefault();
+    modalRefs.closeModalWindow.classList.add('is-hidden');
+
+    console.log(e.target.nodeName);
+  }else {
     return;
   }
 
   console.log(e.target.nodeName);
+  console.log(e.currentTarget.nodeName);
 }
 
 // закрытие модалки через ESC
