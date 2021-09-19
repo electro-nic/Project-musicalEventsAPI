@@ -11,6 +11,14 @@
   overflow: hidden;
 }
 
+.events__gallery {
+  padding-top: 40px;
+
+  @include for-size(tablet-up) {
+    padding-top: 70px;
+  }
+}
+
 .events__list--cards {
   display: flex;
   flex-wrap: wrap;
