@@ -10,7 +10,7 @@ export default async function connect(keyword = '', page = 0, size = 20, country
             _links: [],
         }
         let currentPage = 1;
-        const promiseResponse = await fetch(`${BASE_URL}classificationName=music&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}`);
+        const promiseResponse = await fetch(`${BASE_URL}classificationName=music&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}&sort=random`);
         const data = await promiseResponse.json();
 
         

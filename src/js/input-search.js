@@ -16,7 +16,6 @@ const clearInput = document.querySelector('#search-link');
 
 nameInput.addEventListener('input', debounce(onIconShow, 500));
 nameInput.addEventListener('input', debounce(handlerInput, 1000));
-
 clearInput.addEventListener('click', onInputClear);
 
 function onInputClear(e) {
@@ -47,10 +46,10 @@ async function handlerInput(e){
    const obj = apiService(keyword, 0, 20, '');
    obj.then(data => console.log(data))
   obj.then(data => {
-    if (data.page.totalElements === 0 || keyword.length === 0) {
+    if (data.page.totalElements === 0 || keyword.length === 0 || keyword.length <= 1) {
       return  onError()
     } else {
-      onGreatGalleryEvents(data._embedded.events);
+      creatGalleryCards(data._embedded.events);
     }
   })
    .catch(err => console.log(err))};
@@ -78,7 +77,7 @@ function onError(){
 
 
 
-   function onGreatGalleryEvents(data) {
+   function creatGalleryCards(data) {
     //e.preventDefault();
     //const keyword = nameInput.value;
      //try {

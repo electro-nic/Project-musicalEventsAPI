@@ -11,6 +11,14 @@
   overflow: hidden;
 }
 
+.events__gallery {
+  padding-top: 40px;
+
+  @include for-size(tablet-up) {
+    padding-top: 70px;
+  }
+}
+
 .events__list--cards {
   display: flex;
   flex-wrap: wrap;
@@ -156,8 +164,7 @@
 
 .social__overlay {
   position: absolute;
-  border: 1px solid rgb(220, 86, 197);
-  top: 200px;
+  top: 190px;
   opacity: 0;
   z-index: 1;
 }
@@ -166,24 +173,25 @@
   opacity: 1;
 }
 
-.social__link {
-  border: 1px solid rgb(220, 86, 197);
-
-  &:hover {
-    box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
-    0px 0 20px -35px rgba(220, 86, 197, 0.8),
-    0px 0 20px -23px rgba(220, 86, 197, 0.8),
-    0 0 40px rgba(220, 86, 197, 0.1) inset;
-  }
+.social__animation {
+  transition-duration: 1000ms;
 }
 
 .social__icon {
+  width: 35px;
+  height: 35px;
+fill: var(--title-color);
 
+&:hover {
+  fill: rgba(219, 72, 128, 0.767);
+  border-radius: 22%;
+  box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
+  0px 0 20px -35px rgba(220, 86, 197, 0.8),
+  0px 0 20px -23px rgba(220, 86, 197, 0.8),
+  0 0 40px rgba(220, 86, 197, 0.1) inset;
+}
 }
 
-.instagram-icon {
- 
-}
 .social__link:not(:last-child) {
   margin-right: 15px;
 }

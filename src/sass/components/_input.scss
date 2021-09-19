@@ -41,15 +41,12 @@
 
 .form {
   width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 .form-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 56px;
 
   @include for-size(phone-only) {
     flex-direction: column;
@@ -57,11 +54,11 @@
 
   @include for-size(phone-plus-up) {
     flex-direction: column;
-    margin-bottom: 46px;
   }
 
   @include for-size(tablet-up) {
     flex-direction: row;
+    margin-bottom: 46px;
   }
 }
 
