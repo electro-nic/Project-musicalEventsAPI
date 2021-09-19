@@ -10,9 +10,9 @@ export const refs = {
   inputCountry: document.querySelector('#country'),
   pagination: document.querySelector('#pagination'),
   boxSelect:document.querySelector('.select'),
-  disabledSelect:document.querySelector('.disabled-select-item')
-
-
+  disabledSelect:document.querySelector('.disabled-select-item'),
+  modalMore:document.querySelector('.modal__more'),
+  searchBtn:document.querySelector('#searchBtn')
 };
 
 export const modalRefs = {
