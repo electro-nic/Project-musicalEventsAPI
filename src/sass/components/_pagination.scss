@@ -35,7 +35,7 @@
   height: 30px;
   padding: 8px 0 6px;
   margin-left: 0;
-  color: #fff;
+  color: var(--main-text-color);
   font-size: 12px;
   font-weight: normal;
   line-height: 1;
@@ -53,8 +53,9 @@
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
   color: var(--title-color);
-  border-color: orange;
-  cursor: default;
+  border: 1px solid var(--title-color);
+  border-radius: 10px 0px;
+  // cursor: default;
 }
 
 .tui-pagination .tui-is-selected:hover {
@@ -70,21 +71,21 @@
 
 .tui-pagination .tui-first-child,
 .tui-pagination .tui-prev-is-ellip {
-  border-left: #ddd;
+  border-left: var(--title-color);
+
 }
 
 .tui-pagination .tui-last-child,
 .tui-pagination .tui-next-is-ellip {
-  border-right: #fff;
+  border-right: var(--title-color);
 }
 
 .tui-pagination .tui-first-child.tui-is-selected {
-  border-left: var(--title-color);
+  border: 1px solid var(--title-color);
 }
 
 .tui-pagination .tui-last-child.tui-is-selected {
-  border-right: var(--title-color);
-  opacity: 0.5;
+  border: 1px solid var(--title-color);
 }
 
 .tui-pagination .tui-first,
