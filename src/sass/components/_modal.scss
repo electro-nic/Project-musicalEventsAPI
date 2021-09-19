@@ -22,6 +22,15 @@
   background-color: var(--modal-background-color);
   padding-bottom: 50px;
 
+  animation: test 1s linear;
+
+    @keyframes test {
+    0% {
+        transform: translateX(100%)
+    }
+    }
+
+
   @include for-size(tablet-up) {
     width: 595px;
     border-radius: 250px 0;
@@ -68,7 +77,8 @@
   text-align: center;
   cursor: pointer;
   fill: var(--modal-accent-color);
- 
+  
+  
   @include for-size(desktop-up) {
     width: 25px;
     height: 25px;
