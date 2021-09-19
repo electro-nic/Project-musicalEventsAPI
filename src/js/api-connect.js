@@ -1,3 +1,4 @@
+
 const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 
@@ -10,7 +11,7 @@ export default async function connect(keyword = '', page = 0, size = 20, country
             _links: [],
         }
         let currentPage = 1;
-        const promiseResponse = await fetch(`${BASE_URL}classificationName=music&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}&sort=random`);
+        const promiseResponse = await fetch(`${BASE_URL}classificationName=music&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}`);
         const data = await promiseResponse.json();
 
         
@@ -47,7 +48,7 @@ export default async function connect(keyword = '', page = 0, size = 20, country
 // Sorting order of the search result. Allowable values : 'name,asc', 'name,desc', 'date,asc', 'date,desc', 'relevance,asc', 'relevance,desc', 'distance,asc', 'name,date,asc', 'name,date,desc', 'date,name,asc', 'date,name,desc', 'distance,date,asc', 'onSaleStartDate,asc', 'id,asc', 'venueName,asc', 'venueName,desc', 'random'
 
 //вызывать функцию так
-connect('', 0, 20, '').then(data => console.log(data));
+// connect('', 0, 20, '').then(data => console.log(data));
 
 
 

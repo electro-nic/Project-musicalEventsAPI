@@ -9,7 +9,9 @@ export const refs = {
   listItem: document.querySelector('.item-country'),
   inputCountry: document.querySelector('#country'),
   pagination: document.querySelector('#pagination'),
-  boxSelect:document.querySelector('.select')
+  boxSelect:document.querySelector('.select'),
+  disabledSelect:document.querySelector('.disabled-select-item')
+
 
 };
 
