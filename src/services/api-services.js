@@ -2,7 +2,7 @@ import refs from '../js/refs';
 
 class ApiService {
   constructor() {
-    this.API_KEY = 'AGcGkGLirWXVP1TBWnNfEanVNPgcYNS9';
+    this.API_KEY = 'R6T2f5StA43ZJAlAODPBSAJJjoAoGQks';
     this.BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 
     this._keyword = '';

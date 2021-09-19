@@ -159,11 +159,14 @@
   line-height: 1.21;
   font-family: 'Montserrat', sans-serif;
 }
-.hidebtn {
-  display: none;
-}
+// .hidebtn {
+//   display: none;
+// }
 
 .select select {
   appearance: none;
   /* забираю дефолтну стрілку */
+}
+.form-box{
+  display: flex;
 }

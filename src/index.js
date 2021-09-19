@@ -10,3 +10,4 @@ import './js/pagination';
 import './js/variables';
 import './js/renderModalInfo';
 import './js/markupCountryList';
+import './js/select'

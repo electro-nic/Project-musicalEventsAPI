@@ -2,9 +2,42 @@ import Pagination from 'tui-pagination';
 import apiService from '../services/api-services';
 import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery';
-
+import debounce from 'lodash.debounce';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
+import { result } from 'lodash';
+
+
+document.addEventListener('DOMContentLoaded', onStartEventsLoad);
+
+const nameInput = document.querySelector('#name-input');
+
+
+function onStartEventsLoad() {
+  apiService.resetPage();
+  setEventsOnPage();
+
+  apiService.fetchEvent().then(data => {
+    renderGallery(data);
+    setPagination(data.page.totalElements);
+
+  });
+}
+
+function onInputSearch() {
+  apiService.keyword = nameInput.value;
+  refs.eventCardsRef.innerHTML = '';
+  apiService.resetPage();
+  setEventsOnPage();
+
+  apiService
+    .fetchEvent()
+    .then(data => {
+      renderGallery(data);(data);
+      setPagination(data.page.totalPages).then(data => console.log(data));
+    })
+    .catch(console.log)
+}
 
 function setPagination(totalEvents) {
   const options = {
@@ -57,4 +90,4 @@ function renderGallery(data) {
 }
 export default setPagination;
 //проверка пагинации
-const input = setPagination(70);
+// const input = setPagination(70);

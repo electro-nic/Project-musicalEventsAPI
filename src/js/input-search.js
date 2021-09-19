@@ -41,14 +41,22 @@ function onIconShow(e) {
 async function handlerInput(e){
   e.preventDefault();
   const keyword = nameInput.value;
+  // const countryCode = refs.inputCountry.value;
    console.log(keyword)
+  //  console.log(countryCode)
    refs.eventList.innerHTML = '';
-   const obj = apiService(keyword, 0, 20, '');
+  //  if (refs.disabledSelect.textContent === 'Choose country'){
+  //   // obj = apiService(keyword, 0, 20, '');
+  //   countryCode === '';
+  //   console.log('країну не вибрано')
+  // }
+   const obj = apiService(keyword, 0, 20, );
    obj.then(data => console.log(data))
   obj.then(data => {
     if (data.page.totalElements === 0 || keyword.length === 0 || keyword.length <= 1) {
       return  onError()
-    } else {
+    } 
+    else {
       creatGalleryCards(data._embedded.events);
     }
   })
@@ -77,7 +85,7 @@ function onError(){
 
 
 
-   function creatGalleryCards(data) {
+  export function creatGalleryCards(data) {
     //e.preventDefault();
     //const keyword = nameInput.value;
      //try {
