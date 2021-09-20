@@ -29,20 +29,7 @@
   animation: open 0.8s linear;
   transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
 
-  @keyframes open {
-  0% {
-      transform: translateX(50%) translateY(50%);
-  }
-  }
-
-  animation: test 1s linear;
-
-    @keyframes test {
-    0% {
-        transform: translateX(100%)
-    }
-    }
-
+ 
 
   @include for-size(tablet-up) {
     width: 595px;
@@ -56,6 +43,16 @@
     border-radius: 300px 0;
   }
 }
+
+@keyframes open {
+  0% {
+      transform: translateX(50%) translateY(50%);
+      opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  }
 
 // кнопка закрытия
 
@@ -90,8 +87,7 @@
   text-align: center;
   cursor: pointer;
   fill: var(--modal-accent-color);
-  
-  
+    
   @include for-size(desktop-up) {
     width: 25px;
     height: 25px;
@@ -101,6 +97,13 @@
 .modal__close:hover,
 .modal__close:focus {
   transform: rotate(180deg);
+  
+}
+
+.modal__close-icon:hover,
+.modal__close-icon:focus {
+  fill: var(--title-color);
+
 }
 
 // круглая иконка
@@ -230,7 +233,6 @@
   }
 }
 
-.modal__where,
 .modal__api-info {
   width: 243px;
   height: 35px;
@@ -247,6 +249,19 @@
   }
 }
 
+.modal__where,
+.modal__author {
+  width: 243px;
+  height: 15px;
+  overflow-y: scroll;
+ 
+  @include for-size(desktop-up){
+    width: 380px;
+    height: 18px;
+  }
+}
+
+.modal__author::-webkit-scrollbar,
 .modal__where::-webkit-scrollbar,
 .modal__api-info::-webkit-scrollbar {
   width: 2px;
@@ -323,6 +338,7 @@
   font-size: 13px;
   line-height: 1.25;
   color: var(--main-text-color);
+  
 
   // @include for-size(desktop-up){
   //   font-style: 500;
