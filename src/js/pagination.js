@@ -56,7 +56,16 @@ function setPagination(totalEvents) {
   });
 }
 
+function PageToTop() {
+  window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+  });
+
+}
 function setEventsOnPage() {
+  PageToTop();
   const windowOuterWidth = window.outerWidth;
 
   if (windowOuterWidth > 768 && windowOuterWidth < 1280) {
