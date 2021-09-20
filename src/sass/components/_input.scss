@@ -9,7 +9,11 @@
   }
 
   @include for-size(desktop-up) {
+
     padding-top: 24px;
+
+
+    padding-top: 40px;
 
     margin-bottom: 52px;
   }
@@ -29,7 +33,6 @@
 
   @include for-size(tablet-up) {
     max-width: 355px;
-    /* margin-top: 40px; */
     font-size: 30px;
   }
 
@@ -38,11 +41,13 @@
     font-size: 50px;
   }
 }
+// Анимация для Заголовка
 
-.form {
-  width: 100%;
+.animate__animated.animate__backInDown {
+  --animate-duration: 2s;
 }
 
+// Стили формы
 .form-wrapper {
   display: flex;
   justify-content: center;
@@ -145,20 +150,14 @@
   }
 }
 
-// Анимация для Заголовка
-
-.animate__animated.animate__backInDown {
-  --animate-duration: 2s;
-}
-
 //стилі для селекту
 .input-country {
   background: rgba(175, 175, 175, 0.986);
   color: #dc56c5;
 
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.21;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font);
 }
 
 // .hidebtn {
@@ -170,6 +169,8 @@
   /* забираю дефолтну стрілку */
 }
 
+
 .form-box {
   display: flex;
 }
+

@@ -4,19 +4,18 @@
       FIND BEST EVENTS AROUND THE WORLD
     </h1>
   </div>
-  <div class="container form-box">
-    <!-- <div class="form-box"> -->
+  <div class="container form-wrapper">
     <form class="form">
-      <div class="form-wrapper">
-        <div class="input-wrapper">
-          <input
-            class="form__input link-animation"
-            type="text"
-            name=""
-            id="name-input"
-            placeholder="Start searching"
-          />
-          <a href="" id="search-link" class="search-link">
+      <!-- <div class="form-wrapper"> -->
+      <div class="input-wrapper">
+        <input
+          class="form__input link-animation"
+          type="text"
+          name=""
+          id="name-input"
+          placeholder="Start searching"
+        />
+        <a href="" id="search-link" class="search-link">
           <button class="search-btn" type="submit" id="searchBtn">
             <svg class="form__icon" width="12px" height="12px">
               <use
@@ -33,39 +32,45 @@
               ></use>
             </svg>
           </button>
-          </a>
-        </div>
-
-
-        
+        </a>
       </div>
     </form>
     <div class="input-wrapper select">
-
       <!--1. List of countries from country.json-->
-      <select class="form__input select"  id="country" name="countries" >
-        <option class = "disabled-select-item" selected disabled hidden value=''>Choose country</option>
-        <button class="search-btn " type="button" id="countryBtn">
+      <select
+        class="form__input select link-animation"
+        id="country"
+        name="countries"
+      >
+        <option class="disabled-select-item" selected disabled hidden value="">
+          Choose country
+        </option>
+        <button class="search-btn" type="button" id="countryBtn">
           <svg class="form__icon" width="12px" height="12px">
             <use href="./images/icons/icons.svg#icon-polygon"></use>
           </svg>
         </button>
-        
       </select>
-      
-      <!-- 2. List of countries from API-->
-      <!-- <select class="form__input"  id="country" name="countries" >
+    </div>
+  </div>
+  <ul class="events__list"></ul>
+</section>
+
+<!-- КОД МАРТЫ варианты-->
+
+<!-- 2. List of countries from API-->
+<!-- <select class="form__input"  id="country" name="countries" >
          <option selected disabled hidden>Choose country</option> 
          <button class="search-btn" type="button" id="countryBtn">
           <svg class="form__icon" width="12px" height="12px">
             <use href="./images/icons/icons.svg#icon-polygon"></use>
           </svg>
         </button> -->
-        
-      <!-- </select> --> 
-      
-      <!--3. List of countries here--> 
-       <!-- <select class="form__input link-animation"  id="country" name="countries" > 
+
+<!-- </select> -->
+
+<!--3. List of countries here-->
+<!-- <select class="form__input link-animation"  id="country" name="countries" > 
           <option class='input-country' selected disabled hidden>Choose country</option>
           <option class='input-country' value="AT">Austria</option>
           <option class='input-country' value="AU">Australia</option>
@@ -95,8 +100,3 @@
             </svg>
           </button>
       </select> -->
-    </div>
-  <!-- </div> -->
-    <ul class="events__list"></ul>
-  </div>
-</section>

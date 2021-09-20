@@ -44,6 +44,7 @@
     text-align: center;
     color: var(--second-text-color);
     margin: 0;
+
   
     @include for-size(mobile) {
       margin-bottom: 10px;
@@ -65,10 +66,16 @@
     line-height: 1.18;
     text-align: center;
     color: var(--second-text-color);
+    text-decoration: revert;
+
   
     @include for-size(mobile) {
       font-size: 14px;
       line-height: 1.14;
     }
+  }
+
+  .second-link:hover {
+    color: var(--title-color);
   }
   

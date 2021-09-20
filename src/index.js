@@ -12,3 +12,5 @@ import './js/renderModalInfo';
 import './js/markupCountryList';
 import './js/select';
 import './js/switch';
+import './js/team-modal';
+
