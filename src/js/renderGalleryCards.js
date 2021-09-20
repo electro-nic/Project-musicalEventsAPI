@@ -5,11 +5,15 @@ import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 
+import { error, alert, info } from '@pnotify/core';
+import '@pnotify/core/dist/BrightTheme.css';
+
 window.addEventListener('load', onGreatGalleryEvents());
 
 function onGreatGalleryEvents() {
   try {
     connectApi().then(data => {
+      totalIvents(data),
       // const events = data._embedded.events;
       // const nameList = new Set(events.map(item => item.name));
       // const newList = [...nameList].map(name => events.find(item => item.name === name))
@@ -28,3 +32,10 @@ function onGreatGalleryEvents() {
     console.log(error.message);
   }
 }
+ function totalIvents (data){
+  // console.log(data.page.totalElements)
+  info({
+    text: `Total found ${data.page.totalElements} events`,
+    delay: 2000,
+  });
+ }
