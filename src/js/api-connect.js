@@ -14,7 +14,6 @@ export default async function connect(keyword = '', page = 0, size = 20, country
         const promiseResponse = await fetch(`${BASE_URL}classificationName=music&apikey=${API_KEY}&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}`);
         const data = await promiseResponse.json();
 
-        
         objData.page = data.page;
         objData._links = data._links;
         objData._embedded.events.push(...data._embedded.events);  
@@ -28,15 +27,12 @@ export default async function connect(keyword = '', page = 0, size = 20, country
     //         objData._embedded.events.push(...data._embedded.events);            
     //         ++currentPage;
     //         }
-
     //         currentPage = 1;
     //         return objData;
     // }
-  
     //     else {
     //         return data;
     //     }
-
     }
     catch (err) {
         console.log(err);

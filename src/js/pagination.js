@@ -24,20 +24,21 @@ function onStartEventsLoad() {
   });
 }
 
-function onInputSearch() {
-  apiService.keyword = nameInput.value;
-  refs.eventCardsRef.innerHTML = '';
-  apiService.resetPage();
-  setEventsOnPage();
+// function onInputSearch() {
+//   apiService.keyword = nameInput.value;
+//   refs.eventCardsRef.innerHTML = '';
+//   apiService.resetPage();
+//   setEventsOnPage();
 
-  apiService
-    .fetchEvent()
-    .then(data => {
-      renderGallery(data);(data);
-      setPagination(data.page.totalPages).then(data => console.log(data));
-    })
-    .catch(console.log)
-}
+//   apiService
+//     .fetchEvent()
+//     .then(data => {
+//       renderGallery(data);
+//       setPagination(data.page.totalPages).then(data => console.log(data));
+//     })
+//     .catch(console.log)
+// }
+
 
 function setPagination(totalEvents) {
   const options = {
@@ -47,6 +48,26 @@ function setPagination(totalEvents) {
     page: 1,
     centerAlign: true,
   };
+
+  console.log("first ", totalEvents);
+
+    if (totalEvents <= 20) {
+    console.log("second " ,totalEvents);
+    options.visiblePages = 1;
+  }
+      if (totalEvents <= 40) {
+    console.log("second " ,totalEvents);
+    options.visiblePages = 2;
+  }
+      if (totalEvents <= 60) {
+    console.log("second " ,totalEvents);
+    options.visiblePages = 3;
+  }
+      if (totalEvents <= 80) {
+    console.log("second " ,totalEvents);
+    options.visiblePages = 4;
+  }
+
   const pagination = new Pagination('pagination', options);
 
   pagination.on('beforeMove', function (eventData) {

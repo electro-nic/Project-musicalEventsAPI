@@ -4,6 +4,8 @@ import cardTmp from '../templates/eventsGallery';
 import debounce from 'lodash.debounce';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
+import setPagination from './pagination';
+
 
 import { error, alert } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -65,6 +67,8 @@ function handlerInput(e){
     } 
     else {
       creatGalleryCards(data._embedded.events);
+
+      setPagination(data.page.totalElements);
     }
   })
    .catch(err => console.log(err))};
