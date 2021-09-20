@@ -24,8 +24,9 @@ function onInputClear(e) {
   e.preventDefault();
   
   if (e.currentTarget.nodeName === 'A') {
-    console.log(nameInput.value);
     nameInput.value = '';
+    clearSearchIconRef.style.opacity = 0;
+    searchIconRef.style.opacity = 1;
   } else return
 }
 
