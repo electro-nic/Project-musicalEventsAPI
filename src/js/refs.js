@@ -12,7 +12,8 @@ export const refs = {
   boxSelect:document.querySelector('.select'),
   disabledSelect:document.querySelector('.disabled-select-item'),
   modalMore:document.querySelector('.modal__more'),
-  searchBtn:document.querySelector('#searchBtn')
+  searchBtn:document.querySelector('#searchBtn'),
+  countryIcon: document.querySelector('.country-icon')
 };
 
 export const modalRefs = {

@@ -1,33 +1,31 @@
 import apiService from './api-connect';
 import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
-import debounce from 'lodash.debounce';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 import { creatGalleryCards} from './input-search';
 
-import { error, alert } from '@pnotify/core';
-import '@pnotify/core/dist/BrightTheme.css';
 
 
 refs.inputCountry.addEventListener('change', onChangeCountries);
+refs.boxSelect.addEventListener('click',onIconMoveClick)
+refs.inputCountry.addEventListener('mouseover', onIconManipulate);
 
-refs.inputCountry.addEventListener('mouseover', onIconHide);
-function onIconHide(e){
+//ф-ція повороту іконки
+function onIconMoveClick(){
+refs.countryIcon.style.transform = (refs.countryIcon.style.transform == 'rotate(180deg)') ? 'rotate(0deg)' : 'rotate(180deg)'
+}
+//ф-ція для кнопки-стає пробивна
+function onIconManipulate(e){
     if(e.target.tagName === 'SELECT' ){
-        // refs.countryBtn.classList.add('hidebtn')
-        refs.countryBtn.style.display = 'none';
+        refs.countryBtn.classList.add('hidebtn')
     } 
     else {
-        refs.countryBtn.style.display = 'block';
-    //    refs.countryBtn.classList.remove('hidebtn') 
-    }
-    // refs.countryBtn.classList.remove('hidebtn')
-    // if(!e.target.tagName === 'SELECT' ){
-    //     refs.countryBtn.classList.remove('hidebtn')
-    // }
-} 
 
+       refs.countryBtn.classList.remove('hidebtn') 
+    }
+} 
+//ф-ція ренду карток по країнах
 function onChangeCountries(e){
     e.preventDefault();
     const countryCode = refs.inputCountry.value;
