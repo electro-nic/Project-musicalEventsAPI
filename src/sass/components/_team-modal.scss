@@ -1,13 +1,4 @@
 
-
-.team__btn {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 10px 25px;
-}
-
-
 .team__backdrop {
     position: fixed;
     top: 0;
@@ -98,35 +89,6 @@ margin-right: 10px;
     object-fit: cover;
 border: 2px solid    rgb(220, 86, 197);
     border-radius: 15px;
-    
-
-}
-
-.team__info {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.435);
-}
-
-.team__text {
-    font-size: 16px;
-
-    line-height: 1.21;
-    color: #fff;
-}
-
-.team__icon {
-    margin-top: 5px;
-    padding-bottom: 5px;
-    fill: #fff;
-    border-radius: 50%;
-
-    &:hover {
-        fill: var(--title-color);
-        box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
-        0px 0 20px -35px rgba(220, 86, 197, 0.8),
-        0px 0 20px -23px rgba(220, 86, 197, 0.8),
-        0 0 40px rgba(220, 86, 197, 0.1) inset;
-    }
 }
 
 .team__thumb {
@@ -147,7 +109,40 @@ transition: transform 500ms;
 }
 
 .team__item:hover .team__overlay {
-transform: translateY(69%);
+transform: translateY(71%);
+}
+
+.team__info {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.435);
+}
+
+.team__text--name {
+    font-size: 14px;
+    line-height: 1.21;
+    color: rgb(255, 255, 255);
+}
+
+.team__text--profesion {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.21;
+    color: rgb(250, 163, 49);
+}
+
+.team__icon {
+    margin-top: 5px;
+    padding-bottom: 5px;
+    fill: #fff;
+    border-radius: 50%;
+
+    &:hover {
+        fill: rgb(250, 163, 49);;
+        box-shadow: 0 -5px 10px rgb(250, 163, 49),
+        0px 0 20px -35px rgba(220, 86, 197, 0.8),
+        0px 0 20px -23px rgba(220, 86, 197, 0.8),
+        0 0 40px rgba(220, 86, 197, 0.1) inset;
+    }
 }
 
 
@@ -156,8 +151,11 @@ transform: translateY(69%);
     margin-left: auto;
     margin-right: auto;
     padding: 5px 10px;
+    font-size: 16px;
+    line-height: 1.21;
+    color: #fff;
     background-color: rgba(220, 86, 197, 0.8);
-border: none;
+    border: none;
 
 &:hover {
     box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
