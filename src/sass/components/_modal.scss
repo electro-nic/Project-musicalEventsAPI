@@ -10,11 +10,7 @@
     z-index: 99;
     background-color: rgba(32, 13, 29, 0.6);
     backdrop-filter: blur(3px);
-    
-    
-   
 }
-
 
 .modal {
   position: absolute;
@@ -29,12 +25,9 @@
   animation: open 0.8s linear;
   transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
 
- 
-
   @include for-size(tablet-up) {
     width: 595px;
     border-radius: 250px 0;
-    
   }
 
   @include for-size(desktop-up) {
@@ -97,13 +90,11 @@
 .modal__close:hover,
 .modal__close:focus {
   transform: rotate(180deg);
-  
 }
 
 .modal__close-icon:hover,
 .modal__close-icon:focus {
   fill: var(--title-color);
-
 }
 
 // круглая иконка
@@ -210,11 +201,6 @@
     font-size: 17px;
     line-height: 1.21;
   }
-
-//   @include for-size(desktop-up) {
-//     font-size: 17px;
-    
-// }
 }
 
 .modal-text {
@@ -287,7 +273,6 @@
   }
 }
 
-
 .item-vip {
   padding-right: 15px;
 }
@@ -321,7 +306,6 @@
   display: flexbox;
   padding: 8px 16px 6px 16px;
   border-radius: 5px;
-  // border: 1px solid transparent;
   background-color: var(--modal-accent-color);
   cursor: pointer;
 }
@@ -338,13 +322,6 @@
   font-size: 13px;
   line-height: 1.25;
   color: var(--main-text-color);
-  
-
-  // @include for-size(desktop-up){
-  //   font-style: 500;
-  //   font-size: 20px;
-  //   line-height: 1.25;
-  // }
 }
 
 .modal__buy:hover .modal__btn-title,
