@@ -1,7 +1,6 @@
 import { refs } from './refs';
 import connectApi from './api-connect';
 import cardTmp from '../templates/eventsGallery';
-// import { openModal } from '../js/modal-close';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 
@@ -34,9 +33,8 @@ function onGreatGalleryEvents() {
   }
 }
  function totalIvents (data){
-  // console.log(data.page.totalElements)
   info({
-    text: `Total found ${data.page.totalElements} events`,
+    text: `Found ${data.page.totalElements} musical events`,
     delay: 2000,
   });
  }

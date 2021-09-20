@@ -58,37 +58,59 @@ img {
 
 .pnotify {
   position: absolute !important;
-   top: 225px !important;
+   top: 330px !important;
    width: 100% !important;
    
 }
 
 .pnotify-container {
-  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 450px!important;
 }
 
-.pnotify-text {
-display: flex;
-justify-content: center;
+[data-pnotify] .brighttheme-icon-info:after {
+  width: 0px !important;
 }
+
+[data-pnotify] .brighttheme-text {
+  text-align: center !important;
+}
+
 
 .pnotify-pre-line {
-  color: #Fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em rgb(255, 13, 191),
-    0 0 0.5em rgb(255, 13, 191), 0 0 0.1em rgb(255, 13, 191), 0 10px 3px #000;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
+  color: #fff;
+    font-size: 16px;
+  line-height: 1.21;
+
 
     @include for-size(phone-plus-only) {
       max-width: 420px;
-      text-align: center;
     }
     
 }
 
+.pnotify-text {
+  display: flex !important;
+
+  &::before {
+  content: '';
+  width: 35px;
+  background-image: url(../images/icons/check.svg);
+  background-repeat: no-repeat;
+  }
+}
+
+[data-pnotify] .brighttheme-icon-info:after {
+  display: none !important;
+}
+
+
 [data-pnotify] .brighttheme-container {
-  background-color: transparent !important;
+  padding: 15px 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: rgba(128, 231, 119, 0.801) !important;
 }
 
 [data-pnotify] .brighttheme-error {
@@ -97,13 +119,23 @@ justify-content: center;
 
 [data-pnotify] .brighttheme-icon-error:after {
   display: none !important;
+
 }
 
 [data-pnotify] .brighttheme-icon-closer:after {
   display: none !important;
+
 }
 
 [data-pnotify] .brighttheme-icon-sticker.brighttheme-icon-stuck:after {
   display: none !important;
+
+}
+[data-pnotify] .brighttheme-closer, [data-pnotify] .brighttheme-icon, [data-pnotify] .brighttheme-sticker {
+  display: block !important;
+}
+
+[data-pnotify].pnotify-with-icon .brighttheme-content {
+margin: 0 !important;
 }
 
