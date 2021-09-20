@@ -96,11 +96,7 @@
   @include for-size(desktop-up) {
     width: 160px;
     height: 230px;
-
   }
-    object-fit: cover;
-border: 2px solid    rgb(220, 86, 197);
-    border-radius: 15px;
 }
 
 .team__thumb {
@@ -121,7 +117,7 @@ transition: transform 500ms;
 }
 
 .team__item:hover .team__overlay {
-transform: translateY(71%);
+transform: translateY(69%);
 
 }
 
@@ -146,7 +142,7 @@ transform: translateY(71%);
 
 .team__icon {
   margin-top: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
   fill: #fff;
   border-radius: 50%;
 
@@ -160,26 +156,7 @@ transform: translateY(71%);
   }
 }
 
-.team__thumb {
-  position: relative;
-  overflow: hidden;
-}
 
-.team__overlay {
-  display: inline-block;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(100%);
-  transition: transform 500ms;
-}
-
-.team__item:hover .team__overlay {
-  transform: translateY(69%);
-}
 
 .team__btn--close {
   display: block;
@@ -190,8 +167,6 @@ transform: translateY(71%);
   border: none;
   border-radius: 4px;
 
-  &:hover {
-
     &:hover {
         fill: rgb(250, 163, 49);;
         box-shadow: 0 -5px 10px rgb(250, 163, 49),
@@ -199,25 +174,4 @@ transform: translateY(71%);
         0px 0 20px -23px rgba(220, 86, 197, 0.8),
         0 0 40px rgba(220, 86, 197, 0.1) inset;
     }
-}
-
-
-.team__btn--close {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px 10px;
-    font-size: 16px;
-    line-height: 1.21;
-    color: #fff;
-    background-color: rgba(220, 86, 197, 0.8);
-    border: none;
-
-&:hover {
-
-    box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
-      0px 0 20px -35px rgba(220, 86, 197, 0.8),
-      0px 0 20px -23px rgba(220, 86, 197, 0.8),
-      0 0 40px rgba(220, 86, 197, 0.1) inset;
-  }
 }
