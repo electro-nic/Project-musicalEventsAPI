@@ -14,36 +14,36 @@ const clearSearchIconRef = document.querySelector('.clear-search__icon');
 const eventCardsRef = document.querySelector('.events__list');
 const clearInput = document.querySelector('#search-link');
 
-nameInput.addEventListener('input', debounce(onIconShow, 500));
-nameInput.addEventListener('input', debounce(handlerInput, 1000));
-nameInput.addEventListener('focus', handlerInput);
+//nameInput.addEventListener('input', debounce(onIconShow, 500));
+// nameInput.addEventListener('input', debounce(handlerInput, 1000));
+// nameInput.addEventListener('focus', handlerInput);
 
-clearInput.addEventListener('click', onInputClear);
-//refs.form.addEventListener('submit', handlerInput)
+//clearInput.addEventListener('click', onInputClear);
+refs.form.addEventListener('submit', handlerInput)
 
 
-function onInputClear(e) {
-  e.preventDefault();
+// function onInputClear(e) {
+//   e.preventDefault();
   
-  if (e.currentTarget.nodeName === 'A') {
-    nameInput.value = '';
-    clearSearchIconRef.style.opacity = 0;
-    searchIconRef.style.opacity = 1;
-  } else return
-}
+//   if (e.currentTarget.nodeName === 'A') {
+//     nameInput.value = '';
+//     clearSearchIconRef.style.opacity = 0;
+//     searchIconRef.style.opacity = 1;
+//   } else return
+// }
 
-function onIconShow(e) {
+// function onIconShow(e) {
   
-  if (!e.target.value.length) {
-    searchIconRef.style.opacity = 1;
-    clearSearchIconRef.style.opacity = 0;
-  } else {
-    clearSearchIconRef.style.opacity = 1;
-    searchIconRef.style.opacity = 0;
-  }
-}
+//   if (!e.target.value.length) {
+//     searchIconRef.style.opacity = 1;
+//     clearSearchIconRef.style.opacity = 0;
+//   } else {
+//     clearSearchIconRef.style.opacity = 1;
+//     searchIconRef.style.opacity = 0;
+//   }
+// }
 
-async function handlerInput(e){
+function handlerInput(e){
   e.preventDefault();
   const keyword = nameInput.value;
   // const countryCode = refs.inputCountry.value;
@@ -58,7 +58,9 @@ async function handlerInput(e){
    const obj = apiService(keyword, 0, 20, );
    obj.then(data => console.log(data))
   obj.then(data => {
-    if (data.page.totalElements === 0 || keyword.length === 0 || keyword.length <= 1) {
+    const totalElements = data.page.totalElements
+    console.log(totalElements)
+    if (totalElements === 0 || keyword.length === 1)  {
       return  onError()
     } 
     else {
