@@ -15,9 +15,11 @@ const eventCardsRef = document.querySelector('.events__list');
 const clearInput = document.querySelector('#search-link');
 
 nameInput.addEventListener('input', debounce(onIconShow, 500));
-//nameInput.addEventListener('input', debounce(handlerInput, 1000));
+nameInput.addEventListener('input', debounce(handlerInput, 1000));
+nameInput.addEventListener('focus', handlerInput);
+
 clearInput.addEventListener('click', onInputClear);
-refs.form.addEventListener('submit', debounce(handlerInput, 1000))
+//refs.form.addEventListener('submit', handlerInput)
 
 
 function onInputClear(e) {
