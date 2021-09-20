@@ -17,7 +17,7 @@ const clearInput = document.querySelector('#search-link');
 nameInput.addEventListener('input', debounce(onIconShow, 500));
 //nameInput.addEventListener('input', debounce(handlerInput, 1000));
 clearInput.addEventListener('click', onInputClear);
-refs.searchBtn.addEventListener('submit', debounce(handlerInput, 1000))
+refs.form.addEventListener('submit', debounce(handlerInput, 1000))
 
 
 function onInputClear(e) {
