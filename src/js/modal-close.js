@@ -24,36 +24,23 @@ export function openModal(e) {
 function closeModal(e) {
   if (e.currentTarget.nodeName === 'BUTTON') {
     e.preventDefault();
-    // modalRefs.closeModalWindow.classList.add('is-hidden');
-    
-    setTimeout(function () {
+      setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
-     
     }, 200)
-    console.log(e.target.nodeName);
   }
   if (e.target.nodeName === 'FORM') {
     e.preventDefault();
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
     }, 200)
-    // modalRefs.closeModalWindow.classList.add('is-hidden');
-
-    console.log(e.target.nodeName);
   } if (e.target.nodeName === 'SPAN') {
     e.preventDefault();
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
     }, 200)
-    // modalRefs.closeModalWindow.classList.add('is-hidden');
-
-    console.log(e.target.nodeName);
   }else {
     return;
   }
-
-  console.log(e.target.nodeName);
-  console.log(e.currentTarget.nodeName);
 }
 
 // закрытие модалки через ESC
@@ -63,6 +50,5 @@ function keyEscape(e) {
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
     }, 200)
-    // modalRefs.closeModalWindow.classList.add('is-hidden');
   }
 }
