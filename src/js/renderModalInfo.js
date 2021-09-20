@@ -6,7 +6,7 @@ import { openModal } from '../js/modal-close';
 
 export function renderModalInfo(index) {
   const currentEvent = eventsArr[index];
- 
+ console.log('currentEvent', currentEvent);
   const eventInfo = currentEvent?.info ||
   currentEvent?.pleaseNote ||
   currentEvent?.ticketLimit?.info || 'check on the website';

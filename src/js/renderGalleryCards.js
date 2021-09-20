@@ -19,6 +19,7 @@ function onGreatGalleryEvents() {
         cardTmp(data._embedded.events)
       );
 
+      eventsArr.splice(0, 20);
       eventsArr.push(...data._embedded.events);
       document
         .querySelectorAll('.events__item')
