@@ -24,7 +24,7 @@ export function openModal(e) {
 function closeModal(e) {
   if (e.currentTarget.nodeName === 'BUTTON') {
     e.preventDefault();
-    modalRefs.closeModalWindow.classList.add('is-hidden');
+    // modalRefs.closeModalWindow.classList.add('is-hidden');
     
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
@@ -62,7 +62,7 @@ function keyEscape(e) {
   if (e.code == 'Escape') {
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
-    }, 500)
+    }, 200)
     // modalRefs.closeModalWindow.classList.add('is-hidden');
   }
 }
