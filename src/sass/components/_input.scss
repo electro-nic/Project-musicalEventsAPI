@@ -159,15 +159,20 @@
 .input-country {
   background: rgba(175, 175, 175, 0.986);
   color: #dc56c5;
-
   font-size: 16px;
   line-height: 1.21;
   font-family: var(--font);
 }
 
-// .hidebtn {
-//   display: none;
-// }
+.hidebtn {
+  pointer-events: none;
+}
+.country-icon{
+  @include  transition(transform) 
+}
+.icon-move{
+  transform: rotate(180deg);
+}
 
 .select select {
   appearance: none;
