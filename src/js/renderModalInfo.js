@@ -3,6 +3,7 @@ import { eventsArr } from './variables';
 import apiService from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
+import { onClickScrollTop } from './onClickScrollTo'
 
 export function renderModalInfo(index) {
   const currentEvent = eventsArr[index];
@@ -41,6 +42,7 @@ export function renderModalInfo(index) {
   const inputSearch = document.querySelector('.form__input')
   modalRefs.modalMoreAuthor.addEventListener('click', () => { 
     inputSearch.value = currentEvent.name 
+    onClickScrollTop();
      } )
 }
 

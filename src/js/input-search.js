@@ -77,6 +77,7 @@ function onError(){
 }
 
   export function creatGalleryCards(data) {
+         nameInput.value = '';
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
 
          //код Юли для открытия модалки
