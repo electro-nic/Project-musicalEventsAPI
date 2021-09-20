@@ -10,11 +10,7 @@
     z-index: 99;
     background-color: rgba(32, 13, 29, 0.6);
     backdrop-filter: blur(3px);
-    
-    
-   
 }
-
 
 .modal {
   position: absolute;
@@ -27,23 +23,11 @@
   background-color: var(--modal-background-color);
   padding-bottom: 50px;
   animation: open 0.8s linear;
+  
   transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
 
-  @keyframes open {
-  0% {
-      transform: translateX(50%) translateY(50%);
-  }
-  }
-
-  animation: test 1s linear;
-
-    @keyframes test {
-    0% {
-        transform: translateX(100%)
-    }
-    }
-
-
+  
+  
   @include for-size(tablet-up) {
     width: 595px;
     border-radius: 250px 0;
@@ -57,6 +41,17 @@
   }
 }
 
+@keyframes open {
+  0% {
+      transform: translateX(50%) translateY(50%); 
+      opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+ 
+}
+  
 // кнопка закрытия
 
 .modal__close {
@@ -84,6 +79,9 @@
   }
 }
 
+
+
+
 .modal__close-icon {
   display: flex;
   justify-content: center;
@@ -102,6 +100,17 @@
 .modal__close:focus {
   transform: rotate(180deg);
 }
+
+// .modal__close-icon:checked~.modal__backdrop{
+// animation: close 0.8s linear;
+// }
+
+// @keyframes close {
+//   100%{  
+//     from { transform: translateX(50%) translateY(50%);  opacity:1; }
+//     to { transform: translateX(-50%) translateY(-50%);  opacity:0; }
+//   }
+//   }
 
 // круглая иконка
 
@@ -230,7 +239,7 @@
   }
 }
 
-.modal__where,
+
 .modal__api-info {
   width: 243px;
   height: 35px;
@@ -246,7 +255,24 @@
     height: 50px;
   }
 }
+.modal__where,
+.modal__author{
+  width: 243px;
+  height: 12px;
+  overflow-y: scroll;
 
+  @include for-size(tablet-up){
+    width: 265px;
+    // height: 45px;
+  }
+ 
+  @include for-size(desktop-up){
+    width: 380px;
+    height: 14px;
+  }
+}
+
+.modal__author::-webkit-scrollbar,
 .modal__where::-webkit-scrollbar,
 .modal__api-info::-webkit-scrollbar {
   width: 2px;
