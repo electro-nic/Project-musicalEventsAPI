@@ -65,10 +65,16 @@
 .search-link {
   position: absolute;
   top: 2%;
-  left: 65%;
+  left: 69.5%;
   width: 36px;
   height: 34px;
+
+  @include for-size(tablet-up) {
+    top: 2%;
+    left: 63%;
+  }
 }
+
 .search-btn {
   cursor: pointer;
   position: absolute;
