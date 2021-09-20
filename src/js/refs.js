@@ -13,7 +13,9 @@ export const refs = {
   disabledSelect:document.querySelector('.disabled-select-item'),
   modalMore:document.querySelector('.modal__more'),
   searchBtn:document.querySelector('#searchBtn'),
-  countryIcon: document.querySelector('.country-icon')
+  countryIcon: document.querySelector('.country-icon'),
+  nameInput: document.querySelector('#name-input'),
+
 };
 
 export const modalRefs = {

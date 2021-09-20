@@ -4,7 +4,7 @@ import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 import { creatGalleryCards} from './input-search';
-
+import { cloneDeep } from 'lodash';
 
 
 refs.inputCountry.addEventListener('change', onChangeCountries);
@@ -29,9 +29,11 @@ function onIconManipulate(e){
 function onChangeCountries(e){
     e.preventDefault();
     const countryCode = refs.inputCountry.value;
+  const keyword = refs.nameInput.value;
+  console.dir(keyword);
     console.log(countryCode);
     refs.eventList.innerHTML = '';
-    const fetch = apiService('', 0, 20, countryCode);
+    const fetch = apiService(keyword, 0, 20, countryCode);
     fetch.then(data => 
         
         creatGalleryCards(data._embedded.events)
