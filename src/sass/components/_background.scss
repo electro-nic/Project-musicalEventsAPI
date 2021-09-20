@@ -8,31 +8,17 @@ body {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: 360px;
-  /* margin-top: -40px; */
+  max-width: 480px;
   padding-top: 0px;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-up) {
     max-width: 768px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @include for-size(desktop-up) {
     max-width: 1600px;
   }
 
-}
-
-.background__image--header,
-.background__header {
-  @media screen and (max-width: 1279.98px) {
-    max-height: 364px;
-    background-image: url(../images/tablet/overlay-tablet.png);
-  }
-
-  @media screen and (min-width: 1280px) {
-    max-height: 446px;
-    background-image: url(../images/desktop/overlay-desktop.png);
-  }
 }
 
 .background__header {
@@ -41,13 +27,9 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-}
+  max-height: 364px;
 
-.background__body {
-  position: absolute;
-  z-index: -20;
-  left: 0;
-  top: 300px;
-  max-width: 100%;
-  background-repeat: repeat;
+  @include for-size(desktop-up) {
+    max-height: 446px;
+  }
 }

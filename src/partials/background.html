@@ -6,6 +6,35 @@
         <img src="./images/logo/logo.svg" alt="logo" />
       </a>
     </header>
+    <div class="toolbar">
+      <div class="theme-switch">
+        <!-- <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+          <use href="../images/icons/icons.svg#sun"></use>
+        </svg> -->
+
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle js-switch-input"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой"
+          />
+          <label
+            aria-hidden="true"
+            class="theme-switch__track"
+            for="theme-switch-toggle"
+          >
+          </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
+
+        <!-- <svg class="theme-switch__icon" aria-label="Иконка луны">
+          <use href="./images/icons/icons.svg#moon"></use>
+        </svg> -->
+      </div>
+    </div>
+
     <div class="background__header">
       <picture>
         <source
@@ -33,41 +62,8 @@
           type="image/jpg"
         />
         <img
-          class="background__image background__image--header background__header"
+          class="background__header"
           src="./images/desktop/hero-desktop.jpg"
-          alt="background"
-        />
-      </picture>
-    </div>
-    <div class="background__body">
-      <picture>
-        <source
-          srcset="
-            ./images/desktop/bg_body-desktop.png    1x,
-            ./images/desktop/bg_body-desktop@2x.png 2x
-          "
-          media="(min-width: 1280px)"
-          type="image/png"
-        />
-        <source
-          srcset="
-            ./images/tablet/bg_body-tablet.png    1x,
-            ./images/tablet/bg_body-tablet@2x.png 2x
-          "
-          media="(min-width: 768px)"
-          type="image/png"
-        />
-        <source
-          srcset="
-            ./images/mobile/bg_body-mobile.png    1x,
-            ./images/mobile/bg_body-mobile@2x.png 2x
-          "
-          media="(max-width: 767px)"
-          type="image/png"
-        />
-        <img
-          class="background__image background__image--header background__header"
-          src="./images/desktop/bg_body-desktop.png"
           alt="background"
         />
       </picture>

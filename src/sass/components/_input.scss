@@ -1,15 +1,15 @@
 .header__title {
-  padding-top: 78px;
+  padding-top: 62px;
   margin-bottom: 25px;
   text-align: center;
 
   @include for-size(tablet-up) {
-    padding-top: 40px;
+    padding-top: 24px;
     margin-bottom: 27px;
   }
 
   @include for-size(desktop-up) {
-    padding-top: 40px;
+    padding-top: 24px;
 
     margin-bottom: 52px;
   }
@@ -69,6 +69,7 @@
   width: 36px;
   height: 34px;
 }
+
 .search-btn {
   cursor: pointer;
   position: absolute;
@@ -159,6 +160,7 @@
   line-height: 1.21;
   font-family: 'Montserrat', sans-serif;
 }
+
 // .hidebtn {
 //   display: none;
 // }
@@ -167,6 +169,7 @@
   appearance: none;
   /* забираю дефолтну стрілку */
 }
-.form-box{
+
+.form-box {
   display: flex;
 }
