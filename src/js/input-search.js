@@ -69,6 +69,7 @@ function handlerInput(e){
       //   delay: 2000,
       // });
     } if (keyword.length === 1) {
+        paginationNone();
         return error({
           text: 'Please. Enter the correct data to search for music events.',
           delay: 2000,
@@ -78,7 +79,15 @@ function handlerInput(e){
       creatGalleryCards(data._embedded.events);
     }
   })
-   .catch(err => onError())};
+   .catch(err => {
+     paginationNone(); 
+     onError()}
+  )
+}
+
+function paginationNone() {
+  refs.pagination.classList.add('tui-pagination--none')
+}
 
 function onError(){
   error({

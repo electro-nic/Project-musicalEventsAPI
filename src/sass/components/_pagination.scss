@@ -49,7 +49,9 @@
   opacity: 0.8;
   background: url(../images/icons/rectangle.svg);
 }
-
+.tui-pagination--none {
+  display: none;
+}
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
   color: var(--title-color);
