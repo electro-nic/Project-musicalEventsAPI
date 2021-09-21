@@ -45,7 +45,7 @@ refs.form.addEventListener('submit', handlerInput)
 
 function handlerInput(e){
   e.preventDefault();
-  const keyword = nameInput.value;
+  const keyword = nameInput.value.trim();
   // const countryCode = refs.inputCountry.value;
    console.log(keyword)
   //  console.log(countryCode)
@@ -60,18 +60,26 @@ function handlerInput(e){
   obj.then(data => {
     const totalElements = data.page.totalElements
     console.log(totalElements)
-    if (totalElements === 0 || keyword.length === 1)  {
-      return  onError()
-    } 
+    if (totalElements === 0 || keyword.length === 0)  {
+      return  error({
+        text: 'Sorry, no results were found for your request.',
+        delay: 2000,
+      });
+    } if (keyword.length === 1) {
+        return error({
+          text: 'Please. Enter the correct data to search for music events.',
+          delay: 2000,
+        });
+    }
     else {
       creatGalleryCards(data._embedded.events);
     }
   })
-   .catch(err => console.log(err))};
+   .catch(err => onError())};
 
 function onError(){
   error({
-    text: 'Please. Enter the correct data to search for music events.',
+    text: 'No results found.',
     delay: 2000,
   });
 }
