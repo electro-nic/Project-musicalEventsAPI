@@ -15,7 +15,6 @@ import { refs } from './refs.js';
       with: 100%;
       overflow: hidden;`
 
-      const index = e.currentTarget.dataset.index;
     };
 
     function closeTeamModal() {
