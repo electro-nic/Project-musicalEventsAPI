@@ -35,6 +35,10 @@
     margin-left: -70px;
   }
 }
+//фнимация для галереи
+.animate__animated.animate__backInUp {
+  --animate-duration: 2s;
+}
 
 .events__item {
   position: relative;
