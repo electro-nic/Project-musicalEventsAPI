@@ -1,16 +1,20 @@
 <section class="background">
   <div class="background__container">
     <header class="header">
-      <div class="logo__background"></div>
+      <div class="logo__overlay">
+        <div class="logo__background"></div>
+      </div>
       <a href="./index.html" class="logo">
         <img src="./images/logo/logo.svg" alt="logo" />
       </a>
     </header>
     <div class="toolbar">
       <div class="theme-switch">
-        <!-- <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
-          <use href="../images/icons/icons.svg#sun"></use>
-        </svg> -->
+        <img
+          class="theme-switch__icon"
+          src="./images/icons/moon.svg"
+          alt="moon"
+        />
 
         <div class="theme-switch__control">
           <input
@@ -18,7 +22,7 @@
             type="checkbox"
             name="theme"
             id="theme-switch-toggle"
-            aria-label="Переключить между тёмной и светлой темой"
+            aria-label="theme-switch"
           />
           <label
             aria-hidden="true"
@@ -29,9 +33,11 @@
           <div aria-hidden="true" class="theme-switch__marker"></div>
         </div>
 
-        <!-- <svg class="theme-switch__icon" aria-label="Иконка луны">
-          <use href="./images/icons/icons.svg#moon"></use>
-        </svg> -->
+        <img
+          class="theme-switch__icon"
+          src="./images/icons/sun.svg"
+          alt="sun"
+        />
       </div>
     </div>
 
