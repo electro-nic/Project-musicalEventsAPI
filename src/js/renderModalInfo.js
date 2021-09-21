@@ -53,14 +53,11 @@ export function renderModalInfo(index) {
     // по первому слову
     // const keyword = currentEvent.name.split(' ')[0];
 
-    const keyword = currentEvent.name;
+    const keyword = currentEvent?._embedded?.attractions[0]?.name || currentEvent?.name;
 
 
     const countryCode = '';
     console.log('keyword', keyword);
-    // inputSearch.value = currentEvent.name; 
-    // onClickScrollTop();
-    // onFetch();
     apiService(keyword, 0, 20, countryCode).
     then(data => {
       console.log('inputSearch.value', inputSearch.value);
