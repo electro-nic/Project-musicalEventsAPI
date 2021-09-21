@@ -5,6 +5,11 @@ const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
 export default async function connect(keyword = '', page = 0, size = 20, countryCode = '') {
 
     try {
+            const promiseResponse = await fetch(`${BASE_URL}classificationName=music&keyword=${keyword}&page=${page}&size=${size}&countryCode=${countryCode}&sort=date,desc&apikey=${API_KEY}`);
+            const data = await promiseResponse.json();
+
+            return data;
+
         const objData = {
             page : page,
             _embedded: {events: []},
@@ -33,6 +38,7 @@ export default async function connect(keyword = '', page = 0, size = 20, country
     //     else {
     //         return data;
     //     }
+
     }
     catch (err) {
         console.log(err);
