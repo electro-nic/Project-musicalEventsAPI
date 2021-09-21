@@ -80,7 +80,7 @@ function handlerInput(e){
   })
    .catch(err => onError())};
 
-function onError(){
+export function onError(){
   error({
     text: 'No results found.',
     delay: 2000,

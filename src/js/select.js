@@ -5,6 +5,7 @@ import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 import { creatGalleryCards} from './input-search';
 import { cloneDeep } from 'lodash';
+import {onError} from './input-search'
 
 
 refs.inputCountry.addEventListener('change', onChangeCountries);
@@ -34,11 +35,22 @@ function onChangeCountries(e){
     console.log(countryCode);
     refs.eventList.innerHTML = '';
     const fetch = apiService(keyword, 0, 20, countryCode);
-    fetch.then(data => 
-        
+    fetch.then(data => {
+        if( countryCode === 'All countries'){
+            return;
+        }
+        // if( data._embedded.totalElements === 0){
+        //     console.log('не має івентів');
+        //     return;
+        // }
+
+        else{
         creatGalleryCards(data._embedded.events)
-        )
-}
+    }
+    })
+    .catch(err => onError())};
+
+
 // const nameInput = document.querySelector('#name-input');
 // refs.inputCountry.addEventListener('change', onChangeEventsByCountries);
 // function onChangeEventsByCountries(e){

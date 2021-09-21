@@ -178,7 +178,10 @@
   appearance: none;
   /* забираю дефолтну стрілку */
 }
-
+.input-item{
+  color:rgb(54, 53, 53);
+  background-color: rgba(161,161,161,0.986);
+}
 
 .form-box {
   display: flex;
