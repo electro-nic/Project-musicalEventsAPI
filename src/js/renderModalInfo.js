@@ -50,8 +50,13 @@ export function renderModalInfo(index) {
     e.preventDefault();
     modalRefs.closeModalWindow.classList.add('is-hidden');
 
-    let keyword = currentEvent.name;
-    const countryCode = refs.inputCountry.value;
+    // по первому слову
+    // const keyword = currentEvent.name.split(' ')[0];
+
+    const keyword = currentEvent.name;
+
+
+    const countryCode = '';
     console.log('keyword', keyword);
     // inputSearch.value = currentEvent.name; 
     // onClickScrollTop();
@@ -59,12 +64,16 @@ export function renderModalInfo(index) {
     apiService(keyword, 0, 20, countryCode).
     then(data => {
       console.log('inputSearch.value', inputSearch.value);
-      console.log(data); 
       inputSearch.value = keyword;
 
       refs.eventList.innerHTML = cardTmp(data._embedded.events);
 // или можно вызвать creatGalleryCards(data._embedded.events), если в ней поменять на innerhtml
 
+         eventsArr.splice(0, 20);
+         eventsArr.push(...data._embedded.events);
+      document
+        .querySelectorAll('.events__item')
+        .forEach(event => event.addEventListener('click', openModal));
 
 
       // creatGalleryCards(data._embedded.events);
