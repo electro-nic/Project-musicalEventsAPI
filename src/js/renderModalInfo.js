@@ -4,6 +4,9 @@ import apiService from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
 import { onClickScrollTop } from './onClickScrollTo'
+// import {onChangeCountries} from './select'
+import { creatGalleryCards} from './input-search';
+
 
 export function renderModalInfo(index) {
   const currentEvent = eventsArr[index];
@@ -40,17 +43,64 @@ export function renderModalInfo(index) {
 
   //modalRefs.modalMoreAuthor.href = currentEvent._embedded.attractions[0].url;
   const inputSearch = document.querySelector('.form__input')
-  modalRefs.modalMoreAuthor.addEventListener('click', () => { 
-    inputSearch.value = currentEvent.name 
-    onClickScrollTop();
-     } )
-}
+  modalRefs.modalMoreAuthor.addEventListener('click', onMoreFromAuthorClick)
+  
 
-const modalMore = document.querySelector('.modal__more')
-modalMore.addEventListener('click', onClose)
+  function onMoreFromAuthorClick (e) { 
+    e.preventDefault();
+    modalRefs.closeModalWindow.classList.add('is-hidden');
+
+    // по первому слову
+    // const keyword = currentEvent.name.split(' ')[0];
+
+    const keyword = currentEvent.name;
 
 
-function onClose (e) {
-  e.preventDefault()
-  modalRefs.closeModalWindow.classList.add('is-hidden');
-}
+    const countryCode = '';
+    console.log('keyword', keyword);
+    // inputSearch.value = currentEvent.name; 
+    // onClickScrollTop();
+    // onFetch();
+    apiService(keyword, 0, 20, countryCode).
+    then(data => {
+      console.log('inputSearch.value', inputSearch.value);
+      inputSearch.value = keyword;
+
+      refs.eventList.innerHTML = cardTmp(data._embedded.events);
+// или можно вызвать creatGalleryCards(data._embedded.events), если в ней поменять на innerhtml
+
+         eventsArr.splice(0, 20);
+         eventsArr.push(...data._embedded.events);
+      document
+        .querySelectorAll('.events__item')
+        .forEach(event => event.addEventListener('click', openModal));
+
+
+      // creatGalleryCards(data._embedded.events);
+      console.log(data._embedded.events);
+
+    })
+     .catch(err => console.log(err))};
+
+    refs.nameInput.value = currentEvent.name; 
+
+     } 
+
+
+// function onFetch(){
+//   // refs.nameInput.value = currentEvent.name; 
+//   const countryCode = refs.inputCountry.value;
+// const keyword = refs.nameInput.value;
+// console.dir(keyword);
+//   console.log(countryCode);
+//   refs.eventList.innerHTML = '';
+//   const fetch = apiService(keyword, 0, 20, countryCode);
+//   fetch.then(data => 
+      
+//       creatGalleryCards(data._embedded.events)
+//       )
+// }
+
+
+
+
