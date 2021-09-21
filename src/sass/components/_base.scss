@@ -58,15 +58,23 @@ img {
 
 .pnotify {
   position: absolute !important;
-   top: 330px !important;
+   top: 300px !important;
    width: 100% !important;
+   right: 0 !important;
+
+   @include for-size(tablet-up) {
+    top: 260px !important;
+  }
    
+  @include for-size(desktop-up) {
+    top: 330px !important;
+  }
 }
 
 .pnotify-container {
   display: flex !important;
   justify-content: center !important;
-  width: 450px!important;
+  // width: 450px!important;
 }
 
 [data-pnotify] .brighttheme-icon-info:after {
@@ -107,7 +115,7 @@ img {
 
 
 [data-pnotify] .brighttheme-container {
-  padding: 15px 0 !important;
+  padding: 10px 0 !important;
   margin-left: auto !important;
   margin-right: auto !important;
   background-color: rgba(128, 231, 119, 0.801) !important;
