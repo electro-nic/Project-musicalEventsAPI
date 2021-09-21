@@ -1,10 +1,4 @@
-
-    const refs = {
-      openTeamModalBtn: document.querySelector('#js-open__btn'),
-      closeTeamModalBtn: document.querySelector('#js-close__btn'),
-      teamModal: document.querySelector('.team__backdrop'),
-
-    };
+import { refs } from './refs.js';
 
   
     refs.openTeamModalBtn.addEventListener('click', openTeamModal);
@@ -16,11 +10,21 @@
     function openTeamModal() {
         window.addEventListener('keydown', onEscKeydown);
       refs.teamModal.classList.remove('hidden');
+
+      refs.body.style.cssText += `height: 100%;
+      with: 100%;
+      overflow: hidden;`
+
+      const index = e.currentTarget.dataset.index;
     };
 
     function closeTeamModal() {
         window.removeEventListener('keydown', onEscKeydown);
         refs.teamModal.classList.add('hidden');
+
+        refs.body.style.cssText -= `height: 100%;
+        with: 100%;
+        overflow: hidden;`
       };
     
       function closeBackdropClick(e) {

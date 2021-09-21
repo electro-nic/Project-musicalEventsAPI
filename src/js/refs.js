@@ -16,6 +16,9 @@ export const refs = {
   countryIcon: document.querySelector('.country-icon'),
   nameInput: document.querySelector('#name-input'),
   body: document.querySelector('body'),
+  openTeamModalBtn: document.querySelector('#js-open__btn'),
+  closeTeamModalBtn: document.querySelector('#js-close__btn'),
+  teamModal: document.querySelector('.team__backdrop'),
 
 };
 
