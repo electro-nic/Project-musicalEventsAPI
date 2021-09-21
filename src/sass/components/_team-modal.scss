@@ -224,10 +224,10 @@
 
 
   &:hover {
-    fill: var(--title-color);
-    box-shadow: 0 -5px 10px rgba(220, 86, 197, 1),
-      0px 0 20px -35px rgba(220, 86, 197, 0.8),
-      0px 0 20px -23px rgba(220, 86, 197, 0.8),
+    fill: rgb(250, 163, 49);
+    box-shadow: 0 -5px 10px rgba(250, 163, 49, 1),
+      0px 0 20px -35px rgba(250, 163, 49, 0.8),
+      0px 0 20px -23px rgba(250, 163, 49, 0.8),
       0 0 40px rgba(220, 86, 197, 0.1) inset;
   }
 }
