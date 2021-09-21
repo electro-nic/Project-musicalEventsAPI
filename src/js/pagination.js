@@ -40,7 +40,7 @@ function onStartEventsLoad() {
 // }
 
 
-function setPagination(totalEvents) {
+export function setPagination(totalEvents) {
   const options = {
     totalItems: totalEvents > 1000 ? 1000 : totalEvents,
     itemsPerPage: apiService.size,
@@ -100,7 +100,7 @@ function renderGallery(data) {
   const events = data._embedded.events.map(evt => ({
     ...evt,
     imgUrl: evt.images.find(img => img.width === 1024 && img.height === 683),
-    locationRef: evt._embedded.venues[0].name,
+    locationRef: evt._embedded.venues,
   }));
   refs.eventList.innerHTML = cardTmp(events);
   document
