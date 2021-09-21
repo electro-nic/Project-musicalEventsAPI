@@ -162,6 +162,7 @@
   font-size: 16px;
   line-height: 1.21;
   font-family: var(--font);
+  cursor: pointer;
 }
 
 .hidebtn {
@@ -174,16 +175,23 @@
   transform: rotate(180deg);
 }
 
-.select select {
+.select {
   appearance: none;
   /* забираю дефолтну стрілку */
 }
 .input-item{
   color:rgb(54, 53, 53);
   background-color: rgba(161,161,161,0.986);
+  cursor: pointer;
+}
+.select-selected {
+  cursor: pointer;
 }
 
 .form-box {
   display: flex;
 }
 
+.select-selected {
+  background-color: DodgerBlue;
+}

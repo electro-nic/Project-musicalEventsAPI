@@ -85,7 +85,7 @@ function handlerInput(e){
   )
 }
 
-function paginationNone() {
+export function paginationNone() {
   refs.pagination.classList.add('tui-pagination--none')
 }
 

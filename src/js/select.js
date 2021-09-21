@@ -5,7 +5,8 @@ import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 import { creatGalleryCards} from './input-search';
 import { cloneDeep } from 'lodash';
-import {onError} from './input-search'
+import {onError} from './input-search';
+import {paginationNone} from './input-search'
 
 
 refs.inputCountry.addEventListener('change', onChangeCountries);
@@ -39,16 +40,14 @@ function onChangeCountries(e){
         if( countryCode === 'All countries'){
             return;
         }
-        // if( data._embedded.totalElements === 0){
-        //     console.log('не має івентів');
-        //     return;
-        // }
-
         else{
         creatGalleryCards(data._embedded.events)
     }
     })
-    .catch(err => onError())};
+    .catch(err => {
+        paginationNone(); 
+        onError()})
+};
 
 
 // const nameInput = document.querySelector('#name-input');
