@@ -140,7 +140,7 @@
 
   @include for-size(desktop-up){
     width: 260px;
-    height: 435px;
+    height: 400px;
   }
 }
 
@@ -251,7 +251,7 @@
 .modal__where::-webkit-scrollbar,
 .modal__api-info::-webkit-scrollbar {
   width: 2px;
-  background-color: var(--title-color);
+  background-color: var(--modal-background-color);
 }
 
 .modal__date,
@@ -349,12 +349,12 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   @include for-size(tablet-up) {
-    bottom: 26px;
+    bottom: 45px;
     right: 170px;
   }
 
   @include for-size(desktop-up) {
-    bottom: 12px;
+    bottom: 52px;
     right: 230px;
   }
 }
