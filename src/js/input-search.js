@@ -87,9 +87,9 @@ function onError(){
 }
 
   export function creatGalleryCards(data) {
-        //  nameInput.value = '';
-        //  refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
-         refs.eventList.innerHTML = cardTmp(data);
+         nameInput.value = '';
+         refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
+        //  refs.eventList.innerHTML = cardTmp(data);
 
          //код Юли для открытия модалки
         console.log('data', data);
