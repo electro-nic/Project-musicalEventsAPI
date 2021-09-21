@@ -53,7 +53,7 @@ export function renderModalInfo(index) {
     // по первому слову
     // const keyword = currentEvent.name.split(' ')[0];
 
-    const keyword = currentEvent?._embedded?.attractions[0]?.name || currentEvent?.name;
+    const keyword = currentEvent?._embedded?.attractions ? currentEvent?._embedded?.attractions[0]?.name : currentEvent?.name;
 
 
     const countryCode = '';
