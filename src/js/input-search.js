@@ -4,6 +4,7 @@ import cardTmp from '../templates/eventsGallery';
 import debounce from 'lodash.debounce';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
+import { setPagination } from './pagination'
 
 import { error, alert } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -59,6 +60,7 @@ function handlerInput(e){
    obj.then(data => console.log(data))
   obj.then(data => {
     const totalElements = data.page.totalElements
+    setPagination(totalElements)
     console.log(totalElements)
     if (totalElements === 0 || keyword.length === 0)  {
       return  error({
