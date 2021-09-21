@@ -47,7 +47,8 @@ function onChangeCountries(e){
         else{
         creatGalleryCards(data._embedded.events)
     }
-    }).catch(err => onError())};
+    })
+    .catch(err => onError())};
 
 
 // const nameInput = document.querySelector('#name-input');
