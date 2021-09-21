@@ -61,7 +61,7 @@ export function renderModalInfo(index) {
     apiService(keyword, 0, 20, countryCode).
     then(data => {
       console.log('inputSearch.value', inputSearch.value);
-      inputSearch.value = keyword;
+      // inputSearch.value = keyword;
 
       refs.eventList.innerHTML = cardTmp(data._embedded.events);
       // refs.nameInput.value = currentEvent.name; 
