@@ -15,6 +15,7 @@ export const refs = {
   searchBtn:document.querySelector('#searchBtn'),
   countryIcon: document.querySelector('.country-icon'),
   nameInput: document.querySelector('#name-input'),
+  body: document.querySelector('body'),
 
 };
 
