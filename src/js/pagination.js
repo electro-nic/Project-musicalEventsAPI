@@ -42,7 +42,7 @@ function onStartEventsLoad() {
 
 export function setPagination(totalEvents) {
   const options = {
-    totalItems: totalEvents > 1000 ? 1000 : totalEvents,
+    totalItems: totalEvents > 5000 ? 5000 : totalEvents,
     itemsPerPage: apiService.size,
     visiblePages: window.outerWidth < 768 ? 3 : 5,
     page: 1,
