@@ -13,14 +13,14 @@ export function renderModalInfo(index) {
  console.log('currentEvent', currentEvent);
   const eventInfo = currentEvent?.info ||
   currentEvent?.pleaseNote ||
-  currentEvent?.ticketLimit?.info || 'check on the website';
+  currentEvent?.ticketLimit?.info || 'no additional info';
   const eventTime = currentEvent?.dates?.start?.localTime ?
-    currentEvent?.dates?.start?.localTime.slice(0, 5) : "check time on the website";
-  const eventDate = currentEvent?.dates?.start?.localDate ? currentEvent?.dates?.start?.localDate : 'check on the website';
-  const eventCity = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.city?.name : "city look on the website";
-  const eventCountry = currentEvent?._embedded?.venues[0]?.country?.name ? currentEvent?._embedded?.venues[0]?.country?.name : "country look on the website";
-  const eventPalace = currentEvent?._embedded?.venues[0]?.name ? currentEvent?._embedded?.venues[0]?.name : 'check on the website';
-  const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "check on the website";
+    currentEvent?.dates?.start?.localTime.slice(0, 5) : "";
+  const eventDate = currentEvent?.dates?.start?.localDate ? currentEvent?.dates?.start?.localDate : '';
+  const eventCity = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.city?.name : '';
+  const eventCountry = currentEvent?._embedded?.venues[0]?.country?.name ? currentEvent?._embedded?.venues[0]?.country?.name : '';
+  const eventPalace = currentEvent?._embedded?.venues[0]?.name ? currentEvent?._embedded?.venues[0]?.name : '';
+  const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "check it out by clicking on the button below";
   const currency = currentEvent?.priceRanges ? currentEvent.priceRanges[0].currency : "";
   const eventStandartPrice = `Standart: ${price} ${currency} `;
 
