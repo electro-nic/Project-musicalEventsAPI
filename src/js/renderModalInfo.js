@@ -51,7 +51,7 @@ export function renderModalInfo(index) {
     modalRefs.closeModalWindow.classList.add('is-hidden');
 
     let keyword = currentEvent.name;
-    const countryCode = '';
+    const countryCode = refs.inputCountry.value;
     console.log('keyword', keyword);
     // inputSearch.value = currentEvent.name; 
     // onClickScrollTop();
@@ -61,7 +61,13 @@ export function renderModalInfo(index) {
       console.log('inputSearch.value', inputSearch.value);
       console.log(data); 
       inputSearch.value = keyword;
-      creatGalleryCards(data._embedded.events);
+
+      refs.eventList.innerHTML = cardTmp(data._embedded.events);
+// или можно вызвать creatGalleryCards(data._embedded.events), если в ней поменять на innerhtml
+
+
+
+      // creatGalleryCards(data._embedded.events);
       console.log(data._embedded.events);
 
     })
