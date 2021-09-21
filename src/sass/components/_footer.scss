@@ -1,17 +1,22 @@
   .heart {
     color: rgb(223, 4, 4);
   }
+main{
+  min-height: 95vh;
+}
+
   .footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    
   }
+
   .footer-container {
     margin: 0 auto;
-  
+    
+    
     @include for-size(mobile) {
       max-width: 320px;
+      
     }
   
     @include for-size(tablet) {
@@ -24,6 +29,9 @@
   }
   
   .footer-content {
+    // margin-bottom: 0;
+    // margin-top: 100vh;
+
     @include for-size(mobile) {
       padding-top: 29px;
       padding-bottom: 30px;
