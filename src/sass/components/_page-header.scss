@@ -48,16 +48,18 @@
 }
 
 .logo__background {
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   width: 213.97px;
   height: 180px;
   left: -107.49px;
   top: -90px;
-  /* background-image: linear-gradient(136.07deg,
+  background-image: linear-gradient(136.07deg,
       rgba(196, 196, 196, 0.03) 10.75%,
-      rgba(196, 196, 196, 0) 92.33%); */
+      rgba(196, 196, 196, 0) 92.33%);
   backdrop-filter: blur(30px);
   border-radius: 90%;
+
 
   /* @include for-size(phone-only) {
     background-image: linear-gradient(136.07deg,
@@ -98,6 +100,17 @@
   //   left: -238px;
   //   top: -201px;
   // }
+}
+
+.logo__overlay {
+  overflow: hidden;
+  position: absolute;
+  /* background-image: linear-gradient(136.07deg,
+      rgba(196, 196, 196, 0.03) 10.75%,
+      rgba(196, 196, 196, 0) 92.33%);
+  backdrop-filter: blur(30px);
+  border-radius: 90%; */
+
 }
 
 // .logo:hover {
