@@ -64,7 +64,7 @@ export function renderModalInfo(index) {
       inputSearch.value = keyword;
 
       refs.eventList.innerHTML = cardTmp(data._embedded.events);
-      refs.nameInput.value = currentEvent.name; 
+      // refs.nameInput.value = currentEvent.name; 
 
 // или можно вызвать creatGalleryCards(data._embedded.events), если в ней поменять на innerhtml
 
