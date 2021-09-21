@@ -18,14 +18,14 @@ export function renderModalInfo(index) {
     currentEvent?.dates?.start?.localTime.slice(0, 5) : "";
   const eventDate = currentEvent?.dates?.start?.localDate ? currentEvent?.dates?.start?.localDate : '';
   const eventCity = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.city?.name : '';
-  const eventCountry = currentEvent?._embedded?.venues[0]?.country?.name ? currentEvent?._embedded?.venues[0]?.country?.name : '';
-  const eventPalace = currentEvent?._embedded?.venues[0]?.name ? currentEvent?._embedded?.venues[0]?.name : '';
+  const eventCountry = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.country?.name : "";
+  const eventPalace = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.name : '';
   const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "check it out by clicking on the button below";
   const currency = currentEvent?.priceRanges ? currentEvent.priceRanges[0].currency : "";
   const eventStandartPrice = `Standart: ${price} ${currency} `;
 
-  modalRefs.imgCircleEl[0].srcset = currentEvent.images[0].url;
-  modalRefs.imgPosterEl[0].srcset = currentEvent.images[3].url;
+  modalRefs.imgCircleEl[0].srcset = currentEvent?.images[0]?.url;
+  modalRefs.imgPosterEl[0].srcset = currentEvent?.images[3]?.url;
 
   console.log(currentEvent.images);
 
