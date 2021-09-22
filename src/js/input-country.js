@@ -1,7 +1,6 @@
-
 import {refs} from './refs';
 
-const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy'; //'vHwA8wPXBKX2TH3dmOzAbzhop6A7jZPG';
+const API_KEY = 'Ci1vLtAQ5toUQm0alN6gL6AfnGn8TpWy';
 const BASE_URL = 'https://app.ticketmaster.com/discovery-feed/v2/events?';
 
 async function fetchCountries(countryCode) {
@@ -10,41 +9,26 @@ async function fetchCountries(countryCode) {
   return countryData;
   
 }
-
-
 refs.inputCountry.addEventListener('click', onCountryBtnClick)
-// refs.countryBtn.addEventListener('click',onCountryBtnClick)
-
 async function onCountryBtnClick(e){
   e.preventDefault();
   try{
     const countryFetch = await fetchCountries(country)
     .then(elems=>
-      // console.log(elems)
-       onCountryCreate(elems.countries)
+      console.log(elems)
+      //  onCountryCreate(elems.countries)
     )}
   catch(err){
   console.log(err);
 }
 }
-async function onCountryCreate (obj){
-    const optionEl= Object.keys(obj)
-    console.log(optionEl)
-    const listCountry = optionEl.map((el) => {
-      const itemCountries = `<option class='input-country' value="${el}">${el}</option>`;
-      console.log(itemCountries);
-      return itemCountries;
-    })
-  refs.inputCountry.insertAdjacentHTML('beforeend',listCountry)
-}
-
-//при кліку на селект іконта зникає
-refs.inputCountry.addEventListener('click',onIconHide)
-function onIconHide(e){
-  const valueSelect = e.currentTarget.value;
-  if(valueSelect === 'Choose country'){
-    console.log('нажали на інпут')
-  } else {
-    console.log('нічого не бачить')
-  }
-}
+// async function onCountryCreate (obj){
+//     const optionEl= Object.keys(obj)
+//     console.log(optionEl)
+//     const listCountry = optionEl.map((el) => {
+//       const itemCountries = `<option class='input-country' value="${el}">${el}</option>`;
+//       console.log(itemCountries);
+//       return itemCountries;
+//     })
+//   refs.inputCountry.insertAdjacentHTML('beforeend',listCountry)
+// }
