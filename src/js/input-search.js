@@ -19,11 +19,15 @@ function handlerInput(e){
     const totalElements = data.page.totalElements;
     setPagination(totalElements);
 
+if (totalElements) {
+  refs.pagination.classList.remove('tui-pagination--none')
+} else 
+paginationNone();
+
     if (keyword.length === 0)  {
       return  creatGalleryCards(data._embedded.events);
 
     } if (keyword.length === 1) {
-        paginationNone();
         return error({
           text: 'Please. Enter the correct data to search for music events.',
           delay: 2000,

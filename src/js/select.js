@@ -42,7 +42,9 @@ function onChangeCountries(e){
         if (totalElements === 0){
             paginationNone();
             onError();      
-        }
+        } else   
+        refs.pagination.classList.remove('tui-pagination--none');
+
 
         creatGalleryCards(data._embedded.events);
         setPagination(totalElements);
