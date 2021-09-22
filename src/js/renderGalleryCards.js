@@ -32,7 +32,7 @@ export function onGreatGalleryEvents() {
     console.log(error.message);
   }
 }
- function totalIvents (data){
+ export function totalIvents (data){
   info({
     text: `Found ${data.page.totalElements} musical events`,
     delay: 2000,
