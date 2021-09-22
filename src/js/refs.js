@@ -37,5 +37,6 @@ export const modalRefs = {
   buyTicketsBtnVipEl: document.querySelector('#buy-tickets-btn-vip'),
   closeModalWindow: document.querySelector('.modal__backdrop'),
   closeModalBtn: document.querySelector('[data-action="close-modal__backdrop"]'),
-  modalMoreAuthor: document.querySelector('#modal__more')
+  modalMoreAuthor: document.querySelector('#modal__more'),
+  modal: document.querySelector('.modal')
 };
