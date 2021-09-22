@@ -5,6 +5,7 @@ import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
 import { onClickScrollTop } from './onClickScrollTo'
 import { creatGalleryCards} from './input-search';
+import { setPagination } from './pagination'
 
 
 export function renderModalInfo(index) {
@@ -49,11 +50,15 @@ export function renderModalInfo(index) {
     apiService(keyword, 0, 20, countryCode).
     then(data => {
       refs.eventList.innerHTML = cardTmp(data._embedded.events);
+
          eventsArr.splice(0, 20);
          eventsArr.push(...data._embedded.events);
       document
         .querySelectorAll('.events__item')
         .forEach(event => event.addEventListener('click', openModal));
+
+        const totalElements = data.page.totalElements;
+        setPagination(totalElements);
 
     })
      .catch(err => console.log(err))};
