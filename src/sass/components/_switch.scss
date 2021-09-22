@@ -26,14 +26,9 @@ body.dark-theme {
   fill: ivory;
   stroke: ivory;
   padding: 5px;
-  /*  background-color: #7c7b7b;
-  border-radius: 20px;
-  box-shadow: 0 0 0 1px #b5acac; */
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  /* outline: none;
-  border: none; */
 }
 
 .theme-switch__control {
@@ -45,7 +40,6 @@ body.dark-theme {
   height: 32px;
   border-radius: 50em;
   padding: 3px 0;
-  /*  z-index: 200; */
 }
 
 .theme-switch__toggle {
