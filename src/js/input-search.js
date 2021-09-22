@@ -53,11 +53,8 @@ export function onError(){
 }
 
   export function creatGalleryCards(data) {
-console.log('data', data);
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
         
-         
-
          //код Юли для открытия модалки
          eventsArr.splice(0, 20);
          eventsArr.push(...data);
