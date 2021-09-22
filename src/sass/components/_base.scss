@@ -134,3 +134,24 @@ img {
 [data-pnotify].pnotify-with-icon .brighttheme-content {
   margin: 0 !important;
 }
+/*scroll-bar для body*/
+body{
+  &::-webkit-scrollbar {
+    width: 25px;
+    }
+  &::-webkit-scrollbar-track{
+      background-color: #939393;
+    }
+  &::-webkit-scrollbar-thumb{
+      background: linear-gradient(to top, var(--title-color),#7e3171);
+      background-size: contain;
+      border-radius: 10px;
+    }
+  &::-webkit-scrollbar-thumb:hover{
+      background: linear-gradient(to top,#7e3171, var(--title-color));
+    }
+  &::-webkit-scrollbar-button{
+      background-color: var(--title-color);
+      border-radius: 2px;
+    }
+}

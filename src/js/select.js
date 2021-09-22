@@ -32,8 +32,6 @@ function onChangeCountries(e){
     e.preventDefault();
     const countryCode = refs.inputCountry.value;
   const keyword = refs.nameInput.value;
-  console.dir(keyword);
-    console.log(countryCode);
     refs.eventList.innerHTML = '';
     const fetch = apiService(keyword, 0, 20, countryCode);
     fetch.then(data => {
