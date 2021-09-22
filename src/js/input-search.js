@@ -16,7 +16,6 @@ function handlerInput(e){
    refs.eventList.innerHTML = '';
    const obj = apiService(keyword, 0, 20, );
   obj.then(data => {
-    console.log(data);
     const totalElements = data.page.totalElements;
     setPagination(totalElements);
 
@@ -53,10 +52,7 @@ export function onError(){
 }
 
   export function creatGalleryCards(data) {
-console.log('data', data);
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
-        
-         
 
          //код Юли для открытия модалки
          eventsArr.splice(0, 20);

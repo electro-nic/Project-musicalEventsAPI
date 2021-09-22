@@ -33,7 +33,6 @@ function onChangeCountries(e){
     refs.eventList.innerHTML = '';
     const fetch = apiService(keyword, 0, 20, countryCode);
     fetch.then(data => {
-        console.log('data select', data);
         const totalElements = data.page.totalElements;
 
         if( countryCode === 'All countries'){
@@ -41,7 +40,6 @@ function onChangeCountries(e){
         }
         else{
 
-        // onClearSelect();
 
         creatGalleryCards(data._embedded.events);
     }         setPagination(totalElements);
