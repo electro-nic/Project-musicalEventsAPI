@@ -40,7 +40,9 @@ function onChangeCountries(e){
             return;
         }
         else{
+
         // onClearSelect();
+
         creatGalleryCards(data._embedded.events);
     }         setPagination(totalElements);
 
@@ -49,8 +51,3 @@ function onChangeCountries(e){
         paginationNone(); 
         onError()})
 };
- function onClearSelect(){
-    const dropDown = document.getElementById("country");
-    dropDown.selectedIndex = 0;
-    // refs.inputCountry.style.color = '#939393';
- }
