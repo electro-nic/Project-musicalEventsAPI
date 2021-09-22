@@ -3,7 +3,7 @@ import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
-import { setPagination } from './pagination'
+import { setPagination } from './pagination';
 
 import { error, alert } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -16,10 +16,13 @@ function handlerInput(e){
    refs.eventList.innerHTML = '';
    const obj = apiService(keyword, 0, 20, );
   obj.then(data => {
-    const totalElements = data.page.totalElements
-    setPagination(totalElements)
+    console.log(data);
+    const totalElements = data.page.totalElements;
+    setPagination(totalElements);
+
     if (keyword.length === 0)  {
       return  creatGalleryCards(data._embedded.events);
+
     } if (keyword.length === 1) {
         paginationNone();
         return error({
@@ -29,6 +32,7 @@ function handlerInput(e){
     }
     else {
       creatGalleryCards(data._embedded.events);
+
     }
   })
    .catch(err => {
@@ -49,9 +53,11 @@ export function onError(){
 }
 
   export function creatGalleryCards(data) {
-
+console.log('data', data);
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
         
+         
+
          //код Юли для открытия модалки
          eventsArr.splice(0, 20);
          eventsArr.push(...data);
