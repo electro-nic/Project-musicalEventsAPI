@@ -55,7 +55,7 @@ export function setPagination(totalEvents) {
     setEventsOnPage();
     newApi().then(data => {
       console.log(data);
-      renderGallery(apiService.keyword, eventData.page);
+      renderGallery(apiService.keyword, apiService.page);
     });
       
   });
