@@ -1,5 +1,4 @@
 .modal__backdrop {
-    // visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +12,7 @@
     backdrop-filter: blur(3px);
 }
 
+
 .modal {
   position: absolute;
   width: 272px;
@@ -25,6 +25,8 @@
   padding-bottom: 50px;
   animation: open 0.8s linear;
   transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
+  transition-duration: 250ms;
+  
 
   @include for-size(tablet-up) {
     width: 595px;
@@ -48,7 +50,26 @@
   }
   }
 
-// кнопка закрытия
+  .is-hidden {
+    transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
+    transition-duration: 250ms;
+    opacity: inherit;
+  }
+
+  @keyframes is-hidden {
+    100% {
+        transform: translateX(50%) translateY(50%);
+        opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    0% {
+      opacity: 0;
+    }
+    }
+
+ // кнопка закрытия
 
 .modal__close {
   padding: 0;

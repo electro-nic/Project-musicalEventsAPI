@@ -21,6 +21,8 @@ export const refs = {
   teamModal: document.querySelector('.team__backdrop'),
   pagination: document.querySelector('#pagination'),
   option:document.querySelector('.js-select')
+  clearBtn: document.querySelector('#clear-btn')
+
 };
 
 export const modalRefs = {
@@ -38,5 +40,6 @@ export const modalRefs = {
   buyTicketsBtnVipEl: document.querySelector('#buy-tickets-btn-vip'),
   closeModalWindow: document.querySelector('.modal__backdrop'),
   closeModalBtn: document.querySelector('[data-action="close-modal__backdrop"]'),
-  modalMoreAuthor: document.querySelector('#modal__more')
+  modalMoreAuthor: document.querySelector('#modal__more'),
+  modal: document.querySelector('.modal')
 };

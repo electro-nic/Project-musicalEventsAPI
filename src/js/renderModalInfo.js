@@ -20,7 +20,7 @@ export function renderModalInfo(index) {
   const eventCity = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.city?.name : '';
   const eventCountry = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.country?.name : "";
   const eventPalace = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.name : '';
-  const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "check it out by clicking on the button below";
+  const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "click on the button below";
   const currency = currentEvent?.priceRanges ? currentEvent.priceRanges[0].currency : "";
   const eventStandartPrice = `Standart: ${price} ${currency} `;
 

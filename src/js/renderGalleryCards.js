@@ -9,7 +9,7 @@ import '@pnotify/core/dist/BrightTheme.css';
 
 window.addEventListener('load', onGreatGalleryEvents());
 
-function onGreatGalleryEvents() {
+export function onGreatGalleryEvents() {
   try {
     connectApi().then(data => {
       totalIvents(data),
