@@ -16,44 +16,51 @@
           placeholder="Start searching"
         />
 
-          <button class="search-btn" type="submit" id="searchBtn">
-            <svg class="form__icon" width="12px" height="12px">
-              <use
-                class="search__icon"
-                href="./images/icons/icons.svg#icon-search"
-                opacity="1"
-              ></use>
-            </svg>
-            <svg class="form__icon icon-close" width="12px" height="12px">
-              <use
-                class="clear-search__icon"
-                href="./images/icons/icons.svg#icon-close"
-                opacity="0"
-              ></use>
-            </svg>
-          </button>
-        
+        <button class="search-btn" type="submit" id="searchBtn">
+          <svg class="form__icon" width="12px" height="12px">
+            <use
+              class="search__icon"
+              href="./images/icons/icons.svg#icon-search"
+              opacity="1"
+            ></use>
+          </svg>
+          <svg class="form__icon icon-close" width="12px" height="12px">
+            <use
+              class="clear-search__icon"
+              href="./images/icons/icons.svg#icon-close"
+              opacity="0"
+            ></use>
+          </svg>
+        </button>
       </div>
     </form>
     <div class="input-wrapper select-box">
       <!--1. List of countries from country.json-->
-      <select 
+      <select
         class="form__input select link-animation"
         id="country"
         name="countries"
       >
-        <option class="disabled-select-item js-select" selected disabled hidden value="">
+        <option
+          class="disabled-select-item js-select"
+          selected
+          disabled
+          hidden
+          value=""
+        >
           Choose country
         </option>
         <option class="input-item js-select" value="">All countries</option>
-        <button class="search-btn " type="button" id="countryBtn">
+        <button class="search-btn" type="button" id="countryBtn">
           <svg class="form__icon country-icon" width="12px" height="12px">
             <use href="./images/icons/icons.svg#icon-polygon"></use>
           </svg>
         </button>
       </select>
     </div>
-    <button id="clear-btn" class="clear-btn" type="button">Clear all</button>
+    <button id="clear-btn" class="clear-btn link-animation" type="button">
+      Clear all
+    </button>
   </div>
   <ul class="events__list"></ul>
 </section>
