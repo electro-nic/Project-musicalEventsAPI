@@ -8,7 +8,7 @@ import newApi from "./api-connect"
 
 document.addEventListener('DOMContentLoaded', onStartEventsLoad);
 
-function onStartEventsLoad() {
+export function onStartEventsLoad() {
   apiService.resetPage();
   setEventsOnPage();
 
