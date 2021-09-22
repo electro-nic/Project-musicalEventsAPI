@@ -40,6 +40,9 @@ function onChangeCountries(e){
             return;
         }
         else{
+
+        // onClearSelect();
+
         creatGalleryCards(data._embedded.events);
     }         setPagination(totalElements);
 
