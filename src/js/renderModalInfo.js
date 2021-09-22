@@ -3,23 +3,38 @@ import { eventsArr } from './variables';
 import apiService from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
-import { setPagination } from './pagination'
+import { setPagination } from './pagination';
 
-
+let keyword;
 export function renderModalInfo(index) {
   const currentEvent = eventsArr[index];
-  const eventInfo = currentEvent?.info ||
-  currentEvent?.pleaseNote ||
-  currentEvent?.ticketLimit?.info || 'no additional info';
-  const eventTime = currentEvent?.dates?.start?.localTime ?
-    currentEvent?.dates?.start?.localTime.slice(0, 5) : "";
-  const eventDate = currentEvent?.dates?.start?.localDate ? currentEvent?.dates?.start?.localDate : '';
-  const eventCity = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.city?.name : '';
-  const eventCountry = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.country?.name : "";
-  let eventPalace = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.name : "";
+  const eventInfo =
+    currentEvent?.info ||
+    currentEvent?.pleaseNote ||
+    currentEvent?.ticketLimit?.info ||
+    'no additional info';
+  const eventTime = currentEvent?.dates?.start?.localTime
+    ? currentEvent?.dates?.start?.localTime.slice(0, 5)
+    : '';
+  const eventDate = currentEvent?.dates?.start?.localDate
+    ? currentEvent?.dates?.start?.localDate
+    : '';
+  const eventCity = currentEvent?._embedded?.venues
+    ? currentEvent?._embedded?.venues[0]?.city?.name
+    : '';
+  const eventCountry = currentEvent?._embedded?.venues
+    ? currentEvent?._embedded?.venues[0]?.country?.name
+    : '';
+  let eventPalace = currentEvent?._embedded?.venues
+    ? currentEvent?._embedded?.venues[0]?.name
+    : '';
   eventPalace = eventPalace || '';
-  const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "click on the button below";
-  const currency = currentEvent?.priceRanges ? currentEvent.priceRanges[0].currency : "";
+  const price = currentEvent?.priceRanges
+    ? `from ${currentEvent?.priceRanges[0]?.min}`
+    : 'click on the button below';
+  const currency = currentEvent?.priceRanges
+    ? currentEvent.priceRanges[0].currency
+    : '';
   const eventStandartPrice = `Standart: ${price} ${currency} `;
 
   modalRefs.imgCircleEl[0].srcset = currentEvent?.images[0]?.url;
@@ -34,31 +49,32 @@ export function renderModalInfo(index) {
   modalRefs.standartPriceEl.innerHTML = eventStandartPrice;
   modalRefs.buyTicketsBtnStEl.href = currentEvent?.url;
   modalRefs.buyTicketsBtnVipEl.href = currentEvent?.url;
-  
-  modalRefs.modalMoreAuthor.addEventListener('click', onMoreFromAuthorClick)
-  
-  function onMoreFromAuthorClick (e) { 
-    e.preventDefault();
-    modalRefs.closeModalWindow.classList.add('is-hidden');
 
-    const keyword = currentEvent?._embedded?.attractions ? currentEvent?._embedded?.attractions[0]?.name : currentEvent?.name;
-    const countryCode = '';
-    apiService(keyword, 0, 20, countryCode).
-    then(data => {
+   keyword = currentEvent?._embedded?.attractions
+  ? currentEvent?._embedded?.attractions[0]?.name
+  : currentEvent?.name;
+}
+
+modalRefs.modalMoreAuthor.addEventListener('click', onMoreFromAuthorClick);
+
+function onMoreFromAuthorClick(e) {
+  e.preventDefault();
+  modalRefs.closeModalWindow.classList.add('is-hidden');
+
+
+  const countryCode = '';
+  apiService(keyword, 0, 20, countryCode)
+    .then(data => {
       refs.eventList.innerHTML = cardTmp(data._embedded.events);
 
-         eventsArr.splice(0, 20);
-         eventsArr.push(...data._embedded.events);
+      eventsArr.splice(0, 20);
+      eventsArr.push(...data._embedded.events);
       document
         .querySelectorAll('.events__item')
         .forEach(event => event.addEventListener('click', openModal));
 
-        const totalElements = data.page.totalElements;
-        setPagination(totalElements);
-
+      const totalElements = data.page.totalElements;
+      setPagination(totalElements);
     })
-     .catch(err => console.log(err))};
-     } 
-
-
-
+    .catch(err => console.log(err));
+}
