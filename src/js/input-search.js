@@ -1,7 +1,6 @@
 import apiService from './api-connect';
 import { refs } from './refs';
 import cardTmp from '../templates/eventsGallery'; 
-import debounce from 'lodash.debounce';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 import { setPagination } from './pagination'
@@ -9,53 +8,13 @@ import { setPagination } from './pagination'
 import { error, alert } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 
-const nameInput = document.querySelector('#name-input');
-const searchIconRef = document.querySelector('.search__icon');
-const clearSearchIconRef = document.querySelector('.clear-search__icon');
-const eventCardsRef = document.querySelector('.events__list');
-const clearInput = document.querySelector('#search-link');
-
-//nameInput.addEventListener('input', debounce(onIconShow, 500));
-// nameInput.addEventListener('input', debounce(handlerInput, 1000));
-// nameInput.addEventListener('focus', handlerInput);
-
-//clearInput.addEventListener('click', onInputClear);
 refs.form.addEventListener('submit', handlerInput)
-
-
-// function onInputClear(e) {
-//   e.preventDefault();
-  
-//   if (e.currentTarget.nodeName === 'A') {
-//     nameInput.value = '';
-//     clearSearchIconRef.style.opacity = 0;
-//     searchIconRef.style.opacity = 1;
-//   } else return
-// }
-
-// function onIconShow(e) {
-  
-//   if (!e.target.value.length) {
-//     searchIconRef.style.opacity = 1;
-//     clearSearchIconRef.style.opacity = 0;
-//   } else {
-//     clearSearchIconRef.style.opacity = 1;
-//     searchIconRef.style.opacity = 0;
-//   }
-// }
 
 function handlerInput(e){
   e.preventDefault();
   const keyword = nameInput.value.trim();
-  // const countryCode = refs.inputCountry.value;
    console.log(keyword)
-  //  console.log(countryCode)
    refs.eventList.innerHTML = '';
-  //  if (refs.disabledSelect.textContent === 'Choose country'){
-  //   // obj = apiService(keyword, 0, 20, '');
-  //   countryCode === '';
-  //   console.log('країну не вибрано')
-  // }
    const obj = apiService(keyword, 0, 20, );
    obj.then(data => console.log(data))
   obj.then(data => {
@@ -64,10 +23,6 @@ function handlerInput(e){
     console.log(totalElements)
     if (keyword.length === 0)  {
       return  creatGalleryCards(data._embedded.events);
-      // error({
-      //   text: 'Sorry, no results were found for your request.',
-      //   delay: 2000,
-      // });
     } if (keyword.length === 1) {
         paginationNone();
         return error({
@@ -97,10 +52,7 @@ export function onError(){
 }
 
   export function creatGalleryCards(data) {
-        //  nameInput.value = '';
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
-        //  refs.eventList.innerHTML = cardTmp(data);
-
          //код Юли для открытия модалки
         console.log('data', data);
          eventsArr.splice(0, 20);
