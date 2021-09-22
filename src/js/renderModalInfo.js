@@ -35,10 +35,8 @@ export function renderModalInfo(index) {
   modalRefs.buyTicketsBtnStEl.href = currentEvent?.url;
   modalRefs.buyTicketsBtnVipEl.href = currentEvent?.url;
   
-  const inputSearch = document.querySelector('.form__input')
   modalRefs.modalMoreAuthor.addEventListener('click', onMoreFromAuthorClick)
   
-
   function onMoreFromAuthorClick (e) { 
     e.preventDefault();
     modalRefs.closeModalWindow.classList.add('is-hidden');
