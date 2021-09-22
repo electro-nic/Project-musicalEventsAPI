@@ -20,8 +20,7 @@ export function onStartEventsLoad() {
 
 export function setPagination(totalEvents) {
   const options = {
-    // totalItems: totalEvents,
-    totalItems:    totalEvents > 500 ? 500 : totalEvents    ,
+    totalItems:    totalEvents > 1000 ? 1000 : totalEvents    ,
 
     itemsPerPage: apiService.size,
     visiblePages: window.outerWidth < 768 ? 3 : 5,
@@ -49,12 +48,8 @@ export function setPagination(totalEvents) {
     apiService.page = eventData.page - 1;
     apiService.keyword = refs.nameInput.value.trim();
 
-    console.log('eventData.page', eventData.page);
-    console.log('apiService.page', apiService.page);
-
     setEventsOnPage();
     newApi().then(data => {
-      console.log(data);
       renderGallery(apiService.keyword, apiService.page);
     });
       
@@ -81,12 +76,8 @@ function setEventsOnPage() {
 }
 
 function renderGallery(inputText = '', newPage = 0) {
-  console.log(newPage);
-  console.log(inputText);
+
 newApi(inputText, newPage, 20, '').then(data => {
-  console.log(data);
-
-
   const event = data._embedded.events.map(evt => ({
     ...evt,
     imgUrl: evt.images.find(img => img.width === 1024 && img.height === 683),
