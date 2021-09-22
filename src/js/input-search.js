@@ -12,15 +12,12 @@ refs.form.addEventListener('submit', handlerInput)
 
 function handlerInput(e){
   e.preventDefault();
-  const keyword = nameInput.value.trim();
-   console.log(keyword)
+  const keyword = refs.nameInput.value.trim();
    refs.eventList.innerHTML = '';
    const obj = apiService(keyword, 0, 20, );
-   obj.then(data => console.log(data))
   obj.then(data => {
     const totalElements = data.page.totalElements
     setPagination(totalElements)
-    console.log(totalElements)
     if (keyword.length === 0)  {
       return  creatGalleryCards(data._embedded.events);
     } if (keyword.length === 1) {
@@ -54,7 +51,6 @@ export function onError(){
   export function creatGalleryCards(data) {
          refs.eventList.insertAdjacentHTML('afterbegin', cardTmp(data));
          //код Юли для открытия модалки
-        console.log('data', data);
          eventsArr.splice(0, 20);
          eventsArr.push(...data);
       document
