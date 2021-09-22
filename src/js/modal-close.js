@@ -32,7 +32,10 @@ function closeModal(e) {
     e.preventDefault();
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 1000`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.opasity += 0;
+
+    
       setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
       modalRefs.closeModalWindow.classList.remove('is-show');
@@ -47,7 +50,9 @@ function closeModal(e) {
     e.preventDefault();
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 1000`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.opasity += 0;
+
    setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
       modalRefs.closeModalWindow.classList.remove('is-show');
@@ -61,7 +66,9 @@ function closeModal(e) {
     e.preventDefault();
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 1000`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.opasity += 0;
+
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
       modalRefs.closeModalWindow.classList.remove('is-show');
@@ -82,7 +89,8 @@ function keyEscape(e) {
   if (e.code == 'Escape') {
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 1000`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.opasity += 0;
     
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
@@ -94,20 +102,4 @@ function keyEscape(e) {
     
     }, 200)
   }
-}
-
-
-modalRefs.modal.addEventListener('click', animationClose);
-
-function animationClose(e) {
-  e.preventDefault();
-
-  if(closeModal) {
-
- 
-modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-
-modalRefs.modal.style.transition += `transform 1000`;
-  } 
-  
 }

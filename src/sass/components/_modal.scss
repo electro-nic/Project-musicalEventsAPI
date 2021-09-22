@@ -50,6 +50,25 @@
   }
   }
 
+  .is-hidden {
+    transition-timing-function: cubic-bezier(.14,1.02,.91,.04);
+    transition-duration: 250ms;
+    opacity: inherit;
+  }
+
+  @keyframes is-hidden {
+    100% {
+        transform: translateX(50%) translateY(50%);
+        opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    0% {
+      opacity: 0;
+    }
+    }
+
  // кнопка закрытия
 
 .modal__close {
