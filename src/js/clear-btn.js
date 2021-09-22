@@ -6,8 +6,8 @@ refs.clearBtn.addEventListener('click', onClearBtn)
 function onClearBtn(e) {
 e.preventDefault()
 refs.nameInput.value = '';
-resetSelect();
-onGreatGalleryEvents();
+resetSelect()
+onGreatGalleryEvents()
 }
 
 function resetSelect() {

@@ -197,7 +197,7 @@
 }
 
 .clear-btn {
-  align-items: flex-start;
+  margin-bottom: 25px;
   cursor: pointer;
   padding: 10px 20px;
   font-size: 16px;
@@ -219,5 +219,17 @@
       25px 0 20px -10px rgba(220, 86, 197, 0.8),
       0 0 40px rgba(220, 86, 197, 0.1);
     }
+
+
+    @include for-size(tablet-only) {
+      display: none;
+    }
+    
+    @include for-size(phone-only ) {
+      display: none;
+    }
 }
+
+}
+
 
