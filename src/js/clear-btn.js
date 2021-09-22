@@ -17,7 +17,7 @@ refs.pagination.classList.remove('tui-pagination--none');
 createEventsAfterClick()
 }
 
-function createEventsAfterClick() {
+export function createEventsAfterClick() {
     connectApi().then(data => {
         refs.eventList.innerHTML = cardTmp(data._embedded.events)
         setPagination(data.page.totalElements);

@@ -4,6 +4,7 @@ import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
 import { eventsArr } from '../js/variables';
 import { setPagination } from './pagination';
+import {createEventsAfterClick} from './clear-btn'
 
 import { error, alert } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -32,6 +33,10 @@ paginationNone();
           text: 'Please. Enter the correct data to search for music events.',
           delay: 2000,
         });
+
+        setTimeout(() => {
+          createEventsAfterClick()
+        }, 2000);
     }
     else {
       creatGalleryCards(data._embedded.events);
@@ -40,7 +45,15 @@ paginationNone();
   })
    .catch(err => {
      paginationNone(); 
-     onError()}
+     onError()
+    
+     setTimeout(() => {
+      createEventsAfterClick()
+    }, 2000);
+    
+    }
+
+     
   )
 }
 
