@@ -32,7 +32,7 @@ function closeModal(e) {
     e.preventDefault();
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.5,.52,.5,.52)`;
     modalRefs.modal.style.opasity += 0;
 
     
@@ -44,13 +44,13 @@ function closeModal(e) {
     with: 100%;
     overflow: hidden;`
       
-    }, 200)
+    }, 500)
   }
   if (e.target.nodeName === 'FORM') {
     e.preventDefault();
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.5,.52,.5,.52)`;
     modalRefs.modal.style.opasity += 0;
 
    setTimeout(function () {
@@ -61,12 +61,12 @@ function closeModal(e) {
     with: 100%;
     overflow: hidden;`
 
-    }, 200)
+    }, 500)
   } if (e.target.nodeName === 'SPAN') {
     e.preventDefault();
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.5,.52,.5,.52)`;
     modalRefs.modal.style.opasity += 0;
 
     setTimeout(function () {
@@ -77,7 +77,7 @@ function closeModal(e) {
     with: 100%;
     overflow: hidden;`
 
-    }, 200)
+    }, 500)
   }else {
     return;
   }
@@ -89,8 +89,8 @@ function keyEscape(e) {
   if (e.code == 'Escape') {
 
     modalRefs.modal.style.transform = `translateX(50%) translateY(50%)`;
-    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.14,1.02,.91,.04)`;
-    modalRefs.modal.style.opasity += 0;
+    modalRefs.modal.style.transition += `transform 800 cubic-bezier(.5,.52,.5,.52)`;
+    modalRefs.modal.style.opasity += 0.5;
     
     setTimeout(function () {
       modalRefs.closeModalWindow.classList.add('is-hidden');
@@ -100,6 +100,6 @@ function keyEscape(e) {
     with: 100%;
     overflow: hidden;`
     
-    }, 200)
+    }, 500)
   }
 }
