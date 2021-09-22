@@ -3,8 +3,6 @@ import { eventsArr } from './variables';
 import apiService from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
-import { onClickScrollTop } from './onClickScrollTo'
-import { creatGalleryCards} from './input-search';
 import { setPagination } from './pagination'
 
 
@@ -18,7 +16,8 @@ export function renderModalInfo(index) {
   const eventDate = currentEvent?.dates?.start?.localDate ? currentEvent?.dates?.start?.localDate : '';
   const eventCity = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.city?.name : '';
   const eventCountry = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.country?.name : "";
-  const eventPalace = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.name : "";
+  let eventPalace = currentEvent?._embedded?.venues ? currentEvent?._embedded?.venues[0]?.name : "";
+  eventPalace = eventPalace || '';
   const price = currentEvent?.priceRanges ? `from ${currentEvent?.priceRanges[0]?.min}` : "click on the button below";
   const currency = currentEvent?.priceRanges ? currentEvent.priceRanges[0].currency : "";
   const eventStandartPrice = `Standart: ${price} ${currency} `;
@@ -36,10 +35,8 @@ export function renderModalInfo(index) {
   modalRefs.buyTicketsBtnStEl.href = currentEvent?.url;
   modalRefs.buyTicketsBtnVipEl.href = currentEvent?.url;
   
-  const inputSearch = document.querySelector('.form__input')
   modalRefs.modalMoreAuthor.addEventListener('click', onMoreFromAuthorClick)
   
-
   function onMoreFromAuthorClick (e) { 
     e.preventDefault();
     modalRefs.closeModalWindow.classList.add('is-hidden');
