@@ -164,7 +164,6 @@
   font-family: var(--font);
   cursor: pointer;
 }
-
 .hidebtn {
   pointer-events: none;
 }
@@ -179,18 +178,19 @@
   appearance: none;
   /* забираю дефолтну стрілку */
 }
+.select:hover{
+  color: var(--main-text-color);
+}
 .input-item{
   color:rgb(54, 53, 53);
   background-color: rgba(161,161,161,0.986);
-  cursor: pointer;
-}
-.select-selected {
   cursor: pointer;
 }
 
 .form-box {
   display: flex;
 }
+
 
 .select-selected {
   background-color: DodgerBlue;
@@ -220,6 +220,7 @@
       0 0 40px rgba(220, 86, 197, 0.1);
     }
 
+
     @include for-size(tablet-only) {
       display: none;
     }
@@ -227,5 +228,8 @@
     @include for-size(phone-only ) {
       display: none;
     }
+}
 
 }
+
+
