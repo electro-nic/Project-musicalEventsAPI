@@ -2,7 +2,10 @@ import apiService from './api-connect';
 import { refs } from './refs';
 import { creatGalleryCards} from './input-search';
 import {onError} from './input-search';
-import {paginationNone} from './input-search'
+import {paginationNone} from './input-search';
+import { setPagination } from './pagination';
+
+
 
 refs.inputCountry.addEventListener('change', onChangeCountries);
 refs.boxSelect.addEventListener('click',onIconMoveClick)
@@ -30,14 +33,18 @@ function onChangeCountries(e){
     refs.eventList.innerHTML = '';
     const fetch = apiService(keyword, 0, 20, countryCode);
     fetch.then(data => {
+        console.log('data select', data);
+        const totalElements = data.page.totalElements;
+
         if( countryCode === 'All countries'){
             return;
         }
         else{
         onClearSelect();
         creatGalleryCards(data._embedded.events);
-    }
-    })
+    }         setPagination(totalElements);
+
+    } )
     .catch(err => {
         paginationNone(); 
         onError()})

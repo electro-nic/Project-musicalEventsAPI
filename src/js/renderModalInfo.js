@@ -45,7 +45,6 @@ export function renderModalInfo(index) {
     modalRefs.closeModalWindow.classList.add('is-hidden');
 
     const keyword = currentEvent?._embedded?.attractions ? currentEvent?._embedded?.attractions[0]?.name : currentEvent?.name;
-
     const countryCode = '';
     apiService(keyword, 0, 20, countryCode).
     then(data => {
