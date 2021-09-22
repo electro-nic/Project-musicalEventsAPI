@@ -19,7 +19,9 @@ export const refs = {
   openTeamModalBtn: document.querySelector('#js-open__btn'),
   closeTeamModalBtn: document.querySelector('#js-close__btn'),
   teamModal: document.querySelector('.team__backdrop'),
-  pagination: document.querySelector('#pagination')
+  pagination: document.querySelector('#pagination'),
+  option:document.querySelector('.js-select'),
+  clearBtn: document.querySelector('#clear-btn')
 };
 
 export const modalRefs = {

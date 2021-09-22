@@ -1,13 +1,8 @@
 import apiService from './api-connect';
 import { refs } from './refs';
-import cardTmp from '../templates/eventsGallery'; 
-import { openModal } from '../js/modal-close';
-import { eventsArr } from '../js/variables';
 import { creatGalleryCards} from './input-search';
-import { cloneDeep } from 'lodash';
 import {onError} from './input-search';
 import {paginationNone} from './input-search'
-
 
 refs.inputCountry.addEventListener('change', onChangeCountries);
 refs.boxSelect.addEventListener('click',onIconMoveClick)
@@ -39,32 +34,16 @@ function onChangeCountries(e){
             return;
         }
         else{
-        creatGalleryCards(data._embedded.events)
+        onClearSelect();
+        creatGalleryCards(data._embedded.events);
     }
     })
     .catch(err => {
         paginationNone(); 
         onError()})
 };
-
-
-// const nameInput = document.querySelector('#name-input');
-// refs.inputCountry.addEventListener('change', onChangeEventsByCountries);
-// function onChangeEventsByCountries(e){
-//     e.preventDefault();
-//     const countryCode = refs.inputCountry.value;
-//     const keyword = nameInput.value;
-//     refs.eventList.innerHTML = '';
-//     const obj = apiService(keyword, 0, 20, countryCode );
-//     obj.then(data => console.log(data))
-//    obj.then(data => {
-//      if (data.page.totalElements === 0 || keyword.length === 0 || keyword.length <= 1) {
-//        return  onError()
-//      } 
-//      else {
-//        creatGalleryCards(data._embedded.events);
-//      }
-//    })
-//     .catch(err => console.log(err))
-// };
-
+ function onClearSelect(){
+    const dropDown = document.getElementById("country");
+    dropDown.selectedIndex = 0;
+    // refs.inputCountry.style.color = '#939393';
+ }
