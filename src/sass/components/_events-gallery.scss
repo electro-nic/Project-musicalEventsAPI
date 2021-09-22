@@ -162,7 +162,7 @@
 }
 
 
-//оверлей для появления иконки ютуба
+//оверлей для появления иконок соцсетей
 
 
 
@@ -185,6 +185,8 @@
 }
 
 .social__icon {
+width: 0;
+height: 0;
 
 @include for-size(tablet-up) {
   width: 35px;
@@ -200,6 +202,14 @@
   0px 0 20px -23px rgba(220, 86, 197, 0.8),
   0 0 40px rgba(220, 86, 197, 0.1) inset;
 }
+}
+
+.social__link {
+  opacity: 0;
+
+  @include for-size(tablet-up) {
+opacity: 1;
+  }
 }
 
 .social__link:not(:last-child) {
