@@ -153,7 +153,7 @@
   }
 }
 
-//стилі для селекту
+/*стилі для select*/
 .input-country {
   background: rgba(43, 41, 41, 0.986);
   color: #dc56c5;
@@ -201,7 +201,7 @@
 
 /*scroll-bar для select*/
 
-  select {
+select {
     &::-webkit-scrollbar {
       width: 10px;
     }
@@ -221,7 +221,7 @@
 .select-selected {
   background-color: DodgerBlue;
 }
-
+/*стилі для кнопки clear */
 .clear-btn {
   margin-bottom: 25px;
   cursor: pointer;
