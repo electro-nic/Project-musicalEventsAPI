@@ -3,8 +3,6 @@ import { eventsArr } from './variables';
 import apiService from './api-connect';
 import cardTmp from '../templates/eventsGallery';
 import { openModal } from '../js/modal-close';
-import { onClickScrollTop } from './onClickScrollTo'
-import { creatGalleryCards} from './input-search';
 import { setPagination } from './pagination'
 
 
