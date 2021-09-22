@@ -39,15 +39,16 @@ function onChangeCountries(e){
         if( countryCode === 'All countries'){
             return;
         }
-        else{
-
-        // onClearSelect();
-
+        if (totalElements === 0){
+            paginationNone();
+            onError();      
+        }
+       
         creatGalleryCards(data._embedded.events);
-    }         setPagination(totalElements);
+        setPagination(totalElements);
 
     } )
     .catch(err => {
-        paginationNone(); 
-        onError()})
+        onError()
+    })
 };
